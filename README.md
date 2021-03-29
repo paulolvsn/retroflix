@@ -56,3 +56,15 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 * Comment out all of your code. Without comments it will be very difficult for you to work together.
 * Don't just do what you can, get out of your comfort zone.
 * Each member of the team must work on the whole project.
+
+## Evaluation criterias
+| Criteria |	Indicator	| Yes/No |
+|---|---|---|
+| 1. | Is complete	The student has realized all must-have features.	| 
+| | There is a published GitHub page available.	|
+| | The code is well indented and commented	|
+| | The readme is clean and complete	|
+| | At least one Nice-to-have features is ok	|
+| 2. | Is Correct	The HTML and CSS pass the W3C Validation tool.	|
+| | The lighthouse test scores 90 at least on Performance, Best Practices, Accessibility and SEO.	|
+| | The code is well indented and commented |
