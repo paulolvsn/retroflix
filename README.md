@@ -68,3 +68,4 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 | 2. | Is Correct	The HTML and CSS pass the W3C Validation tool.	|
 | | The lighthouse test scores 90 at least on Performance, Best Practices, Accessibility and SEO.	|
 | | The code is well indented and commented |
+:)
