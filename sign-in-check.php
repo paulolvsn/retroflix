@@ -24,7 +24,7 @@ else
         session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $pseudo;
-        echo 'Vous êtes connecté !';
+        header("Location: account.php");  
     }
     else {
         echo 'Mauvais identifiant ou mot de passe !';

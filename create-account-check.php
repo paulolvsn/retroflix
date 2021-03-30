@@ -77,17 +77,39 @@ while ($data = $reponse->fetch()){
 
 }
 
+//upload avatar
+$uniqueId = uniqid();
+// File name
+$filename = $_FILES['file']['name'];
+// Location
+$target_file = 'avatar/'. $uniqueId .$filename;
+// file extension
+$file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
+$file_extension = strtolower($file_extension);
+// Valid image extension
+$valid_extension = array("png","jpeg","jpg");
+
+
+if(in_array($file_extension, $valid_extension)){
+
+move_uploaded_file($_FILES['file']["tmp_name"],$target_file);
+
 if ($score==0){
-$req = $bdd->prepare('INSERT INTO users(pseudo, email, password, admin) VALUES(:pseudo, :email, :password, :admin)');
+$req = $bdd->prepare('INSERT INTO users(pseudo, email, password, admin, avatar) VALUES(:pseudo, :email, :password, :admin,:avatar)');
 
 $req->execute(array(
     'admin' => 0,
     'pseudo' => $pseudo,
     'password' => $pass_hache,
-    'email' => $email));
+    'email' => $email,
+    'avatar' => $target_file));
 
+    //go to connexion page
 
+    header("location: sign-in.php?regsiter=ok");
 
+}}else{
+    header("Location: create-account.php?failed=imageInvalid$urlCallBack");
 }
 
 ?>

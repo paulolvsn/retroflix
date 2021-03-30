@@ -20,6 +20,9 @@ function errorMessage($mess){
     if($mess == 'email-already-exist'){
         $out = "This email already exist!";
     }
+    if($mess == "invalidImage"){
+        $out = "Wrong image type, please use jpeg or png";
+    }
     return $out;
 }
 
@@ -31,10 +34,11 @@ if(isset($_GET['failed'])){
 ?>
 
 
-<form action="create-account-check.php" method="post">
+<form action="create-account-check.php" method="post" enctype='multipart/form-data'>
 
     <label for="pseudo">pseudo :</label>
         <input type="text" name="pseudo" value="<?php echo $_GET['pseudo'] ?>"required>
+        <input type='file' name='file' multiple />
         <br>
 
     <label for="email">email :</label>
