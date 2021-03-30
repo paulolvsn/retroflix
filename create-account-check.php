@@ -90,11 +90,11 @@ $file_extension = strtolower($file_extension);
 $valid_extension = array("png","jpeg","jpg");
 
 
-if(in_array($file_extension, $valid_extension)){
+if(in_array($file_extension, $valid_extension)){ 
 
 move_uploaded_file($_FILES['file']["tmp_name"],$target_file);
 
-if ($score==0){
+if ($score==0){// if no form errors
 $req = $bdd->prepare('INSERT INTO users(pseudo, email, password, admin, avatar) VALUES(:pseudo, :email, :password, :admin,:avatar)');
 
 $req->execute(array(
@@ -106,7 +106,7 @@ $req->execute(array(
 
     //go to connexion page
 
-    header("location: sign-in.php?regsiter=ok");
+    header("location: sign-in.php?register=ok");
 
 }}else{
     header("Location: create-account.php?failed=imageInvalid$urlCallBack");

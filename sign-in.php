@@ -1,6 +1,6 @@
 <?php 
 
-if(isset($_GET['register'])){
+if($_GET['register']=="ok"){
     echo "<p> Your account have been created. Last step, connect to your account </p>";
 }
 

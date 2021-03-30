@@ -11,10 +11,10 @@ $req->execute(array(
     'pseudo' => $pseudo));
 $resultat = $req->fetch();
 
-// Comparaison du pass envoyé via le formulaire avec la base
+//check password
 $isPasswordCorrect = password_verify($_POST['password'], $resultat['password']);
 
-if (!$resultat)
+if (!$resultat)//if entered pseudo doesn't exist in db
 {
     echo 'Mauvais identifiant ou mot de passe !';
 }
