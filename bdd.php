@@ -23,7 +23,7 @@
         if (isset($_POST['searchFilm'])) {
             $keyword = $_POST['keyword'];
             $baseURL = "https://api.themoviedb.org/3/";
-            $url = $baseURL . "search/movie?api_key=" . $APIKEY . "&query=" . $keyword;
+            $url = $baseURL . "search/movie?api_key=" . $APIKEY . "&query=" . $keyword . "&language=fr-FR";
             echo "API query: $url<br>";
             echo "<strong>Showing results for $keyword:</strong><br>";
             echo "
@@ -79,7 +79,7 @@
             $id = $_POST['addFilm'];
             $name = $_POST['name'];
             $baseURL = "https://api.themoviedb.org/3/";
-            $url = $baseURL . "movie/$id?api_key=" . $APIKEY;
+            $url = $baseURL . "movie/$id?api_key=" . $APIKEY . "&language=fr-FR";
             echo "API query: $url<br>";
             echo "<strong>Showing info for $name (ID: $id):</strong><br>";
             echo "
