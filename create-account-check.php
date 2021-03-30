@@ -92,9 +92,10 @@ $valid_extension = array("png","jpeg","jpg");
 
 if(in_array($file_extension, $valid_extension)){ 
 
-move_uploaded_file($_FILES['file']["tmp_name"],$target_file);
+
 
 if ($score==0){// if no form errors
+move_uploaded_file($_FILES['file']["tmp_name"],$target_file);
 $req = $bdd->prepare('INSERT INTO users(pseudo, email, password, admin, avatar) VALUES(:pseudo, :email, :password, :admin,:avatar)');
 
 $req->execute(array(
