@@ -21,7 +21,7 @@
                         include "key.php";
                         // IF search button is clicked
                         if (isset($_POST['searchFilm'])) {
-                            $keyword = $_POST['keyword'];
+                            $keyword = htmlspecialchars($_POST['keyword'], ENT_QUOTES);
                             $baseURL = "https://api.themoviedb.org/3/";
                             $url = $baseURL . "search/movie?api_key=" . $APIKEY . "&query=" . $keyword . "&language=fr-FR";
                             echo "API query: $url<br>";
