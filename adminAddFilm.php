@@ -12,7 +12,7 @@
                 <div class="row">
                     <h1>Add Films to Database</h1>
                     <strong>Search film:</strong>
-                    <form method="post" action="adminAddFilms.php">
+                    <form method="post" action="adminAddFilm.php">
                         <input type="text" name="keyword" placeholder="Keyword" required>
                         <button class="btn btn-primary" type="submit" name="searchFilm">Search</button>
                     </form>
@@ -52,34 +52,44 @@
                                         textarea.disabled = 'true';
                                         textarea.style.width = '100%';
                                         textarea.style.resize = 'none';
+                                        textarea.classList.add('text-center');
 
                                         var input = document.createElement('INPUT');
                                         input.name = 'name';
                                         input.type = 'hidden';
                                         input.value = film.original_title;
-
-                                        var form = document.createElement('FORM');
-                                        form.action = 'adminAddFilms.php';
-                                        form.method = 'post';
-                                        form.id = film.original_title;
-                                        form.appendChild(textarea);
-                                        form.appendChild(input);
-                                        form.appendChild(btn);
                                         
-                                        var divBody = document.createElement('DIV');
-                                        divBody.classList.add('card-body');
-                                        divBody.appendChild(form);
-
                                         var img = document.createElement('IMG');
                                         img.src = 'https://image.tmdb.org/t/p/w342/'+film.poster_path;
                                         img.alt = film.title;
                                         img.classList.add('card-img-top');
 
+                                        var divHeader = document.createElement('DIV');
+                                        divHeader.classList.add('card-header');
+                                        divHeader.appendChild(img);
+
+                                        var divBody = document.createElement('DIV');
+                                        divBody.classList.add('card-body');
+                                        divBody.appendChild(textarea);
+                                        divBody.appendChild(input);
+
+                                        var divFooter = document.createElement('DIV');
+                                        divFooter.classList.add('card-footer');
+                                        divFooter.classList.add('text-center');
+                                        divFooter.appendChild(btn);
+                                        
+                                        var form = document.createElement('FORM');
+                                        form.action = 'adminAddFilm.php';
+                                        form.method = 'post';
+                                        form.id = film.original_title;
+                                        form.appendChild(divHeader);
+                                        form.appendChild(divBody);
+                                        form.appendChild(divFooter);
+
                                         var divCard = document.createElement('DIV');
                                         divCard.classList.add('card');
                                         divCard.classList.add('h-100');
-                                        divCard.appendChild(img);
-                                        divCard.appendChild(divBody);
+                                        divCard.appendChild(form);
 
                                         var divCol = document.createElement('DIV');
                                         divCol.classList.add('col-12');
@@ -125,7 +135,6 @@
                                     var br12 = document.createElement('BR');
                                     var br13 = document.createElement('BR');
                                     var br14 = document.createElement('BR');
-                                    var br15 = document.createElement('BR');
 
                                     var btn = document.createElement('BUTTON');
                                     btn.innerHTML = 'Confirm';
@@ -248,71 +257,79 @@
                                     video.placeholder = 'Paste video link here';
                                     video.classList.add('w-100');
 
-                                    var form = document.createElement('FORM');
-                                    form.action = 'adminAddFilms.php';
-                                    form.method = 'post';
-                                    form.appendChild(id);
-                                    form.appendChild(br00);
-                                    form.appendChild(imdb_id);
-                                    form.appendChild(br01);
-                                    form.appendChild(backdrop_path);
-                                    form.appendChild(br02);
-                                    form.appendChild(poster_path);
-                                    form.appendChild(br03);
-                                    form.appendChild(title);
-                                    form.appendChild(br04);
-                                    form.appendChild(original_title);
-                                    form.appendChild(br05);
-                                    form.appendChild(original_language);
-                                    form.appendChild(br06);
-                                    form.appendChild(release_date);
-                                    form.appendChild(br07);
-                                    form.appendChild(origin_country);
-                                    form.appendChild(br08);
-                                    form.appendChild(genres);
-                                    form.appendChild(br09);
-                                    form.appendChild(runtime);
-                                    form.appendChild(br10);
-                                    form.appendChild(popularity);
-                                    form.appendChild(br11);
-                                    form.appendChild(vote_count);
-                                    form.appendChild(br12);
-                                    form.appendChild(vote_average);
-                                    form.appendChild(br13);
-                                    form.appendChild(overview);
-                                    form.appendChild(br14);
-                                    form.appendChild(video);
-                                    form.appendChild(br15);
-                                    form.appendChild(btn);
+                                    var img = document.createElement('IMG');
+                                    img.src = 'https://image.tmdb.org/t/p/w342/'+film.poster_path;
+                                    img.alt = film.title;
+                                    img.classList.add('img-fluid');
+
+                                    var divFooter = document.createElement('DIV');
+                                    divFooter.classList.add('card-footer');
+                                    divFooter.classList.add('text-center');
+                                    divFooter.appendChild(btn);
 
                                     var divBody = document.createElement('DIV');
                                     divBody.classList.add('card-body');
-                                    divBody.appendChild(form);
+                                    divBody.classList.add('p-1');
+                                    divBody.appendChild(id);
+                                    divBody.appendChild(br00);
+                                    divBody.appendChild(imdb_id);
+                                    divBody.appendChild(br01);
+                                    divBody.appendChild(backdrop_path);
+                                    divBody.appendChild(br02);
+                                    divBody.appendChild(poster_path);
+                                    divBody.appendChild(br03);
+                                    divBody.appendChild(title);
+                                    divBody.appendChild(br04);
+                                    divBody.appendChild(original_title);
+                                    divBody.appendChild(br05);
+                                    divBody.appendChild(original_language);
+                                    divBody.appendChild(br06);
+                                    divBody.appendChild(release_date);
+                                    divBody.appendChild(br07);
+                                    divBody.appendChild(origin_country);
+                                    divBody.appendChild(br08);
+                                    divBody.appendChild(genres);
+                                    divBody.appendChild(br09);
+                                    divBody.appendChild(runtime);
+                                    divBody.appendChild(br10);
+                                    divBody.appendChild(popularity);
+                                    divBody.appendChild(br11);
+                                    divBody.appendChild(vote_count);
+                                    divBody.appendChild(br12);
+                                    divBody.appendChild(vote_average);
+                                    divBody.appendChild(br13);
+                                    divBody.appendChild(overview);
+                                    divBody.appendChild(br14);
+                                    divBody.appendChild(video);
 
                                     var divRight = document.createElement('DIV');
                                     divRight.classList.add('col-md-8');
                                     divRight.classList.add('col-12');
                                     divRight.appendChild(divBody);
 
-                                    var img = document.createElement('IMG');
-                                    img.src = 'https://image.tmdb.org/t/p/w342/'+film.poster_path;
-                                    img.alt = film.title;
-
                                     var divLeft = document.createElement('DIV');
                                     divLeft.classList.add('col-md-4');
                                     divLeft.classList.add('col-12');
+                                    divLeft.classList.add('p-1');
+                                    divLeft.classList.add('text-center');
                                     divLeft.appendChild(img);
-                                    
+
                                     var divRow = document.createElement('DIV');
                                     divRow.classList.add('row');
                                     divRow.classList.add('g-0');
                                     divRow.appendChild(divLeft);
                                     divRow.appendChild(divRight);
+                                    divRow.appendChild(divFooter);
+
+                                    var form = document.createElement('FORM');
+                                    form.action = 'adminAddFilm.php';
+                                    form.method = 'post';
+                                    form.appendChild(divRow);
 
                                     var divCard = document.createElement('DIV');
                                     divCard.classList.add('card');
                                     divCard.classList.add('border-dark');
-                                    divCard.appendChild(divRow);
+                                    divCard.appendChild(form);
                                         
                                     document.getElementById('output').appendChild(divCard);
                                 })
@@ -347,7 +364,8 @@
                         }
                     ?>
                 </div>
-                <div class="row g-3" id='output'></div>
+                <div class="row g-3 mb-4" id='output'>
+                </div>
             </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
