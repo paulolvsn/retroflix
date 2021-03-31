@@ -97,7 +97,7 @@
                                     $user_id = $comment['user_id'];
                                     $film_id = $comment['film_id'];
                                     $text = $comment['text'];
-                                    if($comment['id'] == $_POST['updateComment']) {
+                                    if( isset($_POST['updateComment']) AND ($comment['id'] == $_POST['updateComment'])) {
                                         echo "
                                             <tr id=$id>
                                             <td>$id</td>

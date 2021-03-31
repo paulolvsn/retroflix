@@ -53,7 +53,7 @@
                                     $original_title = $film['original_title'];
                                     $genres = $film['genres'];
                                     $overview = $film['overview'];
-                                    if($film['id'] == $_POST['updateFilm']) {
+                                    if( isset($_POST['updateFilm']) AND ($film['id'] == $_POST['updateFilm'])) {
                                         echo "
                                             <tr id=$id>
                                             <td><img src='https://image.tmdb.org/t/p/w92/$poster_path' alt='$title'></td>
