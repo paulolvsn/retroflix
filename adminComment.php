@@ -29,12 +29,8 @@
                             <td><select class="form-select" name="user_id" required>
                                 <option value="">Choose user:</option>
                                 <?php
-                                try {
-                                    $db = new PDO('mysql:host=database;dbname=retroflix;charset=utf8', 'root', 'root'); // open database
-                                } catch (Exception $e) {
-                                    die('Erreur : ' . $e->getMessage());
-                                }
-                                $request = $db->query('SELECT * FROM users');
+                                include "connect-to-bdd.php"; // open database
+                                $request = $bdd->query('SELECT * FROM users');
                                 while ($user = $request->fetch()) {
                                     $user_id = $user['id'];
                                     $user_name = $user['pseudo'];
@@ -46,12 +42,8 @@
                             <td><select class="form-select" name="film_id" required>
                                 <option value="">Choose film:</option>
                                 <?php
-                                try {
-                                    $db = new PDO('mysql:host=database;dbname=retroflix;charset=utf8', 'root', 'root'); // open database
-                                } catch (Exception $e) {
-                                    die('Erreur : ' . $e->getMessage());
-                                }
-                                $request = $db->query('SELECT * FROM films');
+                                include "connect-to-bdd.php"; // open database
+                                $request = $bdd->query('SELECT * FROM films');
                                 while ($user = $request->fetch()) {
                                     $film_id = $user['id'];
                                     $film_name = $user['title'];
@@ -66,11 +58,7 @@
                         </tr>
                         <tbody>
                             <?php
-                                try {
-                                    $db = new PDO('mysql:host=database;dbname=retroflix;charset=utf8', 'root', 'root'); // open database
-                                } catch (Exception $e) {
-                                    die('Erreur : ' . $e->getMessage());
-                                }
+                                include "connect-to-bdd.php"; // open database
                                 // IF add button is clicked
                                 if(isset($_POST['addComment'])) {
                                     $id = $_POST['addComment'];
@@ -78,7 +66,7 @@
                                     $user_id = $_POST['user_id'];
                                     $film_id = $_POST['film_id'];
                                     $text = $_POST['text'];
-                                    $request = $db->prepare('INSERT INTO comments(date, user_id, film_id, text) VALUES(?, ?, ?, ?)'); //prepare add command
+                                    $request = $bdd->prepare('INSERT INTO comments(date, user_id, film_id, text) VALUES(?, ?, ?, ?)'); //prepare add command
                                     $request->execute(array($date, $user_id, $film_id, $text)); // add new element in database
                                     echo "<h4 class='text-success'>Le commentaire a été ajouté à la base de données.</h4>";   
                                 }
@@ -86,7 +74,7 @@
                                 // IF delete button is clicked
                                 if(isset($_POST['removeComment'])) {
                                     $id = $_POST['removeComment'];
-                                    $request = $db->prepare('DELETE FROM comments WHERE id = ?'); //prepare delete command
+                                    $request = $bdd->prepare('DELETE FROM comments WHERE id = ?'); //prepare delete command
                                     $request->execute(array($id)); // delete comment from database
                                     echo "<h4 class='text-success'>Le commentaire a été supprimé de la base de données.</h4>";   
                                 }
@@ -97,12 +85,12 @@
                                     $user_id = $_POST['user_id'];
                                     $film_id = $_POST['film_id'];
                                     $text = $_POST['text'];
-                                    $request = $db->prepare('UPDATE comments SET date=?, user_id=?, film_id=?, text=? WHERE id=?'); //prepare update command
+                                    $request = $bdd->prepare('UPDATE comments SET date=?, user_id=?, film_id=?, text=? WHERE id=?'); //prepare update command
                                     $request->execute(array($date, $user_id, $film_id, $text, $id)); // update Comment info
                                     echo "<h4 class='text-success'>Le commentaire a été mis à jour.</h4>";   
                                 }
                                 // generate Comment list table
-                                $request = $db->query('SELECT * FROM comments');
+                                $request = $bdd->query('SELECT * FROM comments');
                                 while ($comment = $request->fetch()) {
                                     $id = $comment['id'];
                                     $date = $comment['date'];

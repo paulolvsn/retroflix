@@ -25,15 +25,11 @@
                         </thead>
                         <tbody>
                             <?php
-                                try {
-                                    $db = new PDO('mysql:host=database;dbname=retroflix;charset=utf8', 'root', 'root'); // open database
-                                } catch (Exception $e) {
-                                    die('Erreur : ' . $e->getMessage());
-                                }
+                                include "connect-to-bdd.php"; // open database
                                 // IF delete button is clicked
                                 if(isset($_POST['removeFilm'])) {
                                     $id = $_POST['removeFilm'];
-                                    $request = $db->prepare('DELETE FROM films WHERE id = ?'); //prepare delete command
+                                    $request = $bdd->prepare('DELETE FROM films WHERE id = ?'); //prepare delete command
                                     $request->execute(array($id)); // delete film from database
                                     echo "<h4 class='text-success'>Le film a été supprimé de la base de données.</h4>";   
                                 }
@@ -44,12 +40,12 @@
                                     $original_title = $_POST['original_title'];
                                     $genres = $_POST['genres'];
                                     $overview = $_POST['overview'];
-                                    $request = $db->prepare('UPDATE films SET title=?, original_title=?, genres=?, overview=? WHERE id=?'); //prepare update command
+                                    $request = $bdd->prepare('UPDATE films SET title=?, original_title=?, genres=?, overview=? WHERE id=?'); //prepare update command
                                     $request->execute(array($title, $original_title, $genres, $overview, $id)); // update film info
                                     echo "<h4 class='text-success'>Le film a été mis à jour.</h4>";   
                                 }
                                 // generate film list table
-                                $request = $db->query('SELECT * FROM films');
+                                $request = $bdd->query('SELECT * FROM films');
                                 while ($film = $request->fetch()) {
                                     $poster_path = $film['poster_path'];
                                     $id = $film['id'];

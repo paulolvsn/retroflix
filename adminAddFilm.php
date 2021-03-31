@@ -336,11 +336,7 @@
                                 </script>";
                         }
                         if(isset($_POST['confirm'])) {
-                            try {
-                                $db = new PDO('mysql:host=database;dbname=retroflix;charset=utf8', 'root', 'root'); // open database
-                            } catch (Exception $e) {
-                                die('Erreur : ' . $e->getMessage());
-                            }
+                            include "connect-to-bdd.php"; // open database
                             $id = $_POST['id'];
                             $imdb_id = $_POST['imdb_id'];
                             $backdrop_path = $_POST['backdrop_path'];
@@ -358,7 +354,7 @@
                             $overview = $_POST['overview'];
                             $video = $_POST['video'];
                             $torrent = "";
-                            $request = $db->prepare('INSERT INTO films(id, imdb_id, backdrop_path, poster_path, title, original_title, original_language, release_date, origin_country, genres, runtime, popularity, vote_count, vote_average, overview, video, torrent) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'); //prepare add command
+                            $request = $bdd->prepare('INSERT INTO films(id, imdb_id, backdrop_path, poster_path, title, original_title, original_language, release_date, origin_country, genres, runtime, popularity, vote_count, vote_average, overview, video, torrent) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'); //prepare add command
                             $request->execute(array($id, $imdb_id, $backdrop_path, $poster_path, $title, $original_title, $original_language, $release_date, $origin_country, $genres, $runtime, $popularity, $vote_count, $vote_average, $overview, $video, $torrent)); // add new element in database
                             echo "<h4>Film added to database.</h4>";   
                         }
