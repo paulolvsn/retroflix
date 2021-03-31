@@ -9,12 +9,12 @@
     <body>
         <main>
             <div class="container">
-                <div class="row">
+                <div class="row" id="search">
                     <h1>Add Film</h1>
                     <strong>Search film:</strong>
                     <form method="post" action="adminAddFilm.php">
-                        <input type="text" name="keyword" placeholder="Keyword" required>
-                        <button class="btn btn-primary" type="submit" name="searchFilm">Search</button>
+                        <input class="form-control form-control-sm mb-1" type="text" name="keyword" placeholder="Keyword" required>
+                        <button class="btn btn-sm btn-primary" type="submit" name="searchFilm">Search</button>
                     </form>
                     <?php
                         // load API key
@@ -24,8 +24,8 @@
                             $keyword = htmlspecialchars($_POST['keyword'], ENT_QUOTES);
                             $baseURL = "https://api.themoviedb.org/3/";
                             $url = $baseURL . "search/movie?api_key=" . $APIKEY . "&query=" . $keyword . "&language=fr-FR";
-                            echo "API query: $url<br>";
-                            echo "<strong>Showing results for $keyword:</strong><br>";
+                            echo "<p>API query: $url</p>";
+                            echo "<p><strong>Showing results for $keyword:</strong></p>";
                             echo "
                                 <script>
                                 let url = '$url';
@@ -43,6 +43,7 @@
                                         btn.name = 'addFilm';
                                         btn.value = film.id;
                                         btn.classList.add('btn');
+                                        btn.classList.add('btn-sm');
                                         btn.classList.add('btn-primary');
 
                                         var textarea = document.createElement('TEXTAREA');
@@ -53,6 +54,8 @@
                                         textarea.style.width = '100%';
                                         textarea.style.resize = 'none';
                                         textarea.classList.add('text-center');
+                                        textarea.classList.add('form-control');
+                                        textarea.classList.add('form-control-sm');
 
                                         var input = document.createElement('INPUT');
                                         input.name = 'name';
@@ -105,11 +108,10 @@
                         if(isset($_POST['addFilm'])) {
                             $id = $_POST['addFilm'];
                             $name = $_POST['name'];
-                            echo $name;
                             $baseURL = "https://api.themoviedb.org/3/";
                             $url = $baseURL . "movie/$id?api_key=" . $APIKEY . "&language=fr-FR";
-                            echo "API query: $url<br>";
-                            echo "<strong>Showing info for $name (ID: $id):</strong><br>";
+                            echo "<p>API query: $url</p>";
+                            echo "<p><strong>Showing info for $name (ID: $id):</strong></p>";
                             echo "
                                 <script>
                                 let url = '$url';
@@ -120,22 +122,6 @@
                                     film = JSON.parse(text);
                                     console.log(film);
                                     
-                                    var br00 = document.createElement('BR');
-                                    var br01 = document.createElement('BR');
-                                    var br02 = document.createElement('BR');
-                                    var br03 = document.createElement('BR');
-                                    var br04 = document.createElement('BR');
-                                    var br05 = document.createElement('BR');
-                                    var br06 = document.createElement('BR');
-                                    var br07 = document.createElement('BR');
-                                    var br08 = document.createElement('BR');
-                                    var br09 = document.createElement('BR');
-                                    var br10 = document.createElement('BR');
-                                    var br11 = document.createElement('BR');
-                                    var br12 = document.createElement('BR');
-                                    var br13 = document.createElement('BR');
-                                    var br14 = document.createElement('BR');
-
                                     var btn = document.createElement('BUTTON');
                                     btn.innerHTML = 'Confirm';
                                     btn.type = 'submit';
@@ -143,53 +129,70 @@
                                     btn.value = film.id;
                                     btn.classList.add('btn');
                                     btn.classList.add('btn-primary');
+                                    btn.classList.add('btn-primary-sm');
 
                                     var id = document.createElement('INPUT');
                                     id.type = 'number';
                                     id.name = 'id';
                                     id.value = film.id;
+                                    id.classList.add('form-control');
+                                    id.classList.add('form-control-sm');
                                     id.classList.add('w-100');
 
                                     var imdb_id = document.createElement('INPUT');
                                     imdb_id.type = 'text';
                                     imdb_id.name = 'imdb_id';
                                     imdb_id.value = film.imdb_id;
+                                    imdb_id.classList.add('form-control');
+                                    imdb_id.classList.add('form-control-sm');
                                     imdb_id.classList.add('w-100');
 
                                     var backdrop_path = document.createElement('INPUT');
                                     backdrop_path.type = 'text';
                                     backdrop_path.name = 'backdrop_path';
                                     backdrop_path.value = film.backdrop_path;
+                                    backdrop_path.classList.add('form-control');
+                                    backdrop_path.classList.add('form-control-sm');
                                     backdrop_path.classList.add('w-100');
 
                                     var poster_path = document.createElement('INPUT');
                                     poster_path.type = 'text';
                                     poster_path.name = 'poster_path';
                                     poster_path.value = film.poster_path;
+                                    poster_path.classList.add('form-control');
+                                    poster_path.classList.add('form-control-sm');
                                     poster_path.classList.add('w-100');
 
                                     var title = document.createElement('INPUT');
                                     title.type = 'text';
                                     title.name = 'title';
                                     title.value = film.title;
+                                    title.classList.add('form-control');
+                                    title.classList.add('form-control-sm');
                                     title.classList.add('w-100');
 
                                     var original_title = document.createElement('INPUT');
                                     original_title.type = 'text';
                                     original_title.name = 'original_title';
                                     original_title.value = film.original_title;
+                                    original_title.classList.add('form-control');
+                                    original_title.classList.add('form-control-sm');
                                     original_title.classList.add('w-100');
 
                                     var original_language = document.createElement('INPUT');
                                     original_language.type = 'text';
                                     original_language.name = 'original_language';
                                     original_language.value = film.original_language;
+                                    original_language.classList.add('form-control');
+                                    original_language.classList.add('form-control-sm');
                                     original_language.classList.add('w-100');
 
                                     var release_date = document.createElement('INPUT');
                                     release_date.type = 'date';
                                     release_date.name = 'release_date';
                                     release_date.value = film.release_date;
+                                    release_date.classList.add('form-control');
+                                    release_date.classList.add('form-control-sm');
                                     release_date.classList.add('w-100');
 
                                     var allCountries = '';
@@ -204,6 +207,8 @@
                                     origin_country.type = 'text';
                                     origin_country.name = 'origin_country';
                                     origin_country.value = allCountries;
+                                    origin_country.classList.add('form-control');
+                                    origin_country.classList.add('form-control-sm');
                                     origin_country.classList.add('w-100');
                                     
                                     var allGenres = '';
@@ -218,24 +223,32 @@
                                     genres.type = 'text';
                                     genres.name = 'genres';
                                     genres.value = allGenres;
+                                    genres.classList.add('form-control');
+                                    genres.classList.add('form-control-sm');
                                     genres.classList.add('w-100');
 
                                     var runtime = document.createElement('INPUT');
                                     runtime.type = 'number';
                                     runtime.name = 'runtime';
                                     runtime.value = film.runtime;
+                                    runtime.classList.add('form-control');
+                                    runtime.classList.add('form-control-sm');
                                     runtime.classList.add('w-100');
 
                                     var popularity = document.createElement('INPUT');
                                     popularity.type = 'text';
                                     popularity.name = 'popularity';
                                     popularity.value = film.popularity;
+                                    popularity.classList.add('form-control');
+                                    popularity.classList.add('form-control-sm');
                                     popularity.classList.add('w-100');
 
                                     var vote_count = document.createElement('INPUT');
                                     vote_count.type = 'number';
                                     vote_count.name = 'vote_count';
                                     vote_count.value = film.vote_count;
+                                    vote_count.classList.add('form-control');
+                                    vote_count.classList.add('form-control-sm');
                                     vote_count.classList.add('w-100');
 
                                     var vote_average = document.createElement('INPUT');
@@ -243,18 +256,24 @@
                                     vote_average.step = '0.1';
                                     vote_average.name = 'vote_average';
                                     vote_average.value = film.vote_average;
+                                    vote_average.classList.add('form-control');
+                                    vote_average.classList.add('form-control-sm');
                                     vote_average.classList.add('w-100');
 
                                     var overview = document.createElement('TEXTAREA');
                                     overview.type = 'text';
                                     overview.name = 'overview';
                                     overview.value = film.overview;
+                                    overview.classList.add('form-control');
+                                    overview.classList.add('form-control-sm');
                                     overview.classList.add('w-100');
 
                                     var video = document.createElement('INPUT');
                                     video.type = 'text';
                                     video.name = 'video';
                                     video.placeholder = 'Paste video link here';
+                                    video.classList.add('form-control');
+                                    video.classList.add('form-control-sm');
                                     video.classList.add('w-100');
 
                                     var img = document.createElement('IMG');
@@ -271,35 +290,20 @@
                                     divBody.classList.add('card-body');
                                     divBody.classList.add('p-1');
                                     divBody.appendChild(id);
-                                    divBody.appendChild(br00);
                                     divBody.appendChild(imdb_id);
-                                    divBody.appendChild(br01);
                                     divBody.appendChild(backdrop_path);
-                                    divBody.appendChild(br02);
                                     divBody.appendChild(poster_path);
-                                    divBody.appendChild(br03);
                                     divBody.appendChild(title);
-                                    divBody.appendChild(br04);
                                     divBody.appendChild(original_title);
-                                    divBody.appendChild(br05);
                                     divBody.appendChild(original_language);
-                                    divBody.appendChild(br06);
                                     divBody.appendChild(release_date);
-                                    divBody.appendChild(br07);
                                     divBody.appendChild(origin_country);
-                                    divBody.appendChild(br08);
                                     divBody.appendChild(genres);
-                                    divBody.appendChild(br09);
                                     divBody.appendChild(runtime);
-                                    divBody.appendChild(br10);
                                     divBody.appendChild(popularity);
-                                    divBody.appendChild(br11);
                                     divBody.appendChild(vote_count);
-                                    divBody.appendChild(br12);
                                     divBody.appendChild(vote_average);
-                                    divBody.appendChild(br13);
                                     divBody.appendChild(overview);
-                                    divBody.appendChild(br14);
                                     divBody.appendChild(video);
 
                                     var divRight = document.createElement('DIV');
@@ -360,7 +364,7 @@
                         }
                     ?>
                 </div>
-                <div class="row g-3 mb-4" id='output'>
+                <div class="row g-3" id='output'>
                 </div>
             </div>
         </main>

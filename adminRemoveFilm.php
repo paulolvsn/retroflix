@@ -59,16 +59,16 @@
                                             <td><img src='https://image.tmdb.org/t/p/w92/$poster_path' alt='$title'></td>
                                             <td>$id</td>
                                             <form method='post' action='adminRemoveFilm.php' id='$title'>
-                                            <td><textarea name='title' style='resize: none; width: 100%;' rows='5' form='$title'>$title</textarea></td>
-                                            <td><textarea name='original_title' style='resize: none; width: 100%;' rows='5' form='$title'>$original_title</textarea></td>
-                                            <td><textarea name='genres' style='resize: none; width: 100%;' rows='5' form='$title'>$genres</textarea></td>
-                                            <td><textarea name='overview' style='resize: none; width: 100%;' rows='5' form='$title'>$overview</textarea></td>
-                                            <td><button class='btn btn-success' type='submit' name='saveFilm' value=$id>Enregistrer</button>
+                                            <td><textarea class='form-control form-control-sm' name='title' style='resize: none; width: 100%;' rows='5' form='$title'>$title</textarea></td>
+                                            <td><textarea class='form-control form-control-sm' name='original_title' style='resize: none; width: 100%;' rows='5' form='$title'>$original_title</textarea></td>
+                                            <td><textarea class='form-control form-control-sm' name='genres' style='resize: none; width: 100%;' rows='5' form='$title'>$genres</textarea></td>
+                                            <td><textarea class='form-control form-control-sm' name='overview' style='resize: none; width: 100%;' rows='5' form='$title'>$overview</textarea></td>
+                                            <td><button class='btn btn-sm btn-success' type='submit' name='saveFilm' value=$id>Enregistrer</button>
                                             </form>
                                             <br>
                                             <br>
                                             <form method='post' action='adminRemoveFilm.php'>
-                                            <button class='btn btn-danger' type='submit' name='removeFilm' value=$id>Supprimer</button>
+                                            <button class='btn btn-sm btn-danger' type='submit' name='removeFilm' value=$id>Supprimer</button>
                                             </form>
                                             </td>
                                             </tr>
@@ -85,11 +85,11 @@
                                             <td>$overview</td>
                                             <td>
                                             <form method='post' action='adminRemoveFilm.php#$id'>
-                                            <button class='btn btn-primary' type='submit' name='updateFilm' value=$id>Changer</button>
+                                            <button class='btn btn-sm btn-primary' type='submit' name='updateFilm' value=$id>Changer</button>
                                             </form>
                                             <br>
                                             <form method='post' action='adminRemoveFilm.php'>
-                                            <button class='btn btn-danger' type='submit' name='removeFilm' value=$id>Supprimer</button>
+                                            <button class='btn btn-sm btn-danger' type='submit' name='removeFilm' value=$id>Supprimer</button>
                                             </form>
                                             </td>
                                             </tr>

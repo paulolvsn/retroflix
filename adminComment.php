@@ -25,9 +25,9 @@
                         <tr>
                             <form method="post" action="adminComment.php">
                             <td></td>
-                            <td><input type="date" name="date" required></td>
-                            <td><select class="form-select" name="user_id" required>
-                                <option value="">Choose user:</option>
+                            <td><input class="form-control form-control-sm" type="date" name="date" required></td>
+                            <td><select class="form-select form-select-sm" name="user_id" required>
+                                <option selected>Choose user:</option>
                                 <?php
                                 include "connect-to-bdd.php"; // open database
                                 $request = $bdd->query('SELECT * FROM users');
@@ -39,8 +39,8 @@
                                 $request->closeCursor(); // close database
                                 ?>
                             </select></td>
-                            <td><select class="form-select" name="film_id" required>
-                                <option value="">Choose film:</option>
+                            <td><select class="form-select form-select-sm" name="film_id" required>
+                                <option selected>Choose film:</option>
                                 <?php
                                 include "connect-to-bdd.php"; // open database
                                 $request = $bdd->query('SELECT * FROM films');
@@ -52,8 +52,8 @@
                                 $request->closeCursor(); // close database
                                 ?>
                             </select></td>
-                            <td><textarea name="text" placeholder="Comment" rows="3" style="width:100%" required></textarea></td>
-                            <td><button type="submit" name="addComment" class='btn btn-success'>Add</button></td>
+                            <td><textarea class="form-control form-control-sm" name="text" placeholder="Comment" rows="3" style="width:100%" required></textarea></td>
+                            <td><button class="btn btn-sm btn-success"type="submit" name="addComment">Add</button></td>
                             </form>
                         </tr>
                         <tbody>
@@ -102,16 +102,16 @@
                                             <tr id=$id>
                                             <td>$id</td>
                                             <form method='post' action='adminComment.php' id='id$user_id$film_id'>
-                                            <td><input type='date' name='date' value=$date></td>
-                                            <td><input type='number' name='user_id' value=$user_id></td>
-                                            <td><input type='number' name='film_id' value=$film_id></td>
-                                            <td><textarea name='text' style='resize: none; width: 100%;' rows='5' form='id$user_id$film_id'>$text</textarea></td>
-                                            <td><button class='btn btn-success' type='submit' name='saveComment' value=$id>Enregistrer</button>
+                                            <td><input class='form-control form-control-sm' type='date' name='date' value=$date></td>
+                                            <td><input class='form-control form-control-sm' type='number' name='user_id' value=$user_id></td>
+                                            <td><input class='form-control form-control-sm' type='number' name='film_id' value=$film_id></td>
+                                            <td><textarea class='form-control form-control-sm' name='text' style='resize: none; width: 100%;' rows='5' form='id$user_id$film_id'>$text</textarea></td>
+                                            <td><button class='btn btn-sm btn-success' type='submit' name='saveComment' value=$id>Enregistrer</button>
                                             </form>
                                             <br>
                                             <br>
                                             <form method='post' action='adminComment.php'>
-                                            <button class='btn btn-danger' type='submit' name='removeComment' value=$id>Supprimer</button>
+                                            <button class='btn btn-sm btn-danger' type='submit' name='removeComment' value=$id>Supprimer</button>
                                             </form>
                                             </td>
                                             </tr>
@@ -127,11 +127,11 @@
                                             <td>$text</td>
                                             <td>
                                             <form method='post' action='adminComment.php#$id'>
-                                            <button class='btn btn-primary' type='submit' name='updateComment' value=$id>Changer</button>
+                                            <button class='btn btn-sm btn-primary' type='submit' name='updateComment' value=$id>Changer</button>
                                             </form>
                                             <br>
                                             <form method='post' action='adminComment.php'>
-                                            <button class='btn btn-danger' type='submit' name='removeComment' value=$id>Supprimer</button>
+                                            <button class='btn btn-sm btn-danger' type='submit' name='removeComment' value=$id>Supprimer</button>
                                             </form>
                                             </td>
                                             </tr>
