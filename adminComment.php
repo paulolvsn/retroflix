@@ -23,7 +23,7 @@
                             </tr>
                         </thead>
                         <tr>
-                            <form method="post" action="adminComment.php">
+                            <form method="post" action="adminPanel.php">
                             <td></td>
                             <td><input class="form-control form-control-sm" type="date" name="date" required></td>
                             <td><select class="form-select form-select-sm" name="user_id" required>
@@ -61,6 +61,7 @@
                                 include "connect-to-bdd.php"; // open database
                                 // IF add button is clicked
                                 if(isset($_POST['addComment'])) {
+                                    echo "<script type='text/javascript'>function toggleAddComment(){addComment.classList.add('active');manageFilms.classList.remove('active');btnAddComment.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddComment();</script>";
                                     $id = $_POST['addComment'];
                                     $date = $_POST['date'];
                                     $user_id = $_POST['user_id'];
@@ -73,6 +74,7 @@
 
                                 // IF delete button is clicked
                                 if(isset($_POST['removeComment'])) {
+                                    echo "<script type='text/javascript'>function toggleAddComment(){addComment.classList.add('active');manageFilms.classList.remove('active');btnAddComment.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddComment();</script>";
                                     $id = $_POST['removeComment'];
                                     $request = $bdd->prepare('DELETE FROM comments WHERE id = ?'); //prepare delete command
                                     $request->execute(array($id)); // delete comment from database
@@ -80,6 +82,7 @@
                                 }
                                 // IF confirm button is clicked to save changes
                                 if(isset($_POST['saveComment'])) {
+                                    echo "<script type='text/javascript'>function toggleAddComment(){addComment.classList.add('active');manageFilms.classList.remove('active');btnAddComment.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddComment();</script>";
                                     $id = $_POST['saveComment'];
                                     $date = $_POST['date'];
                                     $user_id = $_POST['user_id'];
@@ -98,10 +101,11 @@
                                     $film_id = $comment['film_id'];
                                     $text = $comment['text'];
                                     if( isset($_POST['updateComment']) AND ($comment['id'] == $_POST['updateComment'])) {
+                                        echo "<script type='text/javascript'>function toggleAddComment(){addComment.classList.add('active');manageFilms.classList.remove('active');btnAddComment.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddComment();</script>";
                                         echo "
                                             <tr id=$id>
                                             <td>$id</td>
-                                            <form method='post' action='adminComment.php' id='id$user_id$film_id'>
+                                            <form method='post' action='adminPanel.php' id='id$user_id$film_id'>
                                             <td><input class='form-control form-control-sm' type='date' name='date' value=$date></td>
                                             <td><input class='form-control form-control-sm' type='number' name='user_id' value=$user_id></td>
                                             <td><input class='form-control form-control-sm' type='number' name='film_id' value=$film_id></td>
@@ -110,7 +114,7 @@
                                             </form>
                                             <br>
                                             <br>
-                                            <form method='post' action='adminComment.php'>
+                                            <form method='post' action='adminPanel.php'>
                                             <button class='btn btn-sm btn-danger' type='submit' name='removeComment' value=$id>Supprimer</button>
                                             </form>
                                             </td>
@@ -126,11 +130,11 @@
                                             <td>$film_id</td>
                                             <td>$text</td>
                                             <td>
-                                            <form method='post' action='adminComment.php#$id'>
+                                            <form method='post' action='adminPanel.php#$id'>
                                             <button class='btn btn-sm btn-primary' type='submit' name='updateComment' value=$id>Changer</button>
                                             </form>
                                             <br>
-                                            <form method='post' action='adminComment.php'>
+                                            <form method='post' action='adminPanel.php'>
                                             <button class='btn btn-sm btn-danger' type='submit' name='removeComment' value=$id>Supprimer</button>
                                             </form>
                                             </td>
@@ -142,8 +146,6 @@
                             ?>
                         </tbody>
                     </table>
-                </div>
-                <div class="row g-3" id='output'>
                 </div>
             </div>
         </main>

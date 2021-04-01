@@ -26,11 +26,12 @@
                                 include "connect-to-bdd.php"; // open database         
                                 // IF save button is clicked
                                 if(isset($_POST['addTorrent'])) {
+                                    echo "<script type='text/javascript'>function toggleAddTorrent(){addTorrent.classList.add('active');manageFilms.classList.remove('active');btnAddTorrent.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddTorrent();</script>";
                                     $imdb_id = $_POST['addTorrent'];
                                     $torrent = $_POST['torrent'];
                                     $request = $bdd->prepare('UPDATE films SET torrent = ? WHERE imdb_id = ?'); //prepare add command
                                     $request->execute(array($torrent, $imdb_id)); // add new element in database
-                                    echo "<h4>Torrent added to database.</h4>";   
+                                    echo "<h4 class='text-success'>Torrent added to database.</h4>";   
                                 }
                                 // generate film list table
                                 $request = $bdd->query('SELECT * FROM films');
@@ -43,13 +44,14 @@
                                     $baseURL = "https://yts.mx/api/v2/";
                                     $url = $baseURL . "list_movies.json?query_term=" . $imdb_id;
                                     if( isset($_POST['updateTorrent']) AND ($film['imdb_id'] == $_POST['updateTorrent'])) {
+                                        echo "<script type='text/javascript'>function toggleAddTorrent(){addTorrent.classList.add('active');manageFilms.classList.remove('active');btnAddTorrent.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddTorrent();</script>";
                                         echo "
                                             <tr id=$imdb_id>
                                             <td><img src='https://image.tmdb.org/t/p/w92/$poster_path' alt='$title'></td>
                                             <td>$imdb_id</td>
                                             <td>$title</td>
                                             <td>
-                                            <form method='post' action='adminAddTorrent.php' id='form'>
+                                            <form method='post' action='adminPanel.php' id='form'>
                                             <script>
                                             console.log('$url');
                                             let url = '$url';
@@ -98,9 +100,9 @@
                                             <td><img src='https://image.tmdb.org/t/p/w92/$poster_path' alt='$title'></td>
                                             <td>$imdb_id</td>
                                             <td>$title</td>
-                                            <td>$torrent</td>
+                                            <td><span class='text-break'>$torrent</span></td>
                                             <td>
-                                            <form method='post' action='adminAddTorrent.php#$imdb_id'>
+                                            <form method='post' action='adminPanel.php#$imdb_id'>
                                             <button class='btn btn-sm btn-primary' type='submit' name='updateTorrent' value=$imdb_id>Changer</button>
                                             </form>
                                             </td>
@@ -112,8 +114,6 @@
                             ?>
                         </tbody>
                     </table>
-                </div>
-                <div class="row" id='output'>
                 </div>
             </div>
         </main>

@@ -12,7 +12,7 @@
                 <div class="row" id="search">
                     <h1>Add Film</h1>
                     <strong>Search film:</strong>
-                    <form method="post" action="adminAddFilm.php">
+                    <form method="post" action="adminPanel.php">
                         <input class="form-control form-control-sm mb-1" type="text" name="keyword" placeholder="Keyword" required>
                         <button class="btn btn-sm btn-primary" type="submit" name="searchFilm">Search</button>
                     </form>
@@ -21,6 +21,7 @@
                         include "key.php";
                         // IF search button is clicked
                         if (isset($_POST['searchFilm'])) {
+                            echo "<script type='text/javascript'>function toggleAddFilm(){addFilm.classList.add('active');manageFilms.classList.remove('active');btnAddFilm.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddFilm();</script>";
                             $keyword = htmlspecialchars($_POST['keyword'], ENT_QUOTES);
                             $baseURL = "https://api.themoviedb.org/3/";
                             $url = $baseURL . "search/movie?api_key=" . $APIKEY . "&query=" . $keyword . "&language=fr-FR";
@@ -82,7 +83,7 @@
                                         divFooter.appendChild(btn);
                                         
                                         var form = document.createElement('FORM');
-                                        form.action = 'adminAddFilm.php';
+                                        form.action = 'adminPanel.php';
                                         form.method = 'post';
                                         form.id = film.original_title;
                                         form.appendChild(divHeader);
@@ -99,13 +100,14 @@
                                         divCol.classList.add('col-md-3');
                                         divCol.appendChild(divCard);
                                         
-                                        document.getElementById('output').appendChild(divCol);
+                                        document.getElementById('outputFilm').appendChild(divCol);
                                     });   
                                 })
                                 </script>";
                         }
                         // IF add film button clicked
                         if(isset($_POST['addFilm'])) {
+                            echo "<script type='text/javascript'>function toggleAddFilm(){addFilm.classList.add('active');manageFilms.classList.remove('active');btnAddFilm.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddFilm();</script>";
                             $id = $_POST['addFilm'];
                             $name = $_POST['name'];
                             $baseURL = "https://api.themoviedb.org/3/";
@@ -326,7 +328,7 @@
                                     divRow.appendChild(divFooter);
 
                                     var form = document.createElement('FORM');
-                                    form.action = 'adminAddFilm.php';
+                                    form.action = 'adminPanel.php';
                                     form.method = 'post';
                                     form.appendChild(divRow);
 
@@ -335,11 +337,12 @@
                                     divCard.classList.add('border-dark');
                                     divCard.appendChild(form);
                                         
-                                    document.getElementById('output').appendChild(divCard);
+                                    document.getElementById('outputFilm').appendChild(divCard);
                                 })
                                 </script>";
                         }
                         if(isset($_POST['confirm'])) {
+                            echo "<script type='text/javascript'>function toggleAddFilm(){addFilm.classList.add('active');manageFilms.classList.remove('active');btnAddFilm.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddFilm();</script>";
                             include "connect-to-bdd.php"; // open database
                             $id = $_POST['id'];
                             $imdb_id = $_POST['imdb_id'];
@@ -360,12 +363,11 @@
                             $torrent = "";
                             $request = $bdd->prepare('INSERT INTO films(id, imdb_id, backdrop_path, poster_path, title, original_title, original_language, release_date, origin_country, genres, runtime, popularity, vote_count, vote_average, overview, video, torrent) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'); //prepare add command
                             $request->execute(array($id, $imdb_id, $backdrop_path, $poster_path, $title, $original_title, $original_language, $release_date, $origin_country, $genres, $runtime, $popularity, $vote_count, $vote_average, $overview, $video, $torrent)); // add new element in database
-                            echo "<h4>Film added to database.</h4>";   
+                            echo "<h4 class='text-success'>Film added to database.</h4>";   
                         }
                     ?>
                 </div>
-                <div class="row g-3" id='output'>
-                </div>
+                <div class="row g-3" id='outputFilm'></div>
             </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

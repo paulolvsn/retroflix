@@ -25,7 +25,7 @@
                             </tr>
                         </thead>
                         <tr>
-                            <form method="post" action="adminUser.php" enctype="multipart/form-data">
+                            <form method="post" action="adminPanel.php" enctype="multipart/form-data">
                                 <td><input class="form-control form-control-sm" type="file" name="avatar" id="avatar" required></td>
                                 <td></td>
                                 <td><input class="form-control form-control-sm" type="date" name="date" required></td>
@@ -41,6 +41,7 @@
                                 include "connect-to-bdd.php"; // open database
                                 // IF add button is clicked
                                 if(isset($_POST['addUser'])) {
+                                    echo "<script type='text/javascript'>function toggleUser(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleUser();</script>";
                                     $target_dir = "avatar/";
                                     $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
                                     $uploadOk = 1;
@@ -94,6 +95,7 @@
 
                                 // IF delete button is clicked
                                 if(isset($_POST['removeUser'])) {
+                                    echo "<script type='text/javascript'>function toggleUser(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleUser();</script>";
                                     $id = $_POST['removeUser'];
                                     $request = $bdd->prepare('SELECT * FROM users WHERE id = ?'); // prepare search command
                                     $request->execute(array($id)); // search element in database
@@ -106,6 +108,7 @@
                                 }
                                 // IF confirm button is clicked to save changes
                                 if(isset($_POST['saveUser'])) {
+                                    echo "<script type='text/javascript'>function toggleUser(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleUser();</script>";
                                     $id = $_POST['saveUser'];
                                     $date = $_POST['date'];
                                     $pseudo = $_POST['pseudo'];
@@ -127,10 +130,11 @@
                                     $password = $user['password'];
                                     $avatar = $user['avatar'];
                                     if( isset($_POST['updateUser']) AND ($user['id'] == $_POST['updateUser'])) {
+                                        echo "<script type='text/javascript'>function toggleUser(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleUser();</script>";
                                         echo "
                                             <tr id=$id>
-                                            <form method='post' action='adminUser.php'>
-                                            <td></td>
+                                            <form method='post' action='adminPanel.php'>
+                                            <td><img src='$avatar' alt='$pseudo' width='50px' height='auto'></td>
                                             <td><input class='form-control form-control-sm' type='number' name='id' value=$id></td>
                                             <td><input class='form-control form-control-sm' type='date' name='date' value=$date></td>
                                             <td><input class='form-control form-control-sm' type='text' name='pseudo' value=$pseudo></td>
@@ -141,7 +145,7 @@
                                             </form>
                                             <br>
                                             <br>
-                                            <form method='post' action='adminUser.php'>
+                                            <form method='post' action='adminPanel.php'>
                                             <button class='btn btn-danger' type='submit' name='removeUser' value=$id>Supprimer</button>
                                             </form>
                                             </td>
@@ -159,11 +163,11 @@
                                             <td>$admin</td>
                                             <td><span class='text-break'>$password</span></td>
                                             <td>
-                                            <form method='post' action='adminUser.php#$id'>
+                                            <form method='post' action='adminPanel.php#$id'>
                                             <button class='btn btn-sm btn-primary w-100' type='submit' name='updateUser' value=$id>Changer</button>
                                             </form>
                                             <br>
-                                            <form method='post' action='adminUser.php'>
+                                            <form method='post' action='adminPanel.php'>
                                             <button class='btn btn-sm btn-danger w-100' type='submit' name='removeUser' value=$id>Supprimer</button>
                                             </form>
                                             </td>
@@ -175,8 +179,6 @@
                             ?>
                         </tbody>
                     </table>
-                </div>
-                <div class="row g-3" id='output'>
                 </div>
             </div>
         </main>
