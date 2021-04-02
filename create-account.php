@@ -28,7 +28,11 @@ function errorMessage($mess){
     return $out;
 }
 
-
+function getEcho($data){
+    if(isset($_GET["$data"])){
+        echo $_GET["$data"];
+    }
+}
 
 if(isset($_GET['failed'])){
     echo "<p style='color:red;'> " . errorMessage($_GET['failed']) . "</p>";
@@ -45,14 +49,14 @@ if(isset($_GET['failed'])){
         </div>
         <br>
         <label for="pseudo">pseudo :</label>
-            <input type="text" name="pseudo" value="<?php echo $_GET['pseudo'] ?>"required>
+            <input type="text" name="pseudo" value="<?php getEcho('pseudo') ?>"required>
         <br>
 
     <label for="email">email :</label>
-        <input type="email" name="email" value="<?php echo $_GET['email'] ?>" required><br>
+        <input type="email" name="email" value="<?php getEcho('email') ?>" required><br>
 
     <label for="email-check">confirm email :</label>
-        <input type="email" name="email-check" value="<?php echo $_GET['emailCheck'] ?>" required><br>
+        <input type="email" name="email-check" value="<?php getEcho('emailCheck') ?>" required><br>
 
     <label for="password">password :</label>
         <input type="password" name="password" required><br>

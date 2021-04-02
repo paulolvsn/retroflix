@@ -2,7 +2,15 @@
 
 include_once("connect-to-bdd.php");
 
-
+function generateRandomString($length = 100) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
 
 function test_input($data) {
     $data = trim($data);
@@ -92,22 +100,24 @@ $valid_extension = array("png","jpeg","jpg");
 
 if(in_array($file_extension, $valid_extension)){ 
 
-
+//create a random string 
+$rndString =  generateRandomString();
 
 if ($score==0){// if no form errors
 move_uploaded_file($_FILES['file']["tmp_name"],$target_file);
-$req = $bdd->prepare('INSERT INTO users(pseudo, email, password, admin, avatar) VALUES(:pseudo, :email, :password, :admin,:avatar)');
+$req = $bdd->prepare('INSERT INTO users(pseudo, email, password, admin, avatar,recovery) VALUES(:pseudo, :email, :password, :admin,:avatar,:recovery)');
 
 $req->execute(array(
     'admin' => 0,
     'pseudo' => $pseudo,
     'password' => $pass_hache,
     'email' => $email,
-    'avatar' => $target_file));
+    'avatar' => $target_file,
+    'recovery' => $rndString));
 
-    //go to connexion page
+    //go to sendMail page
 
-    header("location: sign-in.php?register=ok");
+    header("location: sendMail.php?email=$email&str=$rndString");
 
 }}else{
     header("Location: create-account.php?failed=imageInvalid$urlCallBack");

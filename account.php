@@ -10,14 +10,22 @@ echo "Welcome " . $pseudo;
 $reponse = $bdd->query("SELECT avatar, email, pseudo FROM users WHERE pseudo='$pseudo'");
 ?>
 <div>
-<form method='POST' enctype=multipart/form-data action="change-avatar.php">
+<form method='POST' enctype=multipart/form-data action="user-save-changes.php">
 <?php
 while ($data = $reponse->fetch()){
     $_SESSION['avatar']= $data['avatar'];
     $avatar = $data['avatar'];
     echo  '<img id="avatarDisplay" src="'.$avatar.'" width="250" alt="avatar"><br>';
     echo '<input id=avatar type="file" name="file"/> <br>';
-    echo '<input type="submit" value="change avatar"/> <br>';
+    echo '<label for="oldPass">old password</label><br>
+          <input type="password" name="oldPass"><br>
+          <label for="newPass">new password</label><br>
+          <input type="password" name="newPass"><br>
+          <label for="newPass2">new password Confirmation</label><br>
+          <input type="password" name="newPass2"><br>';
+    echo '<input type="submit" value="Save Changes"/> <br>';
+
+
     echo $data['email'] . "<br>" ;
     echo $data['pseudo'] . "<br>" ;
 
