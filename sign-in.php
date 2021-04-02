@@ -13,4 +13,5 @@ if($_GET['register']=="ok"){
         <input type="password" name="password">
         <br>
     <input type="submit" value="connexion">
+    <a href="password-recovery-form.php">Forgotten password?</a>
 </form>
