@@ -9,6 +9,7 @@ if(isset($_GET['email'])&&isset($_GET['str'])){
     $link = $_GET['str'];
     $adress = $_GET['email'];
     $mail = new PHPMailer;
+    $mail->isHTML(true);
     $mail->isSMTP(); 
     $mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
     $mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
@@ -20,9 +21,12 @@ if(isset($_GET['email'])&&isset($_GET['str'])){
     $mail->setFrom('info.retroflix@gmail.com', 'retro-flix'); // From email and name
     $mail->addAddress($adress, 'retro team'); // to email and name
     $mail->Subject = 'RETROFLIX';
-    $mail->msgHTML("Welcom to retroflix, <br>
-                    To confirm your inscription follow the link bellow <br>
-                    http://retro-flix.000webhostapp.com/users/confirm-account.php?email=$adress&str=$link"); //$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
+    $body = file_get_contents('confirmationEmail.php');
+    $body = str_replace('$adress', $adress, $body);
+	$body = str_replace('$link', $link, $body);
+
+    $mail->Body = $body;
+//$mail->msgHTML(file_get_contents('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
     $mail->AltBody = 'HTML messaging not supported'; // If html emails is not supported by the receiver, show this body
     // $mail->addAttachment('images/phpmailer_mini.png'); //Attach an image file
     $mail->SMTPOptions = array(
