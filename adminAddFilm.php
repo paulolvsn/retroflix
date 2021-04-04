@@ -362,7 +362,7 @@
                             $vote_count = $_POST['vote_count'];
                             $vote_average = $_POST['vote_average'];
                             $overview = $_POST['overview'];
-                            $video = $_POST['video'];
+                            list($youtube, $video) = explode("watch?v=", $_POST['video']);
                             $torrent = "";
                             $request = $bdd->prepare('INSERT INTO films(id, imdb_id, backdrop_path, poster_path, title, original_title, original_language, release_date, origin_country, genres, runtime, popularity, vote_count, vote_average, overview, video, torrent) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'); //prepare add command
                             $request->execute(array($id, $imdb_id, $backdrop_path, $poster_path, $title, $original_title, $original_language, $release_date, $origin_country, $genres, $runtime, $popularity, $vote_count, $vote_average, $overview, $video, $torrent)); // add new element in database
