@@ -27,19 +27,19 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active" id="manageFilms" role="tabpanel">
-                                <?php include "adminRemoveFilm.php" ?>
+                                <?php include "manageFilms.php" ?>
                             </div>
                             <div class="tab-pane" id="addFilm" role="tabpanel">
-                                <?php include "adminAddFilm.php" ?>
+                                <?php include "addFilm.php" ?>
                             </div>
                             <div class="tab-pane" id="addTorrent" role="tabpanel">
-                                <?php include "adminAddTorrent.php" ?>
+                                <?php include "addTorrent.php" ?>
                             </div>
                             <div class="tab-pane" id="manageUsers" role="tabpanel">
-                                <?php include "adminUser.php" ?>
+                                <?php include "manageUsers.php" ?>
                             </div>
                             <div class="tab-pane" id="manageComments" role="tabpanel">
-                                <?php include "adminComment.php" ?>
+                                <?php include "manageComments.php" ?>
                             </div>
                         </div>
                     </div>
