@@ -12,7 +12,6 @@
         <title>Rechercher</title>
     </head>
 
-
     <body>
         <?php
         //    include("header.php"); 
@@ -50,60 +49,74 @@
                     else {
                         echo" <h5>Résultats pour<strong> '$keyword'</strong></h5>";
                     }
-                    echo "
-                                <ul class='nav nav-tabs'>
-                                    <p class='navbar-brand'>Filtrez votre recherche:</p>
-                                    <li class='nav-item dropdown'>
-                                        <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
-                                        <ul class='dropdown-menu'>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Action' id='action'>Action</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Aventure' id='aventure'>Aventure</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Comédie' id='comedie'>Comédie</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Crime' id='crime'>Crime</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Documentaire' id='documentaire'>Documentaire</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Drame' id='drame'>Drame</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Fantastique' id='fantastique'>Fantastique</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Guerre' id='guerre'>Guerre</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Histoire' id='histoire'>Histoire</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Horreur' id='horreur'>Horreur</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Mystère' id='mystere'>Mystère</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Romance' id='romance'>Romance</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Science-Fiction' id='sciencefiction'>Science-Fiction</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Thriller' id='thriller'>Thriller</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Western' id='western'>Western</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
-                                        </ul>
-                                    </li>
-                                    <li class='nav-item dropdown'>
-                                        <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
-                                        <ul class='dropdown-menu'>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='ascendent' id='ascendent'>Ascendent (A-Z)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
-                                            <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='descendent' id='descendent'>Descendent (Z-A)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
-                                        </ul>
-                                    </li>
+                    echo " 
+                        <ul class='nav nav-tabs'>
+                            <p class='navbar-brand'>Filtrez votre recherche:</p>                                    
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
+                                <ul class='dropdown-menu'>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Action' id='action'>Action</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Animation' id='animation'>Animation</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Aventure' id='aventure'>Aventure</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Comédie' id='comedie'>Comédie</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Crime' id='crime'>Crime</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Documentaire' id='documentaire'>Documentaire</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Drame' id='drame'>Drame</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Fantastique' id='fantastique'>Fantastique</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Guerre' id='guerre'>Guerre</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Histoire' id='histoire'>Histoire</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Horreur' id='horreur'>Horreur</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Mystère' id='mystere'>Mystère</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Romance' id='romance'>Romance</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Science-Fiction' id='sciencefiction'>Science-Fiction</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Thriller' id='thriller'>Thriller</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Western' id='western'>Western</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
                                 </ul>
+                            </li>                                    
+                            <li class='nav-item dropdown'>
+                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
+                                <ul class='dropdown-menu'>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='ascendent' id='ascendent'>Ascendent (A-Z)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
+                                    <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='descendent' id='descendent'>Descendent (Z-A)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
+                                </ul>
+                            </li>
                     ";
+                    
                     if(($alpha) AND ($genre)) {
                         if ($alpha == 'ascendent') {
                             $request = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) AND (genres LIKE '%$genre%') ORDER BY title");//ir a buscar a la base de datos "text"
+                            $counter = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) AND (genres LIKE '%$genre%') ORDER BY title");//ir a buscar a la base de datos "text"
                         }
                         else {
                             $request = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) AND (genres LIKE '%$genre%') ORDER BY title DESC");//ir a buscar a la base de datos "text"
+                            $counter = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) AND (genres LIKE '%$genre%') ORDER BY title DESC");//ir a buscar a la base de datos "text"
                         }
                     }
                     else if($genre) {
                         $request = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) AND (genres LIKE '%$genre%')");//ir a buscar a la base de datos "text"
+                        $counter = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) AND (genres LIKE '%$genre%')");//ir a buscar a la base de datos "text"
                     }
                     else if($alpha) {
                         if ($alpha == 'ascendent') {
                             $request = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) ORDER BY title");//ir a buscar a la base de datos "text"
+                            $counter = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) ORDER BY title");//ir a buscar a la base de datos "text"
                         }
                         else {
                             $request = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) ORDER BY title DESC");//ir a buscar a la base de datos "text"
+                            $counter = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) ORDER BY title DESC");//ir a buscar a la base de datos "text"
                         }
                     }
                     else {
                         $request = $bdd->query("SELECT * FROM films WHERE (title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%') ");//ir a buscar a la base de datos "text"
+                        $counter = $bdd->query("SELECT * FROM films WHERE (title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%') ");//ir a buscar a la base de datos "text"
                     }
+                    $total = 0;
+                    while ($count = $counter->fetch()){
+                        $total = $total + 1;
+                    }
+                    $counter->closeCursor();
+                    echo "<p class='navbar-brand'>On a trouvé $total résultats.<p>";
+                    echo "</ul>";
                     while ($film = $request->fetch()){
                         $id = $film['id'];
                         $backdrop_path = $film['backdrop_path'];
@@ -129,7 +142,7 @@
                                     </div>    
                                     <div class='card-footer d-flex bg-dark'>
                                         <a class='link-light h3 col text-center' href='play.php?id=$id'><i class='fas fa-play-circle'></i></a>
-                                        <a class='link-light h3 col text-center' href='infocard.php?id=$id'><i class='fas fa-chevron-down'></i></a>
+                                        <a class='link-light h3 col text-center' href='film.php?id=$id'><i class='fas fa-chevron-down'></i></a>
                                     </div>
                                 </div>
                             </div>
