@@ -28,11 +28,11 @@
             </tr>
             <tbody>
                 <?php
-                    $root = $_SERVER['DOCUMENT_ROOT'] . "/retroflix/";
+                    $root = $_SERVER['DOCUMENT_ROOT'];
                     // IF add button is clicked
                     if(isset($_POST['addUser'])) {
                         echo "<script type='text/javascript'>function toggleManageUsers(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleManageUsers();</script>";
-                        $target_dir = $root . "avatar/";
+                        $target_dir = $root . "/avatar/";
                         $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
                         $uploadOk = 1;
                         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -91,7 +91,7 @@
                         $request->execute(array($id)); // search element in database
                         $user = $request->fetch();
                         $avatar = $user['avatar'];
-                        unlink($root . $avatar); //delete image from folder
+                        unlink($root . "/" . $avatar); //delete image from folder
                         $request = $bdd->prepare('DELETE FROM users WHERE id = ?'); //prepare delete command
                         $request->execute(array($id)); // delete user from database
                         echo "<h4 class='text-success'>Le utilisateur a été supprimé de la base de données.</h4>";   
@@ -125,7 +125,7 @@
                             echo "
                                 <tr id=$id>
                                     <form method='post' action='adminPanel.php'>
-                                    <td><img src='/retroflix/$avatar' alt='$pseudo' width='50px' height='auto'></td>
+                                    <td><img src='/$avatar' alt='$pseudo' width='50px' height='auto'></td>
                                     <td><input class='form-control form-control-sm' type='number' name='id' value=$id></td>
                                     <td><input class='form-control form-control-sm' type='date' name='date' value=$date></td>
                                     <td><input class='form-control form-control-sm' type='text' name='pseudo' value=$pseudo></td>
@@ -146,7 +146,7 @@
                         else {
                             echo "
                                 <tr id=$id>
-                                    <td><img src='/retroflix/$avatar' alt='$pseudo' width='50px' height='auto'></td>
+                                    <td><img src='/$avatar' alt='$pseudo' width='50px' height='auto'></td>
                                     <td>$id</td>
                                     <td>$date</td>
                                     <td>$pseudo</td>
