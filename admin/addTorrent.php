@@ -29,7 +29,6 @@
                         $imdb_id = $film['imdb_id'];
                         $title = $film['title'];
                         $torrent = $film['torrent'];
-                        include "key.php"; // load API key
                         $baseURL = "https://yts.mx/api/v2/";
                         $url = $baseURL . "list_movies.json?query_term=" . $imdb_id;
                         if( isset($_POST['updateTorrent']) AND ($film['imdb_id'] == $_POST['updateTorrent'])) {

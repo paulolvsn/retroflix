@@ -28,33 +28,34 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="manageFilms" role="tabpanel">
                                 <?php
-                                    include "connect-to-bdd.php"; // open database
-                                    include "admin/manageFilms.php";
+                                    include "../connect-to-bdd.php"; // open database
+                                    include "manageFilms.php";
                                 ?>
                             </div>
                             <div class="tab-pane" id="addFilm" role="tabpanel">
                                 <?php
-                                    include "connect-to-bdd.php"; // open database
-                                    include "key.php"; // load API key
-                                    include "admin/addFilm.php";
+                                    include "../connect-to-bdd.php"; // open database
+                                    include "../key.php"; // load API key
+                                    include "addFilm.php";
                                 ?>
                             </div>
                             <div class="tab-pane" id="addTorrent" role="tabpanel">
                                 <?php
-                                    include "connect-to-bdd.php"; // open database
-                                    include "admin/addTorrent.php";
+                                    include "../connect-to-bdd.php"; // open database
+                                    include "../key.php"; // load API key
+                                    include "addTorrent.php";
                                     ?>
                             </div>
                             <div class="tab-pane" id="manageUsers" role="tabpanel">
                                 <?php
-                                    include "connect-to-bdd.php"; // open database
-                                    include "admin/manageUsers.php";
+                                    include "../connect-to-bdd.php"; // open database
+                                    include "manageUsers.php";
                                     ?>
                             </div>
                             <div class="tab-pane" id="manageComments" role="tabpanel">
                                 <?php
-                                    include "connect-to-bdd.php"; // open database
-                                    include "admin/manageComments.php";
+                                    include "../connect-to-bdd.php"; // open database
+                                    include "manageComments.php";
                                 ?>
                             </div>
                         </div>
