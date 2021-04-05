@@ -12,7 +12,7 @@
             // IF search button is clicked
             if (isset($_POST['searchFilm'])) {
                 echo "<script type='text/javascript'>function toggleAddFilm(){addFilm.classList.add('active');manageFilms.classList.remove('active');btnAddFilm.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddFilm();</script>";
-                $keyword = htmlspecialchars($_POST['keyword'], ENT_QUOTES);
+                $keyword = str_replace("'", "", $_POST['keyword']);
                 $baseURL = "https://api.themoviedb.org/3/";
                 $url = $baseURL . "search/movie?api_key=" . $APIKEY . "&query=" . $keyword . "&language=fr-FR";
                 echo "<p>API query: $url</p>";

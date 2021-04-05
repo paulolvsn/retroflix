@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <h1>Update/Remove Comment</h1>
-        <table class="table bg-white table-hover border border-dark text-start">
+        <table class="table table-bordered table-hover bg-white border border-dark text-start">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
