@@ -27,19 +27,35 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane active" id="manageFilms" role="tabpanel">
-                                <?php include "manageFilms.php" ?>
+                                <?php
+                                    include "connect-to-bdd.php"; // open database
+                                    include "admin/manageFilms.php";
+                                ?>
                             </div>
                             <div class="tab-pane" id="addFilm" role="tabpanel">
-                                <?php include "addFilm.php" ?>
+                                <?php
+                                    include "connect-to-bdd.php"; // open database
+                                    include "key.php"; // load API key
+                                    include "admin/addFilm.php";
+                                ?>
                             </div>
                             <div class="tab-pane" id="addTorrent" role="tabpanel">
-                                <?php include "addTorrent.php" ?>
+                                <?php
+                                    include "connect-to-bdd.php"; // open database
+                                    include "admin/addTorrent.php";
+                                    ?>
                             </div>
                             <div class="tab-pane" id="manageUsers" role="tabpanel">
-                                <?php include "manageUsers.php" ?>
+                                <?php
+                                    include "connect-to-bdd.php"; // open database
+                                    include "admin/manageUsers.php";
+                                    ?>
                             </div>
                             <div class="tab-pane" id="manageComments" role="tabpanel">
-                                <?php include "manageComments.php" ?>
+                                <?php
+                                    include "connect-to-bdd.php"; // open database
+                                    include "admin/manageComments.php";
+                                ?>
                             </div>
                         </div>
                     </div>

@@ -19,27 +19,25 @@
                 <td><select class="form-select form-select-sm" name="user_id" required>
                     <option selected>Choose user:</option>
                     <?php
-                    include "connect-to-bdd.php"; // open database
-                    $request = $bdd->query('SELECT * FROM users');
-                    while ($user = $request->fetch()) {
-                        $user_id = $user['id'];
-                        $user_name = $user['pseudo'];
-                        echo "<option value=$user_id>$user_id: $user_name</option>";
-                    }
-                    $request->closeCursor(); // close database
+                        $request = $bdd->query('SELECT * FROM users');
+                        while ($user = $request->fetch()) {
+                            $user_id = $user['id'];
+                            $user_name = $user['pseudo'];
+                            echo "<option value=$user_id>$user_id: $user_name</option>";
+                        }
+                        $request->closeCursor(); // close database
                     ?>
                 </select></td>
                 <td><select class="form-select form-select-sm" name="film_id" required>
                     <option selected>Choose film:</option>
                     <?php
-                    include "connect-to-bdd.php"; // open database
-                    $request = $bdd->query('SELECT * FROM films');
-                    while ($user = $request->fetch()) {
-                        $film_id = $user['id'];
-                        $film_name = $user['title'];
-                        echo "<option value=$film_id>$film_id: $film_name</option>";
-                    }
-                    $request->closeCursor(); // close database
+                        $request = $bdd->query('SELECT * FROM films');
+                        while ($user = $request->fetch()) {
+                            $film_id = $user['id'];
+                            $film_name = $user['title'];
+                            echo "<option value=$film_id>$film_id: $film_name</option>";
+                        }
+                        $request->closeCursor(); // close database
                     ?>
                 </select></td>
                 <td><textarea class="form-control form-control-sm" name="text" placeholder="Comment" rows="3" style="width:100%" required></textarea></td>
@@ -48,7 +46,6 @@
             </tr>
             <tbody>
                 <?php
-                    include "connect-to-bdd.php"; // open database
                     // IF add button is clicked
                     if(isset($_POST['addComment'])) {
                         echo "<script type='text/javascript'>function toggleManageComments(){manageComments.classList.add('active');manageFilms.classList.remove('active');btnManageComments.classList.add('active');btnManageFilms.classList.remove('active');}toggleManageComments();</script>";

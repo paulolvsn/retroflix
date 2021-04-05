@@ -7,8 +7,6 @@
             <button class="btn btn-sm btn-primary" type="submit" name="searchFilm">Search</button>
         </form>
         <?php
-            // load API key
-            include "key.php";
             // IF search button is clicked
             if (isset($_POST['searchFilm'])) {
                 echo "<script type='text/javascript'>function toggleAddFilm(){addFilm.classList.add('active');manageFilms.classList.remove('active');btnAddFilm.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddFilm();</script>";
@@ -333,7 +331,6 @@
             }
             if(isset($_POST['confirm'])) {
                 echo "<script type='text/javascript'>function toggleAddFilm(){addFilm.classList.add('active');manageFilms.classList.remove('active');btnAddFilm.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddFilm();</script>";
-                include "connect-to-bdd.php"; // open database
                 $id = $_POST['id'];
                 $imdb_id = $_POST['imdb_id'];
                 $backdrop_path = $_POST['backdrop_path'];

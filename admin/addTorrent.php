@@ -13,7 +13,6 @@
             </thead>
             <tbody>
                 <?php
-                    include "connect-to-bdd.php"; // open database         
                     // IF save button is clicked
                     if(isset($_POST['addTorrent'])) {
                         echo "<script type='text/javascript'>function toggleAddTorrent(){addTorrent.classList.add('active');manageFilms.classList.remove('active');btnAddTorrent.classList.add('active');btnManageFilms.classList.remove('active');}toggleAddTorrent();</script>";

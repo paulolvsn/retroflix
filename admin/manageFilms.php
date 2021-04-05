@@ -15,7 +15,6 @@
             </thead>
             <tbody>
                 <?php
-                    include "connect-to-bdd.php"; // open database
                     // IF delete button is clicked
                     if(isset($_POST['removeFilm'])) {
                         $id = $_POST['removeFilm'];

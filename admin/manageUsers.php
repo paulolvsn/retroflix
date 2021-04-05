@@ -28,11 +28,10 @@
             </tr>
             <tbody>
                 <?php
-                    include "connect-to-bdd.php"; // open database
                     // IF add button is clicked
                     if(isset($_POST['addUser'])) {
                         echo "<script type='text/javascript'>function toggleManageUsers(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleManageUsers();</script>";
-                        $target_dir = "avatar/";
+                        $target_dir = $_SERVER['DOCUMENT_ROOT'] . "/retroflix/avatar/";
                         $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
                         $uploadOk = 1;
                         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -91,7 +90,7 @@
                         $request->execute(array($id)); // search element in database
                         $user = $request->fetch();
                         $avatar = $user['avatar'];
-                        unlink($avatar); //delete image from folder
+                        unlink($_SERVER['DOCUMENT_ROOT'] . "/retroflix/" . $avatar); //delete image from folder
                         $request = $bdd->prepare('DELETE FROM users WHERE id = ?'); //prepare delete command
                         $request->execute(array($id)); // delete user from database
                         echo "<h4 class='text-success'>Le utilisateur a été supprimé de la base de données.</h4>";   
@@ -99,14 +98,15 @@
                     // IF confirm button is clicked to save changes
                     if(isset($_POST['saveUser'])) {
                         echo "<script type='text/javascript'>function toggleManageUsers(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleManageUsers();</script>";
-                        $id = $_POST['saveUser'];
+                        $oldId = $_POST['saveUser'];
+                        $id = $_POST['id'];
                         $date = $_POST['date'];
                         $pseudo = $_POST['pseudo'];
                         $email = $_POST['email'];
                         $admin = $_POST['admin'];
                         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                        $request = $bdd->prepare('UPDATE users SET date=?, pseudo=?, email=?, admin=?, password=? WHERE id=?'); //prepare update command
-                        $request->execute(array($date, $pseudo, $email, $admin, $password, $id)); // update user info
+                        $request = $bdd->prepare('UPDATE users SET id=?, date=?, pseudo=?, email=?, admin=?, password=? WHERE id=?'); //prepare update command
+                        $request->execute(array($id, $date, $pseudo, $email, $admin, $password, $oldId)); // update user info
                         echo "<h4 class='text-success'>Le utilisateur a été mis à jour.</h4>";   
                     }
                     // generate user list table
@@ -123,44 +123,44 @@
                             echo "<script type='text/javascript'>function toggleManageUsers(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleManageUsers();</script>";
                             echo "
                                 <tr id=$id>
-                                <form method='post' action='adminPanel.php'>
-                                <td><img src='$avatar' alt='$pseudo' width='50px' height='auto'></td>
-                                <td><input class='form-control form-control-sm' type='number' name='id' value=$id></td>
-                                <td><input class='form-control form-control-sm' type='date' name='date' value=$date></td>
-                                <td><input class='form-control form-control-sm' type='text' name='pseudo' value=$pseudo></td>
-                                <td><input class='form-control form-control-sm' type='email' name='email' value=$email></td>
-                                <td><input class='form-control form-control-sm' type='number' name='admin' value=$admin></td>
-                                <td><input class='form-control form-control-sm' type='password' name='password' value=$password></td>
-                                <td><button class='btn btn-sm btn-success w-100' type='submit' name='saveUser' value=$id>Enregistrer</button>
-                                </form>
-                                <br>
-                                <br>
-                                <form method='post' action='adminPanel.php'>
-                                <button class='btn btn-danger' type='submit' name='removeUser' value=$id>Supprimer</button>
-                                </form>
-                                </td>
+                                    <form method='post' action='adminPanel.php'>
+                                    <td><img src='$avatar' alt='$pseudo' width='50px' height='auto'></td>
+                                    <td><input class='form-control form-control-sm' type='number' name='id' value=$id></td>
+                                    <td><input class='form-control form-control-sm' type='date' name='date' value=$date></td>
+                                    <td><input class='form-control form-control-sm' type='text' name='pseudo' value=$pseudo></td>
+                                    <td><input class='form-control form-control-sm' type='email' name='email' value=$email></td>
+                                    <td><input class='form-control form-control-sm' type='number' name='admin' value=$admin></td>
+                                    <td><input class='form-control form-control-sm' type='password' name='password' value=$password></td>
+                                    <td><button class='btn btn-sm btn-success w-100' type='submit' name='saveUser' value=$id>Enregistrer</button>
+                                    </form>
+                                    <br>
+                                    <br>
+                                    <form method='post' action='adminPanel.php'>
+                                    <button class='btn btn-danger' type='submit' name='removeUser' value=$id>Supprimer</button>
+                                    </form>
+                                    </td>
                                 </tr>
                             ";
                         }
                         else {
                             echo "
                                 <tr id=$id>
-                                <td><img src='$avatar' alt='$pseudo' width='50px' height='auto'></td>
-                                <td>$id</td>
-                                <td>$date</td>
-                                <td>$pseudo</td>
-                                <td>$email</td>
-                                <td>$admin</td>
-                                <td><span class='text-break'>$password</span></td>
-                                <td>
-                                <form method='post' action='adminPanel.php#$id'>
-                                <button class='btn btn-sm btn-primary w-100' type='submit' name='updateUser' value=$id>Changer</button>
-                                </form>
-                                <br>
-                                <form method='post' action='adminPanel.php'>
-                                <button class='btn btn-sm btn-danger w-100' type='submit' name='removeUser' value=$id>Supprimer</button>
-                                </form>
-                                </td>
+                                    <td><img src='$avatar' alt='$pseudo' width='50px' height='auto'></td>
+                                    <td>$id</td>
+                                    <td>$date</td>
+                                    <td>$pseudo</td>
+                                    <td>$email</td>
+                                    <td>$admin</td>
+                                    <td><span class='text-break'>$password</span></td>
+                                    <td>
+                                    <form method='post' action='adminPanel.php#$id'>
+                                    <button class='btn btn-sm btn-primary w-100' type='submit' name='updateUser' value=$id>Changer</button>
+                                    </form>
+                                    <br>
+                                    <form method='post' action='adminPanel.php'>
+                                    <button class='btn btn-sm btn-danger w-100' type='submit' name='removeUser' value=$id>Supprimer</button>
+                                    </form>
+                                    </td>
                                 </tr>
                             ";
                         }
