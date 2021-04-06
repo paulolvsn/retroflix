@@ -1,24 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,700&display=swap" rel="stylesheet"> 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-        
-        <title>Rechercher</title>
-    </head>
-
-    <body>
+<html lang="fr">
+    <?php
+        include "head.php";
+    ?>        
+    <body class="bg-dark text-white">
         <?php
-        //    include("header.php"); 
+            include "header.php";
         ?>
-        <main class="container bg-dark">
+        <main class="container" id="search">
             <section class="mb-3">
-                <h3 class="text-white">Rechercher...</h3>
+                <h3 class="h3">Rechercher...</h3>
                 <div>
                     <form class="d-flex" action="search.php" method="get">
                         <input class="form-control me-2" type="search" name="keyword" placeholder="Recherche par Titre ou Genre..." aria-label="search">
@@ -28,13 +19,13 @@
             </section>
 
             <?php                    
-                include "connect-to-bdd.php"; // open database
+                include "../connect-to-bdd.php"; // open database
                 if(isset($_GET['keyword'])) {  //al click en submit
                     $keyword= $_GET['keyword'];
                     $genre = $_GET['genre'];
                     $alpha = $_GET['alpha'];
                     echo "
-                        <section class='container mb-3 text-white'>
+                        <section class='container mb-3'>
                             <div class='row g-4'>
                     ";
                     if(($alpha) AND ($genre)) {
@@ -53,7 +44,7 @@
                         <ul class='nav nav-tabs'>
                             <p class='navbar-brand'>Filtrez votre recherche:</p>                                    
                             <li class='nav-item dropdown'>
-                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
+                                <a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
                                 <ul class='dropdown-menu'>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Action' id='action'>Action</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Animation' id='animation'>Animation</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
@@ -74,7 +65,7 @@
                                 </ul>
                             </li>                                    
                             <li class='nav-item dropdown'>
-                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
+                                <a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
                                 <ul class='dropdown-menu'>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='ascendent' id='ascendent'>Ascendent (A-Z)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='descendent' id='descendent'>Descendent (Z-A)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
@@ -137,7 +128,7 @@
                             <div class='col-12 col-sm-4 col-md-3 '>
                                 <div class='card h-100 border rounded'>
                                     <img class='card-img-top' src='https://image.tmdb.org/t/p/w342/$poster_path' alt='$title'>
-                                    <div class='card-body text-center text-white bg-dark'>
+                                    <div class='card-body text-center bg-dark'>
                                         <h4>$title</h4> 
                                     </div>    
                                     <div class='card-footer d-flex bg-dark'>
@@ -156,6 +147,11 @@
                 } 
             ?>            
         </main>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <?php
+            include "footer.php";
+        ?>
+        <?php
+            include "script.php";
+        ?>
     </body>
 </html>

@@ -1,68 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Admin Panel</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,700&display=swap" rel="stylesheet"> 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    </head>
-    <body>
-        <main>
-            <div class="container">
-                <div class="row">
-                <h1>Admin Panel</h1>
-                    <div role="tabpanel">
-                        <!-- List group -->
-                        <div class="list-group list-group-horizontal" id="adminPanel" role="tablist">
-                            <a class="list-group-item list-group-item-action active" id="btnManageFilms" data-bs-toggle="list" href="#manageFilms" role="tab">Manage Films</a>
-                            <a class="list-group-item list-group-item-action" id="btnAddFilm" data-bs-toggle="list" href="#addFilm" role="tab">Add Film</a>
-                            <a class="list-group-item list-group-item-action" id="btnAddTorrent" data-bs-toggle="list" href="#addTorrent" role="tab">Add Torrent</a>
-                            <a class="list-group-item list-group-item-action" id="btnManageUsers" data-bs-toggle="list" href="#manageUsers" role="tab">Manage Users</a>
-                            <a class="list-group-item list-group-item-action" id="btnManageComments" data-bs-toggle="list" href="#manageComments" role="tab">Manage Comments</a>
-                        </div>
+<div class="container">
+    <div class="row">
+    <h1>Admin Panel</h1>
+        <div role="tabpanel">
+            <!-- List group -->
+            <div class="list-group list-group-horizontal" id="adminPanel" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="btnManageFilms" data-bs-toggle="list" href="#manageFilms" role="tab">Manage Films</a>
+                <a class="list-group-item list-group-item-action" id="btnAddFilm" data-bs-toggle="list" href="#addFilm" role="tab">Add Film</a>
+                <a class="list-group-item list-group-item-action" id="btnAddTorrent" data-bs-toggle="list" href="#addTorrent" role="tab">Add Torrent</a>
+                <a class="list-group-item list-group-item-action" id="btnManageUsers" data-bs-toggle="list" href="#manageUsers" role="tab">Manage Users</a>
+                <a class="list-group-item list-group-item-action" id="btnManageComments" data-bs-toggle="list" href="#manageComments" role="tab">Manage Comments</a>
+            </div>
 
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="manageFilms" role="tabpanel">
-                                <?php
-                                    include "../connect-to-bdd.php"; // open database
-                                    include "manageFilms.php";
-                                ?>
-                            </div>
-                            <div class="tab-pane" id="addFilm" role="tabpanel">
-                                <?php
-                                    include "../connect-to-bdd.php"; // open database
-                                    include "../key.php"; // load API key
-                                    include "addFilm.php";
-                                ?>
-                            </div>
-                            <div class="tab-pane" id="addTorrent" role="tabpanel">
-                                <?php
-                                    include "../connect-to-bdd.php"; // open database
-                                    include "../key.php"; // load API key
-                                    include "addTorrent.php";
-                                    ?>
-                            </div>
-                            <div class="tab-pane" id="manageUsers" role="tabpanel">
-                                <?php
-                                    include "../connect-to-bdd.php"; // open database
-                                    include "manageUsers.php";
-                                    ?>
-                            </div>
-                            <div class="tab-pane" id="manageComments" role="tabpanel">
-                                <?php
-                                    include "../connect-to-bdd.php"; // open database
-                                    include "manageComments.php";
-                                ?>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="manageFilms" role="tabpanel">
+                    <?php
+                        include "../connect-to-bdd.php"; // open database
+                        include "manageFilms.php";
+                    ?>
+                </div>
+                <div class="tab-pane" id="addFilm" role="tabpanel">
+                    <?php
+                        include "../connect-to-bdd.php"; // open database
+                        include "../key.php"; // load API key
+                        include "addFilm.php";
+                    ?>
+                </div>
+                <div class="tab-pane" id="addTorrent" role="tabpanel">
+                    <?php
+                        include "../connect-to-bdd.php"; // open database
+                        include "../key.php"; // load API key
+                        include "addTorrent.php";
+                        ?>
+                </div>
+                <div class="tab-pane" id="manageUsers" role="tabpanel">
+                    <?php
+                        include "../connect-to-bdd.php"; // open database
+                        include "manageUsers.php";
+                        ?>
+                </div>
+                <div class="tab-pane" id="manageComments" role="tabpanel">
+                    <?php
+                        include "../connect-to-bdd.php"; // open database
+                        include "manageComments.php";
+                    ?>
                 </div>
             </div>
-        </main>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    </body>
-</html>
+        </div>
+    </div>
+</div>
