@@ -117,7 +117,7 @@
                                 </div>    
                                 <div class='card-footer bg-dark text-center'>
                                     <ul class='list-inline list-unstyled'>
-                                        <li class='list-inline-item'><a href='play.php?id=$id' class='link-light h5 mx-3'><i class='fas fa-play-circle'></i></a> </li>
+                                        <li class='list-inline-item'><a href='play.php?id=$id' class='link-light h5 mx-3'><i class='fas fa-play-circle'></i></a></li>
                                         <li class='list-inline-item'><a href='film.php?id=$id' class='link-light h5 mx-3'><i class='fas fa-chevron-down'></i></a></li>
                                     </ul>                      
                                 </div>
