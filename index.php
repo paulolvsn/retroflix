@@ -44,6 +44,134 @@
                         include "base/carousel.php";
                     ?>
                 </div>
+                <div class="cardlistcontainer">
+                    <h2 id="action">Action</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Action';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="animation">Animation</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Animation';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="aventure">Aventure</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Aventure';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="comedie">Comédie</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Comédie';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="crime">Crime</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Crime';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="documentaire">Documentaire</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Documentaire';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="drame">Drame</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Drame';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="fantastique">Fantastique</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Fantastique';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="guerre">Guerre</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Guerre';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="histoire">Histoire</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Histoire';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="horreur">Horreur</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Horreur';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="mystere">Mystère</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Mystère';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="romance">Romance</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Romance';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="sciencefiction">Science-Fiction</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Science-Fiction';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="thriller">Thriller</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Thriller';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
+                <div class="cardlistcontainer">
+                    <h2 id="western">Western</h2>
+                    <?php
+                        include "connect-to-bdd.php";
+                        $genre = 'Western';
+                        include "base/carousel-genres.php";
+                    ?>
+                </div>
             </section>
         </main>
         <?php
