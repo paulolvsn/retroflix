@@ -17,10 +17,10 @@
         </form>
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/users/create-account.php"><i class="fas fa-user-plus"></a>
+            <a class="nav-link text-white" aria-current="page" href="/users/create-account.php"><i class="fas fa-user-plus"></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/users/sign-in.php"><i class="fas fa-sign-in-alt"></a>
+            <a class="nav-link text-white" aria-current="page" href="/users/sign-in.php"><i class="fas fa-sign-in-alt"></i></a>
           </li>
         </ul>        
       </div>
