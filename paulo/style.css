@@ -11,11 +11,18 @@ body {
     background-size: cover;
 }
 
-
-.navigation-bar {
-    margin: auto;
-    width: 100%;
-    
+.navbar-brand > #a {
+    color: rgb(252, 186, 3);
+    display: inline;
+    vertical-align: top;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-top: 60px;
+    font-family: logofont;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
 }
 
 #logo {
@@ -44,38 +51,6 @@ body {
     font-weight: bold;
     font-size: 30px;
     padding: 10px;
-}
-
-.navigation-bar > img {
-    float: right;
-    margin-right: 10px;
-}
-.navigation-bar > a {
-    display: inline;
-    vertical-align: top;
-    margin-right: 30px;
-    height: 40px;
-    line-height: 29px;   
-    font-size: 20px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-
-.navigation-bar > button {
-    margin-top: 3px;
-    display: inline;
-    vertical-align: top;
-    float: right;
-}
-
-.navigation-bar > input {
-    margin-top: 2px;
-    display: inline;
-    vertical-align: top;
-    background-color: #e9e9e9;
-    border-radius: 30px;
-    width: 200px;
-    height: 20px;
 }
 
 a {
@@ -133,13 +108,14 @@ button {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     font-size: 30px;
+    padding: 30px;
+    font-weight: bold;
 }
 
 footer {
-    position: absolute;
-    right: 0px;
-    width: 150px;
-    padding: 10px;
+    float: right;
+    padding: 20px;
+    margin-right: 20px;
 }
 
 .cardlist {

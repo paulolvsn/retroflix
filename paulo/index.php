@@ -14,6 +14,14 @@
 </header>
 <main>
     <section class="container row m-5">
+<<<<<<< HEAD
+    <section class="col d-flex align-items-center m-5">
+        <a class="text-decoration-none" href="lesdentsdelamer"><h1 class="display-1 text-uppercase"><b>LES DENTS DE LA MER</b></h1></a>
+    </section>
+    <section class="col" id="synopsis">
+        <p>A quelques jours du début de la saison estivale, les habitants de la petite station balnéaire d'Amity sont mis en émoi par la découverte sur le littoral du corps atrocement mutilé d'une jeune vacancière. Pour Martin Brody, le chef de la police, il ne fait aucun doute que la jeune fille a été victime d'un requin. Il décide alors d'interdire l'accès des plages mais se heurte à l'hostilité du maire uniquement intéressé par l'afflux des touristes. Pendant ce temps, le requin continue à semer la terreur le long des côtes et à dévorer les baigneurs... (<b>Steve Spielberg</b>)</br>
+        <i class="fas fa-play-circle" alt="Play button"></i>
+=======
         <section class="col d-flex align-items-center m-5">
             <a class="text-decoration-none" href="lesdentsdelamer"><h1 class="display-1 text-uppercase">LES DENTS DE LA MER</h1></a>
         </section>
@@ -21,6 +29,7 @@
             <p>A quelques jours du début de la saison estivale, les habitants de la petite station balnéaire d'Amity sont mis en émoi par la découverte sur le littoral du corps atrocement mutilé d'une jeune vacancière. Pour Martin Brody, le chef de la police, il ne fait aucun doute que la jeune fille a été victime d'un requin. Il décide alors d'interdire l'accès des plages mais se heurte à l'hostilité du maire uniquement intéressé par l'afflux des touristes. Pendant ce temps, le requin continue à semer la terreur le long des côtes et à dévorer les baigneurs... (<b>Steve Spielberg</b>)</br>
             <img src="images/play.png" class="playbtn" alt="Play button">
         </section>
+>>>>>>> 6a4a22f16dd176c3603be79a07686e7f51502684
     </section>
 
     <h1 id="recommendations">RECOMMENDATIONS</h1>
@@ -43,8 +52,8 @@
                         <img src='https://image.tmdb.org/t/p/w342/$poster_path' class='cardlist-itemimg' alt='$title'>
                         <div class='cardlist-itemdetails'>
                         <div class='cardbtn'>
-                            <img src='images/play.png' class='playbtn' alt='Play button'>
-                            <img src='images/info.png' class='infobtn' alt='Info button'>
+                            <i class='fas fa-play-circle' alt='play button'></i>
+                            <i class='fas fa-info-circle' alt='info button'></i>
                         </div>
                         <p class='cardtitle'>$title</p>
                     </div>
