@@ -1,5 +1,9 @@
-<a href="http://www.youtube.com"><img src="images/youtube.png" width="25" height="25"></a>
-    <a href="http://www.twitter.com"><img src="images/twitter.png" width="25" height="25"></a>
-    <a href="http://www.facebook.com"><img src="images/facebook.png" width="25" height="25"></a>
-    <a href="mailto:retroflix@flix.com"><img src="images/email.png" width="25" height="25"></a>
-    <a href="http://www.instagram.com"><img src="/retroflix/images/instagram.png" width="25" height="25"></a>
+
+        <small>&copy; Copyright 2021, Gabriela, Guillaume, Marcelo et Paulo</small>
+     
+        <a href="https://github.com/paulolvsn/retroflix"><i class="fab fa-github-square"></i></a>
+        <a href="http://www.youtube.com"><i class="fab fa-youtube-square"></i></a>
+        <a href="http://www.twitter.com"><i class="fab fa-twitter-square"></i></a>
+        <a href="http://www.facebook.com"><i class="fab fa-facebook square"></i></a>
+        <a href="mailto:retroflix@flix.com"><i class="fas fa-envelope-square"></i></a>
+        <a href="http://www.instagram.com"><i class="fab fa-instagram-square"></i></a>
