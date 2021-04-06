@@ -8,7 +8,7 @@
             include "header.php";
         ?>
         <main class="container" id="film">
-            <div class="card border border-dark rounded mb-4">
+            <div class="card border border-dark rounded bg-dark mb-4">
                 <?php
                     include "../connect-to-bdd.php"; // open database
                     if(isset($_GET['id'])) {  
