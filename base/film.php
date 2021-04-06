@@ -8,7 +8,7 @@
             include "header.php";
         ?>
         <main class="container" id="film">
-            <div class="card border border-dark rounded mb-4">
+            <div class="card border border-dark rounded bg-dark mb-4">
                 <?php
                     include "../connect-to-bdd.php"; // open database
                     if(isset($_GET['id'])) {  
@@ -43,13 +43,13 @@
                                 </div>
                                 <div class='col-12 col-md-3'>
                                     <ul class='list-group'>
-                                        <li class='list-group-item'>Genres: $genres</li>
-                                        <li class='list-group-item'>Pays: $origin_country</li>
-                                        <li class='list-group-item'>Langue: $original_language</li>
-                                        <li class='list-group-item'>Date: $release_date</li>
-                                        <li class='list-group-item'>Durée: $runtime minutes</li>
-                                        <li class='list-group-item'>Popularité: $popularity/10</li>
-                                        <li class='list-group-item'>Rating: $vote_average</li>
+                                        <li class='list-group-item list-group-item-dark'>Genres: $genres</li>
+                                        <li class='list-group-item list-group-item-dark'>Pays: <img src='https://www.countryflags.io/$origin_country/flat/32.png'></li>
+                                        <li class='list-group-item list-group-item-dark'>Langue: $original_language</li>
+                                        <li class='list-group-item list-group-item-dark'>Date: $release_date</li>
+                                        <li class='list-group-item list-group-item-dark'>Durée: $runtime minutes</li>
+                                        <li class='list-group-item list-group-item-dark'>Popularité: $popularity/10</li>
+                                        <li class='list-group-item list-group-item-dark'>Rating: $vote_average</li>
                                     </ul>
                                 </div>
                                 <div class='col-12 col-md-6'>
