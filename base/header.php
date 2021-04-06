@@ -15,7 +15,7 @@
           </li>
         </ul>
         <form class="d-flex" action="/base/search.php" method="get">
-          <input class="form-control me-2" type="search" name="keyword" placeholder="Recherche par Titre ou Genre..." aria-label="search">
+          <input class="form-control me-2" type="search" name="keyword" placeholder="Rechercher..." aria-label="search">
           <button class="btn btn-secondary" type="submit" name="search"><i class="fas fa-search"></i></button>
         </form>
         <ul class="navbar-nav mb-2 mb-md-0">
