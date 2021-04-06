@@ -22,3 +22,5 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="/users/sign-in.php"><i class="fas fa-sign-in-alt"></i></a>
         </li>
+    </div>
+    </nav>
