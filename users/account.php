@@ -38,13 +38,13 @@
                     <a class='list-group-item list-group-item-action active' id='btnAdminPanel' data-bs-toggle='list' href='#admin' role='tab'>Admin Panel</a>
                     <a class='list-group-item list-group-item-action' id='btnUserPanel' data-bs-toggle='list' href='#user' role='tab'>User Panel</a>
                   </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane" id="user" role="tabpanel">
               ";
             }
           }
           ?>
-          <!-- Tab panes -->
-          <div class="tab-content">
-            <div class="tab-pane" id="user" role="tabpanel">
               <div class="container" >
                 <div class="row mt-5">
                     <div class="mt-5 col-3 offset-4 border border-dark border-2 rounded shadow p-3 mb-5 bg-body rounded">      
@@ -69,12 +69,12 @@
                       </form>
                     </div>
                 </div>
-              </div>
-            </div>
             <?php
               if(isset($_SESSION['admin'])) {
                 if($_SESSION['admin'] == 1) {
                   echo "
+                      </div>
+                    </div>
                     <div class='tab-pane active' id='admin' role='tabpanel'>                
                   ";
                   include "../connect-to-bdd.php"; // open database
