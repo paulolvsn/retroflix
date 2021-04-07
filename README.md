@@ -11,6 +11,8 @@
   * backend: 2
   * project management : 1
 
+## [Our getflixProject](https://retro-flix.000webhostapp.com/)
+
 ## Mission objectives
 Now is the time to take stock of everything you've learned so far and add a layer at the same time!
 
@@ -22,16 +24,16 @@ In this exercise you must create a Streaming site in html / css, javascript and 
 Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... The goal is to display a catalog of movies. Spot the similarities between these platforms (navbar, header, search tool, different categories of videos…) See what is cool and what works.
 
 ### Must-have features
-- [ ] A session system: registration, connection / disconnection.
-- [ ] Different rights: registrants have the right to comment on the content. You can add other rights depending on the different types of users.
-- [ ] Include a search bar and sort by filters
-- [ ] Make a secure code
-- [ ] Deploy the site. PHP is not supported by github, find free alternatives.
+- [x] A session system: registration, connection / disconnection.
+- [x] Different rights: registrants have the right to comment on the content. You can add other rights depending on the different types of users.
+- [x] Include a search bar and sort by filters
+- [x] Make a secure code
+- [x] Deploy the site. PHP is not supported by github, find free alternatives.
  
 ### Nice-to-have features
-- [ ] Management of lost passwords.
-- [ ] Back office for user and comment management (CRUD).
-- [ ] Create a page or section that displays the top movies with the movie db API.
+- [x] Management of lost passwords.
+- [x] Back office for user and comment management (CRUD).
+- [x] Create a page or section that displays the top movies with the movie db API.
 - [ ] Integrate a newsletter with Mailchimp.
 
 ### Miscellanous information

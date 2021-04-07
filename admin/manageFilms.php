@@ -47,7 +47,7 @@
                                 <tr id=$id>
                                 <td><img src='https://image.tmdb.org/t/p/w92/$poster_path' alt='$title'></td>
                                 <td>$id</td>
-                                <form method='post' action='adminPanel.php' id='$title'>
+                                <form method='post' action='/users/account.php' id='$title'>
                                 <td><textarea class='form-control form-control-sm' name='title' style='resize: none; width: 100%;' rows='5' form='$title'>$title</textarea></td>
                                 <td><textarea class='form-control form-control-sm' name='original_title' style='resize: none; width: 100%;' rows='5' form='$title'>$original_title</textarea></td>
                                 <td><textarea class='form-control form-control-sm' name='genres' style='resize: none; width: 100%;' rows='5' form='$title'>$genres</textarea></td>
@@ -56,7 +56,7 @@
                                 </form>
                                 <br>
                                 <br>
-                                <form method='post' action='adminPanel.php'>
+                                <form method='post' action='/users/account.php'>
                                 <button class='btn btn-sm btn-danger' type='submit' name='removeFilm' value=$id>Supprimer</button>
                                 </form>
                                 </td>
@@ -73,11 +73,11 @@
                                 <td>$genres</td>
                                 <td>$overview</td>
                                 <td>
-                                <form method='post' action='adminPanel.php#$id'>
+                                <form method='post' action='/users/account.php#$id'>
                                 <button class='btn btn-sm btn-primary' type='submit' name='updateFilm' value=$id>Changer</button>
                                 </form>
                                 <br>
-                                <form method='post' action='adminPanel.php'>
+                                <form method='post' action='/users/account.php'>
                                 <button class='btn btn-sm btn-danger' type='submit' name='removeFilm' value=$id>Supprimer</button>
                                 </form>
                                 </td>

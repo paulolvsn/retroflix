@@ -42,4 +42,5 @@ if(isset($_GET['email'])&&isset($_GET['str'])){
         echo "Message sent!";
     }
     echo '<script> window.location.href = "http://retro-flix.000webhostapp.com/users/email-sent.php"; </script>';
+    //echo '<script> window.location.href = "/users/email-sent.php"; </script>';
 }

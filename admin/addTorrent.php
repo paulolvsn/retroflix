@@ -39,7 +39,7 @@
                                 <td>$imdb_id</td>
                                 <td>$title</td>
                                 <td>
-                                <form method='post' action='adminPanel.php' id='form'>
+                                <form method='post' action='/users/account.php' id='form'>
                                 <script>
                                 console.log('$url');
                                 let url = '$url';
@@ -90,7 +90,7 @@
                                 <td>$title</td>
                                 <td><span class='text-break'>$torrent</span></td>
                                 <td>
-                                <form method='post' action='adminPanel.php#$imdb_id'>
+                                <form method='post' action='/users/account.php#$imdb_id'>
                                 <button class='btn btn-sm btn-primary' type='submit' name='updateTorrent' value=$imdb_id>Changer</button>
                                 </form>
                                 </td>

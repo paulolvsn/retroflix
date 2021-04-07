@@ -16,12 +16,36 @@
           <button class="btn btn-secondary" type="submit" name="search"><i class="fas fa-search"></i></button>
         </form>
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/users/create-account.php"><i class="fas fa-user-plus"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="/users/sign-in.php"><i class="fas fa-sign-in-alt"></i></a>
-          </li>
+          <?php
+            if(isset($_SESSION['pseudo'])) {
+              echo "
+              <li class='nav-item'>
+                <a class='nav-link text-white' aria-current='page' href='/users/account.php'><i class='fs-1 fas fa-user-circle'></i></i></a>
+              </li>
+              ";
+            }
+          ?>
+          <?php
+            if(!isset($_SESSION['pseudo'])) {
+              echo "
+                <li class='nav-item'>
+                  <a class='nav-link text-white' aria-current='page' href='/users/create-account.php'><i class='fs-5 fas fa-user-plus'></i></a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link text-white' aria-current='page' href='/users/sign-in.php'><i class='fs-5 fas fa-sign-in-alt'></i></a>
+                </li>
+              ";
+            }
+          ?>
+          <?php
+            if(isset($_SESSION['pseudo'])) {
+              echo "
+              <li class='nav-item'>
+                <a class='nav-link text-white' aria-current='page' href='/users/deconnexion.php'><i class='fs-5 fas fa-sign-out-alt'></i></a>
+              </li>
+              ";
+            }
+          ?>
         </ul>        
       </div>
     </div>

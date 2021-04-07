@@ -1,3 +1,7 @@
+<?php
+    include "../users/check-session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <?php
@@ -44,7 +48,7 @@
                         <ul class='nav nav-tabs'>
                             <p class='navbar-brand'>Filtrez votre recherche:</p>                                    
                             <li class='nav-item dropdown'>
-                                <a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
+                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
                                 <ul class='dropdown-menu'>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Action' id='action'>Action</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Animation' id='animation'>Animation</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
@@ -65,7 +69,7 @@
                                 </ul>
                             </li>                                    
                             <li class='nav-item dropdown'>
-                                <a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
+                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
                                 <ul class='dropdown-menu'>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='ascendent' id='ascendent'>Ascendent (A-Z)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='descendent' id='descendent'>Descendent (Z-A)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
@@ -132,7 +136,17 @@
                                         <h4>$title</h4> 
                                     </div>    
                                     <div class='card-footer d-flex bg-dark'>
-                                        <a class='link-light h3 col text-center' href='play.php?id=$id'><i class='fas fa-play-circle'></i></a>
+                        ";
+                        if(isset($_SESSION['pseudo'])) {
+                            echo "
+                                        <a class='link-light h3 col text-center' href='/base/play.php?id=$id'><i class='fas fa-play-circle'></i></a>
+                            ";
+                        } else {
+                            echo "
+                                        <a class='link-light h3 col text-center' href='/users/sign-in.php'><i class='fas fa-sign-in-alt'></i></a>
+                            ";
+                        }
+                        echo "
                                         <a class='link-light h3 col text-center' href='film.php?id=$id'><i class='fas fa-chevron-down'></i></a>
                                     </div>
                                 </div>

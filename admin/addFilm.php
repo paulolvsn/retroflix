@@ -2,7 +2,7 @@
     <div class="row" id="search">
         <h1>Add Film</h1>
         <strong>Search film:</strong>
-        <form method="post" action="adminPanel.php">
+        <form method="post" action="/users/account.php">
             <input class="form-control form-control-sm mb-1" type="text" name="keyword" placeholder="Keyword" required>
             <button class="btn btn-sm btn-primary" type="submit" name="searchFilm">Search</button>
         </form>
@@ -71,7 +71,7 @@
                             divFooter.appendChild(btn);
                             
                             var form = document.createElement('FORM');
-                            form.action = 'adminPanel.php';
+                            form.action = '/users/account.php';
                             form.method = 'post';
                             form.id = film.original_title;
                             form.appendChild(divHeader);
@@ -185,18 +185,19 @@
                         release_date.classList.add('form-control-sm');
                         release_date.classList.add('w-100');
 
-                        var allCountries = '';
-                        film.production_countries.forEach(function(country) {
-                            if (allCountries == '') {
-                                allCountries = country['iso_3166_1']; 
-                            } else {
-                            allCountries = allCountries + ' ' + country['iso_3166_1'];
-                            }
-                        });
+                        //var allCountries = '';
+                        //film.production_countries.forEach(function(country) {
+                        //    if (allCountries == '') {
+                        //        allCountries = country['iso_3166_1']; 
+                        //    } else {
+                        //    allCountries = allCountries + ' ' + country['iso_3166_1'];
+                        //    }
+                        //});
                         var origin_country = document.createElement('INPUT');
                         origin_country.type = 'text';
                         origin_country.name = 'origin_country';
-                        origin_country.value = allCountries;
+                        // origin_country.value = allCountries;
+                        origin_country.value = film.production_countries[0]['iso_3166_1'];
                         origin_country.classList.add('form-control');
                         origin_country.classList.add('form-control-sm');
                         origin_country.classList.add('w-100');
@@ -316,7 +317,7 @@
                         divRow.appendChild(divFooter);
 
                         var form = document.createElement('FORM');
-                        form.action = 'adminPanel.php';
+                        form.action = '/users/account.php';
                         form.method = 'post';
                         form.appendChild(divRow);
 

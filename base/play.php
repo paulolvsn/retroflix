@@ -1,3 +1,7 @@
+<?php
+    include "../users/check-session.php";
+?>   
+
 <!DOCTYPE html>
 <html lang="fr">
     <?php

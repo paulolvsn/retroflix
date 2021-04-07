@@ -1,3 +1,7 @@
+<?php
+    include "../users/check-session.php";
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <?php
@@ -10,8 +14,16 @@
         <main class="container mb-3" id="browse">
             <?php                    
                 include "../connect-to-bdd.php"; // open database
-                $genre = $_GET['genre'];
-                $alpha = $_GET['alpha'];
+                if(isset($_GET['genre'])){
+                    $genre = $_GET['genre'];
+                } else {
+                    $genre = NULL;
+                }
+                if(isset($_GET['alpha'])){
+                    $alpha = $_GET['alpha'];
+                } else {
+                    $alpha = NULL;
+                }
                 if(($alpha) AND ($genre)) {
                     echo "<h5>Films du genre <strong>'$genre'</strong> en ordre alphabétique $alpha</h5>";
                 }
@@ -117,7 +129,17 @@
                                 </div>    
                                 <div class='card-footer bg-dark text-center'>
                                     <ul class='list-inline list-unstyled'>
+                    ";
+                    if(isset($_SESSION['pseudo'])) {
+                        echo "
                                         <li class='list-inline-item'><a href='play.php?id=$id' class='link-light h5 mx-3'><i class='fas fa-play-circle'></i></a></li>
+                        ";
+                    } else {
+                        echo "
+                                        <li class='list-inline-item'><a href='/users/sign-in.php' class='link-light h5 mx-3'><i class='fas fa-sign-in-alt'></i></a></li>
+                        ";
+                    }
+                    echo "
                                         <li class='list-inline-item'><a href='film.php?id=$id' class='link-light h5 mx-3'><i class='fas fa-chevron-down'></i></a></li>
                                     </ul>                      
                                 </div>

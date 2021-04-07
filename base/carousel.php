@@ -10,7 +10,17 @@ while ($film = $request->fetch()) {
         <div class='cardlist-itemdetails'>
             <p>$title</p>
             <div class='cardbtn'>
-                <a href='/base/play.php?id=$id' class='link-light mx-1'><i class='fas fa-play-circle'></i></a>
+    ";
+    if(isset($_SESSION['pseudo'])) {
+        echo "
+                    <a href='/base/play.php?id=$id' class='link-light mx-1'><i class='fas fa-play-circle'></i></a>
+        ";
+    } else {
+        echo "
+                    <a href='/users/sign-in.php' class='link-light mx-1'><i class='fas fa-sign-in-alt'></i></a>
+        ";
+    }
+    echo "
                 <a href='/base/film.php?id=$id' class='link-light mx-1'><i class='fas fa-chevron-down'></i></a>
             </div>
         </div>

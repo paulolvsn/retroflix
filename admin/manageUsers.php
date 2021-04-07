@@ -15,10 +15,10 @@
                 </tr>
             </thead>
             <tr>
-                <form method="post" action="adminPanel.php" enctype="multipart/form-data">
+                <form method="post" action="/users/account.php" enctype="multipart/form-data">
                     <td><input class="form-control form-control-sm" type="file" name="avatar" id="avatar" required></td>
                     <td></td>
-                    <td><input class="form-control form-control-sm" type="date" name="date" required></td>
+                    <td></td>
                     <td><input class="form-control form-control-sm" type="text" name="pseudo" placeholder="Pseudo" required></td>
                     <td><input class="form-control form-control-sm" type="email" name="email" placeholder="Email"required></td>
                     <td><input class="form-control form-control-sm" type="number" name="admin" placeholder="0/1"required></td>
@@ -32,7 +32,7 @@
                     // IF add button is clicked
                     if(isset($_POST['addUser'])) {
                         echo "<script type='text/javascript'>function toggleManageUsers(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleManageUsers();</script>";
-                        $target_dir = $root . "/avatar/";
+                        $target_dir = $root . "/users/avatar/";
                         $target_file = $target_dir . basename($_FILES["avatar"]["name"]);
                         $uploadOk = 1;
                         $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -72,14 +72,15 @@
                                 echo "<h4 class='text-left text-danger'>Sorry, there was an error uploading your file.</h4>";
                             }
                         }
-                        $date = $_POST['date'];
                         $pseudo = $_POST['pseudo'];
                         $email = $_POST['email'];
                         $admin = $_POST['admin'];
                         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                         $avatar = "avatar/" . $_FILES['avatar']['name'];
-                        $request = $bdd->prepare('INSERT INTO users(date, pseudo, email, admin, password, avatar) VALUES(?, ?, ?, ?, ?, ?)'); //prepare add command
-                        $request->execute(array($date, $pseudo, $email, $admin, $password, $avatar)); // add new element in database
+                        $valid = 1;
+                        $recovery = "6OoQDvuSNJ1D1lTaF09fuqfhxknZbPP7yGqhmCLpVf1MAh2jiMInYBwRR2xgBsfkKUOyldo9V7b2IOzV14VmI1qYHBcVh66hZ0h7";
+                        $request = $bdd->prepare('INSERT INTO users(pseudo, email, admin, password, avatar, valid, recovery) VALUES(?, ?, ?, ?, ?, ?, ?)'); //prepare add command
+                        $request->execute(array($pseudo, $email, $admin, $password, $avatar, $valid, $recovery)); // add new element in database
                         echo "<h4 class='text-success'>Le utilisateur a été ajouté à la base de données.</h4>";   
                     }
 
@@ -91,7 +92,7 @@
                         $request->execute(array($id)); // search element in database
                         $user = $request->fetch();
                         $avatar = $user['avatar'];
-                        unlink($root . "/" . $avatar); //delete image from folder
+                        unlink($root . "/users/" . $avatar); //delete image from folder
                         $request = $bdd->prepare('DELETE FROM users WHERE id = ?'); //prepare delete command
                         $request->execute(array($id)); // delete user from database
                         echo "<h4 class='text-success'>Le utilisateur a été supprimé de la base de données.</h4>";   
@@ -124,8 +125,8 @@
                             echo "<script type='text/javascript'>function toggleManageUsers(){manageUsers.classList.add('active');manageFilms.classList.remove('active');btnManageUsers.classList.add('active');btnManageFilms.classList.remove('active');}toggleManageUsers();</script>";
                             echo "
                                 <tr id=$id>
-                                    <form method='post' action='adminPanel.php'>
-                                    <td><img src='/$avatar' alt='$pseudo' width='50px' height='auto'></td>
+                                    <form method='post' action='/users/account.php'>
+                                    <td><img src='/users/$avatar' alt='$pseudo' width='50px' height='auto'></td>
                                     <td><input class='form-control form-control-sm' type='number' name='id' value=$id></td>
                                     <td><input class='form-control form-control-sm' type='date' name='date' value=$date></td>
                                     <td><input class='form-control form-control-sm' type='text' name='pseudo' value=$pseudo></td>
@@ -136,7 +137,7 @@
                                     </form>
                                     <br>
                                     <br>
-                                    <form method='post' action='adminPanel.php'>
+                                    <form method='post' action='/users/account.php'>
                                     <button class='btn btn-danger' type='submit' name='removeUser' value=$id>Supprimer</button>
                                     </form>
                                     </td>
@@ -146,7 +147,7 @@
                         else {
                             echo "
                                 <tr id=$id>
-                                    <td><img src='/$avatar' alt='$pseudo' width='50px' height='auto'></td>
+                                    <td><img src='/users/$avatar' alt='$pseudo' width='50px' height='auto'></td>
                                     <td>$id</td>
                                     <td>$date</td>
                                     <td>$pseudo</td>
@@ -154,11 +155,11 @@
                                     <td>$admin</td>
                                     <td><span class='text-break'>$password</span></td>
                                     <td>
-                                    <form method='post' action='adminPanel.php#$id'>
+                                    <form method='post' action='/users/account.php#$id'>
                                     <button class='btn btn-sm btn-primary w-100' type='submit' name='updateUser' value=$id>Changer</button>
                                     </form>
                                     <br>
-                                    <form method='post' action='adminPanel.php'>
+                                    <form method='post' action='/users/account.php'>
                                     <button class='btn btn-sm btn-danger w-100' type='submit' name='removeUser' value=$id>Supprimer</button>
                                     </form>
                                     </td>

@@ -6,7 +6,7 @@ $pseudo = $_POST['pseudo'];
 
 
 //  Récupération de l'utilisateur et de son pass hashé
-$req = $bdd->prepare('SELECT id, password, valid FROM users WHERE pseudo = :pseudo');
+$req = $bdd->prepare('SELECT id, admin, password, valid FROM users WHERE pseudo = :pseudo');
 $req->execute(array(
     'pseudo' => $pseudo));
 $resultat = $req->fetch();
@@ -25,7 +25,8 @@ else
         session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $pseudo;
-        header("Location: account.php");  
+        $_SESSION['admin'] = $resultat['admin'];
+        header("Location: /index.php");  
     }
     else if ($isPasswordCorrect && ($isValid != 1)){
         echo '<p>Your account is not activated yet. Please check you inbox mail and follow the link</p>';
