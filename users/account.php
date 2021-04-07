@@ -39,8 +39,8 @@
                     <a class='list-group-item list-group-item-action' id='btnUserPanel' data-bs-toggle='list' href='#user' role='tab'>User Panel</a>
                   </div>
                 <!-- Tab panes -->
-                <div class="tab-content">
-                  <div class="tab-pane" id="user" role="tabpanel">
+                <div class='tab-content'>
+                  <div class='tab-pane' id='user' role='tabpanel'>
               ";
             }
           }
