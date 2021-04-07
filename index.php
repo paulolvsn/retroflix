@@ -7,19 +7,46 @@
         <?php
             include "base/header.php";
         ?>  
-        <main class="container">
-            <section class="container row m-5">
-                <section class="col d-flex align-items-center m-5">
-                    <a class="text-decoration-none" href="lesdentsdelamer"><h1 class="display-1 text-uppercase">LES DENTS DE LA MER</h1></a>
+        <main class="container-fluid">
+            <?php
+                include "connect-to-bdd.php";
+                $request = $bdd->query("SELECT * FROM films");
+                while ($film = $request->fetch()){
+                    $films[] = $film['id'];
+                    $titles[] = $film['title'];
+                    $overviews[] = $film['overview'];
+                    $backdrop_paths[] = $film['backdrop_path'];
+                }
+                $request->closeCursor();
+                $length = count($films) - 1;
+                $random = rand(0, $length);
+                $id = $films[$random];
+                $title = $titles[$random];
+                $overview = $overviews[$random];
+                $backdrop_path = "https://image.tmdb.org/t/p/original/" . $backdrop_paths[$random];
+            echo "
+                <section class='row my-5' style='height:75vh;width:75vw;margin:auto;'>
+                    <div class='card'>
+                        <img class='card-img-top' src='$backdrop_path' alt='$title' style='opacity:0.3;'>
+                        <div class='card-img-overlay'>
+                            <div class='row h-100'>
+                                <div class='col d-flex align-items-center p-5'>
+                                    <h1 class='display-1 text-uppercase'><a class='text-decoration-none text-warning' href='/base/film.php?id=$id'>$title</a></h1>
+                                </div>
+                                <div class='col d-flex flex-column align-self-center p-5'>
+                                    <p class='text-body'>$overview</p><br>
+                                    <div class='text-center'>
+                                        <a href='/base/play.php?id=$id' class='link-light mx-3'><i class='text-body fs-3 fas fa-play-circle'></i></a>
+                                        <a href='/base/film.php?id=$id' class='link-light mx-3'><i class='text-body fs-3 fas fa-chevron-down'></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
-                <section class="col" id="synopsis">
-                    <p>À quelques jours du début de la saison estivale, les habitants de la petite station balnéaire d'Amity sont mis en émoi par la découverte sur le littoral du corps atrocement mutilé d'une jeune vacancière. Pour Martin Brody, le chef de la police, il ne fait aucun doute que la jeune fille a été victime d'un requin. Il décide alors d'interdire l'accès des plages mais se heurte à l'hostilité du maire uniquement intéressé par l'afflux des touristes. Pendant ce temps, le requin continue à semer la terreur le long des côtes et à dévorer les baigneurs... (<b>Steven Spielberg</b>)</br>
-                    <a href='/base/play.php?id=$id' class='link-light mx-1'><i class='fas fa-play-circle'></i></a>
-                    <a href='/base/film.php?id=$id' class='link-light mx-1'><i class='fas fa-chevron-down'></i></a>
-                </section>
-            </section>
-
-            <section class="cardlist">
+            ";
+            ?>
+            <section class="container cardlist">
                 <div class="cardlistcontainer">
                     <h2 id="rating">Best rating</h2>
                     <?php
