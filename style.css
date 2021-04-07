@@ -65,14 +65,12 @@ a {
      
 }
 
-/* .cardlist::-webkit-scrollbar {
-    display: hidden;
-}  */
 
 .cardlistcontainer {
     white-space: nowrap;
     margin: 40px 0px;
-    padding-bottom: 10px;     
+    padding-bottom: 50px;
+    padding-left: 40px;
     overflow-y: hidden;   
 }
 
@@ -80,6 +78,8 @@ a {
 ::-webkit-scrollbar {
     width: 8px;
     height: 6px;
+    margin-top: 20px;
+    margin-right: 50px;
 }
  
 ::-webkit-scrollbar-track {

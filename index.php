@@ -62,7 +62,7 @@
             ?>
             <section class="container cardlist">
                 <div class="cardlistcontainer">
-                    <h2 id="rating">Best rating</h2>
+                    <h2 class="mb-5" id="rating">Best rating</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $sort = 'vote_average';
@@ -70,7 +70,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="popularity">Most popular</h2>
+                    <h2 class="mb-5" id="popularity">Most popular</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $sort = 'popularity';
@@ -78,7 +78,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="voted">Most voted</h2>
+                    <h2 class="mb-5" id="voted">Most voted</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $sort = 'vote_count';
@@ -86,7 +86,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="action">Action</h2>
+                    <h2 class="mb-5" id="action">Action</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Action';
@@ -94,7 +94,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="animation">Animation</h2>
+                    <h2 class="mb-5" id="animation">Animation</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Animation';
@@ -102,7 +102,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="aventure">Aventure</h2>
+                    <h2 class="mb-5" id="aventure">Aventure</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Aventure';
@@ -110,7 +110,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="comedie">Comédie</h2>
+                    <h2 class="mb-5" id="comedie">Comédie</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Comédie';
@@ -118,7 +118,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="crime">Crime</h2>
+                    <h2 class="mb-5" id="crime">Crime</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Crime';
@@ -126,7 +126,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="documentaire">Documentaire</h2>
+                    <h2 class="mb-5" id="documentaire">Documentaire</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Documentaire';
@@ -134,7 +134,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="drame">Drame</h2>
+                    <h2 class="mb-5" id="drame">Drame</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Drame';
@@ -142,7 +142,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="fantastique">Fantastique</h2>
+                    <h2 class="mb-5" id="fantastique">Fantastique</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Fantastique';
@@ -150,7 +150,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="guerre">Guerre</h2>
+                    <h2 class="mb-5" id="guerre">Guerre</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Guerre';
@@ -158,7 +158,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="histoire">Histoire</h2>
+                    <h2 class="mb-5" id="histoire">Histoire</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Histoire';
@@ -166,7 +166,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="horreur">Horreur</h2>
+                    <h2 class="mb-5" id="horreur">Horreur</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Horreur';
@@ -174,7 +174,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="mystere">Mystère</h2>
+                    <h2 class="mb-5" id="mystere">Mystère</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Mystère';
@@ -182,7 +182,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="romance">Romance</h2>
+                    <h2 class="mb-5" id="romance">Romance</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Romance';
@@ -190,7 +190,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="sciencefiction">Science-Fiction</h2>
+                    <h2 class="mb-5" id="sciencefiction">Science-Fiction</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Science-Fiction';
@@ -198,7 +198,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="thriller">Thriller</h2>
+                    <h2 class="mb-5" id="thriller">Thriller</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Thriller';
@@ -206,7 +206,7 @@
                     ?>
                 </div>
                 <div class="cardlistcontainer">
-                    <h2 id="western">Western</h2>
+                    <h2 class="mb-5" id="western">Western</h2>
                     <?php
                         include "connect-to-bdd.php";
                         $genre = 'Western';
