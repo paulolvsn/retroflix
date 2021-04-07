@@ -26,8 +26,16 @@
                 include "../connect-to-bdd.php"; // open database
                 if(isset($_GET['keyword'])) {  //al click en submit
                     $keyword= $_GET['keyword'];
-                    $genre = $_GET['genre'];
-                    $alpha = $_GET['alpha'];
+                    if(isset($_GET['genre'])){
+                        $genre = $_GET['genre'];
+                    } else {
+                        $genre = NULL;
+                    }
+                    if(isset($_GET['alpha'])){
+                        $alpha = $_GET['alpha'];
+                    } else {
+                        $alpha = NULL;
+                    }
                     echo "
                         <section class='container mb-3'>
                             <div class='row g-4'>
