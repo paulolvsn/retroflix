@@ -61,7 +61,7 @@
             ";
             ?>
             <section class="container cardlist">
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="rating">Best rating</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -69,7 +69,7 @@
                         include "base/carousel.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="popularity">Most popular</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -77,7 +77,7 @@
                         include "base/carousel.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="voted">Most voted</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -85,7 +85,7 @@
                         include "base/carousel.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="action">Action</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -93,7 +93,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="animation">Animation</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -101,7 +101,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="aventure">Aventure</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -109,7 +109,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="comedie">Comédie</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -117,7 +117,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="crime">Crime</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -125,7 +125,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="documentaire">Documentaire</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -133,7 +133,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="drame">Drame</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -141,7 +141,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="fantastique">Fantastique</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -149,7 +149,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="guerre">Guerre</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -157,7 +157,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="histoire">Histoire</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -165,7 +165,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="horreur">Horreur</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -173,7 +173,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="mystere">Mystère</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -181,7 +181,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="romance">Romance</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -189,7 +189,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="sciencefiction">Science-Fiction</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -197,7 +197,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="thriller">Thriller</h2>
                     <?php
                         include "connect-to-bdd.php";
@@ -205,7 +205,7 @@
                         include "base/carousel-genres.php";
                     ?>
                 </div>
-                <div class="cardlistcontainer mx-5">
+                <div class="cardlistcontainer">
                     <h2 id="western">Western</h2>
                     <?php
                         include "connect-to-bdd.php";
