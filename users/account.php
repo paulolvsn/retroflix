@@ -47,7 +47,7 @@
           ?>
               <div class="container" >
                 <div class="row mt-5">
-                    <div class="mt-5 col-3 offset-4 border border-dark border-2 rounded shadow p-3 mb-5 bg-body rounded">      
+                    <div class="mt-5 col-3 offset-4 border border-dark border-2 rounded shadow p-3 mb-5 bg-body rounded text-dark">      
                       <form method='POST' enctype=multipart/form-data action="user-save-changes.php">
                         <div class="card form-control" >
                           <h3> <?php echo "Welcome " . $pseudo;   ?></h3>
