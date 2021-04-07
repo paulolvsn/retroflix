@@ -71,13 +71,21 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane active" id="admin" role="tabpanel">
-                <?php
-                    include "../connect-to-bdd.php"; // open database
-                    include "../key.php"; // load API key
-                    include "../admin/adminPanel.php";
-                ?>
-            </div>
+            <?php
+              if(isset($_SESSION['admin'])) {
+                if($_SESSION['admin'] == 1) {
+                  echo "
+                    <div class='tab-pane active' id='admin' role='tabpanel'>                
+                  ";
+                  include "../connect-to-bdd.php"; // open database
+                  include "../key.php"; // load API key
+                  include "../admin/adminPanel.php";
+                  echo "
+                    </div>
+                  ";
+                }
+              }
+            ?>
           </div>
         </div>
       </main>
