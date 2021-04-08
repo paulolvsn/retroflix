@@ -25,7 +25,7 @@
                     <img class='rounded-circle' width='60px' src='/users/$avatar' alt=$pseudo>
                 </div>
                 <div class='col-12 col-md-10'>
-                    <p class='fs-4'>Auteur: $pseudo</p>
+                    <p class='fs-4 text-warning'>$pseudo</p>
                     <div>
                         <p style='color:silver;'>$text</p>
                     </div>
