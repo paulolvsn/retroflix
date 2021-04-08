@@ -140,7 +140,7 @@
                         ";
                     }
                     echo "
-                                        <li class='list-inline-item'><a href='film.php?id=$id' class='link-light h5 mx-3 stretched-link'><i class='fas fa-chevron-down'></i></a></li>
+                                        <li class='list-inline-item'><a href='film.php?id=$id' class='link-light h5 mx-3'><i class='fas fa-chevron-down'></i></a></li>
                                     </ul>                      
                                 </div>
                             </div>
