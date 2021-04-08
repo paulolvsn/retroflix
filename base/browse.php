@@ -34,7 +34,7 @@
                     echo "<h5>Films en ordre alphabétique $alpha</strong></h5>";
                 }
                 else {
-                    echo "<h5>Toutes les films</h5>";
+                    echo "<h5 class='text-warning'>Tous les films</h5>";
                 }
                 echo "
                     <div class='row g-4'>
@@ -102,7 +102,7 @@
                     $total = $total + 1;
                 }
                 $counter->closeCursor();
-                echo "<p class='navbar-brand'>On a $total films.<p>";
+                echo "<p class='navbar-brand text-warning'>On a $total films.<p>";
                 echo "</ul>";
                 while ($film = $request->fetch()){
                     $id = $film['id'];
@@ -125,7 +125,7 @@
                             <div class='card h-100 border rounded'>
                                 <img class='card-img-top' src='https://image.tmdb.org/t/p/w342/$poster_path' alt='$title'>
                                 <div class='card-body text-center text-white bg-dark'>
-                                    <h4>$title</h4> 
+                                    <h4 class='text-warning'>$title</h4> 
                                 </div>    
                                 <div class='card-footer bg-dark text-center'>
                                     <ul class='list-inline list-unstyled'>
