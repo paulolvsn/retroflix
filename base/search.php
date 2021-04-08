@@ -200,7 +200,7 @@
                             ";
                         }
                         echo "
-                                        <a class='link-light h3 col text-center' href='film.php?id=$id'><i class='fas fa-chevron-down'></i></a>
+                                        <a class='link-light h3 col text-center stretched-link' href='film.php?id=$id'><i class='fas fa-chevron-down'></i></a>
                                     </div>
                                 </div>
                             </div>

@@ -21,7 +21,7 @@ while ($film = $request->fetch()) {
         ";
     }
     echo "
-                <a href='/base/film.php?id=$id' class='link-light mx-1'><i class='fas fa-chevron-down'></i></a>
+                <a href='/base/film.php?id=$id' class='link-light mx-1 stretched-link'><i class='fas fa-chevron-down'></i></a>
             </div>
         </div>
     </div>
