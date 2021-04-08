@@ -51,8 +51,8 @@
                                             <li class='list-group-item list-group-item-dark'>Langue: $original_language</li>
                                             <li class='list-group-item list-group-item-dark'>Date: $release_date</li>
                                             <li class='list-group-item list-group-item-dark'>Durée: $runtime minutes</li>
-                                            <li class='list-group-item list-group-item-dark'>Popularité: $popularity/10</li>
-                                            <li class='list-group-item list-group-item-dark'>Rating: $vote_average</li>
+                                            <li class='list-group-item list-group-item-dark'>Popularité: $popularity</li>
+                                            <li class='list-group-item list-group-item-dark'>Score: $vote_average/10</li>
                                         </ul>
                                     </div>
                                     <div class='col-12 col-md-6'>
