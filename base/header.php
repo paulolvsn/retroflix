@@ -15,12 +15,12 @@
           <input class="form-control me-2 rounded-pill" type="search" name="keyword" placeholder="Recherche..." aria-label="search">
           <button class="btn btn-secondary rounded-circle" type="submit" name="search"><i class="fas fa-search"></i></button>
         </form>
-        <ul class="navbar-nav mb-2 mb-lg-0 me-3">
+        <ul class="navbar-nav mb-2 mb-lg-0 me-2">
           <?php
             if(isset($_SESSION['pseudo'])) {
               echo "
               <li class='nav-item'>
-                <a class='nav-link text-white' aria-current='page' href='/users/account.php'><i class='fs-1 fas fa-user-circle'></i></i></a>
+                <a class='nav-link text-white' aria-current='page' href='/users/account.php' data-bs-toggle='tooltip' data-bs-placement='top' title='User panel'><i class='fs-1 fas fa-user-circle'></i></i></a>
               </li>
               ";
             }
@@ -29,10 +29,10 @@
             if(!isset($_SESSION['pseudo'])) {
               echo "
                 <li class='nav-item'>
-                  <a class='nav-link text-white' aria-current='page' href='/users/create-account.php'><i class='fs-5 fas fa-user-plus'></i></a>
+                  <a class='nav-link text-white' aria-current='page' href='/users/create-account.php' data-bs-toggle='tooltip' data-bs-placement='top' title='S&apos;enregistrer'><i class='fs-5 fas fa-user-plus'></i></a>
                 </li>
                 <li class='nav-item'>
-                  <a class='nav-link text-white' aria-current='page' href='/users/sign-in.php'><i class='fs-5 fas fa-sign-in-alt'></i></a>
+                  <a class='nav-link text-white' aria-current='page' href='/users/sign-in.php' data-bs-toggle='tooltip' data-bs-placement='top' title='Se connecter'><i class='fs-5 fas fa-sign-in-alt'></i></a>
                 </li>
               ";
             }
@@ -41,7 +41,7 @@
             if(isset($_SESSION['pseudo'])) {
               echo "
               <li class='nav-item'>
-                <a class='nav-link text-white' aria-current='page' href='/users/deconnexion.php'><i class='fs-5 fas fa-sign-out-alt'></i></a>
+                <a class='nav-link text-white' aria-current='page' href='/users/deconnexion.php' data-bs-toggle='tooltip' data-bs-placement='top' title='Se déconnecter'><i class='fs-5 fas fa-sign-out-alt'></i></a>
               </li>
               ";
             }
