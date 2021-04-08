@@ -1,5 +1,5 @@
 <?php
-$request = $bdd->query("SELECT * FROM films ORDER BY $sort DESC LIMIT 0,8");
+$request = $bdd->query("SELECT * FROM films ORDER BY $sort DESC LIMIT 0,10");
 while ($film = $request->fetch()) {
     $id = $film['id'];
     $title = $film['title'];

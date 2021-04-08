@@ -1,5 +1,5 @@
 <?php
-$request = $bdd->query("SELECT * FROM films WHERE genres LIKE '%$genre%' ORDER BY vote_average DESC LIMIT 0,8");
+$request = $bdd->query("SELECT * FROM films WHERE genres LIKE '%$genre%' ORDER BY vote_average DESC LIMIT 0,10");
 while ($film = $request->fetch()) {
     $id = $film['id'];
     $title = $film['title'];
