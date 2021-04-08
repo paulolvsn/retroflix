@@ -25,7 +25,7 @@
                     <img class='rounded-circle' width='60px' src='/users/$avatar' alt=$pseudo>
                 </div>
                 <div class='col-12 col-md-10'>
-                    <p class='fs-4 text-warning'>$pseudo</p>
+                    <p class='fs-4'>Auteur: $pseudo</p>
                     <div>
                         <p style='color:silver;'>$text</p>
                     </div>
@@ -58,7 +58,7 @@
                 <div class='col-12 col-md-10'>
                     <form action='$url' method='post'>
                         <div class='form-group'>
-                            <label class='fs-4' for='comment'>Auteur: $pseudo</label>
+                            <label class='fs-4' for='comment'>Auteur $pseudo</label>
                             <textarea class='form-control' id='comment' name='text' rows='4' cols='50'></textarea>
                         </div>
                         <button type='submit' class='btn btn-dark my-1' name='addComment' value=$user_id>Submit</button>

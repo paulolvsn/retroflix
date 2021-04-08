@@ -8,12 +8,57 @@
         include "head.php";
     ?>        
     <body class="bg-dark text-white">
-        <?php
-            include "header.php";
-        ?>
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-warning fs-3" href="/index.php">RETROFLIX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/base/browse.php">BROWSE MOVIES</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0 me-3">
+          <?php
+            if(isset($_SESSION['pseudo'])) {
+              echo "
+              <li class='nav-item'>
+                <a class='nav-link text-white' aria-current='page' href='/users/account.php'><i class='fs-1 fas fa-user-circle'></i></i></a>
+              </li>
+              ";
+            }
+          ?>
+          <?php
+            if(!isset($_SESSION['pseudo'])) {
+              echo "
+                <li class='nav-item'>
+                  <a class='nav-link text-white' aria-current='page' href='/users/create-account.php'><i class='fs-5 fas fa-user-plus'></i></a>
+                </li>
+                <li class='nav-item'>
+                  <a class='nav-link text-white' aria-current='page' href='/users/sign-in.php'><i class='fs-5 fas fa-sign-in-alt'></i></a>
+                </li>
+              ";
+            }
+          ?>
+          <?php
+            if(isset($_SESSION['pseudo'])) {
+              echo "
+              <li class='nav-item'>
+                <a class='nav-link text-white' aria-current='page' href='/users/deconnexion.php'><i class='fs-5 fas fa-sign-out-alt'></i></a>
+              </li>
+              ";
+            }
+          ?>
+        </ul>        
+      </div>
+    </div>
+  </nav>
+</header>
         <main class="container" id="search">
             <section class="mb-3">
-                <h3 class="h3">Rechercher...</h3>
                 <div>
                     <form class="d-flex" action="search.php" method="get">
                         <input class="form-control me-2" type="search" name="keyword" placeholder="Recherche par Titre ou Genre..." aria-label="search">
@@ -54,9 +99,9 @@
                     }
                     echo " 
                         <ul class='nav nav-tabs'>
-                            <p class='navbar-brand'>Filtrez votre recherche:</p>                                    
+                            <p class='navbar-brand text-warning'>Filtrez votre recherche:</p>                                    
                             <li class='nav-item dropdown'>
-                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
+                                <a class='nav-link dropdown-toggle text-warning' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
                                 <ul class='dropdown-menu'>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Action' id='action'>Action</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Animation' id='animation'>Animation</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
@@ -77,7 +122,7 @@
                                 </ul>
                             </li>                                    
                             <li class='nav-item dropdown'>
-                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
+                                <a class='nav-link dropdown-toggle text-warning' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
                                 <ul class='dropdown-menu'>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='ascendent' id='ascendent'>Ascendent (A-Z)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='descendent' id='descendent'>Descendent (Z-A)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
@@ -118,7 +163,7 @@
                         $total = $total + 1;
                     }
                     $counter->closeCursor();
-                    echo "<p class='navbar-brand'>On a trouvé $total résultats.<p>";
+                    echo "<p class='navbar-brand text-warning'>On a trouvé $total résultats.<p>";
                     echo "</ul>";
                     while ($film = $request->fetch()){
                         $id = $film['id'];
@@ -141,7 +186,7 @@
                                 <div class='card h-100 border rounded'>
                                     <img class='card-img-top' src='https://image.tmdb.org/t/p/w342/$poster_path' alt='$title'>
                                     <div class='card-body text-center bg-dark'>
-                                        <h4>$title</h4> 
+                                        <h4 class='text-warning'>$title</h4> 
                                     </div>    
                                     <div class='card-footer d-flex bg-dark'>
                         ";
