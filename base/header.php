@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand text-warning" href="/index.php">RETROFLIX</a>
+      <a class="navbar-brand text-warning fs-3" href="/index.php">RETROFLIX</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -12,8 +12,8 @@
           </li>
         </ul>
         <form class="d-flex" action="/base/search.php" method="get">
-          <input class="form-control me-2" type="search" name="keyword" placeholder="Recherche..." aria-label="search">
-          <button class="btn btn-secondary" type="submit" name="search"><i class="fas fa-search"></i></button>
+          <input class="form-control me-2 rounded-pill" type="search" name="keyword" placeholder="Recherche..." aria-label="search">
+          <button class="btn btn-secondary rounded-circle" type="submit" name="search"><i class="fas fa-search"></i></button>
         </form>
         <ul class="navbar-nav mb-2 mb-lg-0">
           <?php
