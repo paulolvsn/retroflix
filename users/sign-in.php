@@ -27,11 +27,11 @@
                 <div class="row mt-5">
                     <div class="mt-5 col-2 offset-5 border border-dark border-2 rounded shadow p-3 mb-5 bg-body rounded">
                         <form  action="sign-in-check.php" method="post">
-                            <label class="form-label" for="pseudo">Pseudo</label>
-                                <input class="form-control"  type="text" name="pseudo"><br>
-                            <label for="password" class="form-label">Password</label>
-                                <input class="form-control"  type="password" name="password">
-                                <br>
+                            <label class="form-label text-body" for="pseudo">Pseudo</label>
+                            <input class="form-control"  type="text" name="pseudo"><br>
+                            <label class="form-label text-body" for="password">Password</label>
+                            <input class="form-control"  type="password" name="password">
+                            <br>
                             <div class="d-grid gap-2">    
                                 <input class="btn btn-outline-primary btn-block"  type="submit" value="connexion"><br>
                             </div>
