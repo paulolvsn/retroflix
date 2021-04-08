@@ -13,7 +13,7 @@
         ?>
         <main class="container mb-3" id="browse">
             <?php                    
-                include "../connect-to-bdd.php"; // open database
+                include "../users/connect-to-bdd.php"; // open database
                 if(isset($_GET['genre'])){
                     $genre = $_GET['genre'];
                 } else {

@@ -14,7 +14,7 @@
         <main class="container" id="play">
             <div class="ratio ratio-16x9 m-5">
                 <?php
-                    include "../connect-to-bdd.php"; // open database
+                    include "../users/connect-to-bdd.php"; // open database
                     if(isset($_GET['id'])) { 
                         $id = $_GET['id'];
                         $request = $bdd->query("SELECT * FROM films WHERE id=$id"); // search info for id=$id

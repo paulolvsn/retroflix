@@ -68,7 +68,7 @@
             </section>
 
             <?php                    
-                include "../connect-to-bdd.php"; // open database
+                include "../users/connect-to-bdd.php"; // open database
                 if(isset($_GET['keyword'])) {  //al click en submit
                     $keyword= $_GET['keyword'];
                     if(isset($_GET['genre'])){

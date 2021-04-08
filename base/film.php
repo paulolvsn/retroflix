@@ -14,7 +14,7 @@
         <main class="container" id="film">
             <div class="card border border-dark rounded bg-dark mb-4">
                 <?php
-                    include "../connect-to-bdd.php"; // open database
+                    include "../users/connect-to-bdd.php"; // open database
                     if(isset($_GET['id'])) {  
                         $id= $_GET['id'];
                         $request = $bdd->query("SELECT * FROM films WHERE id LIKE $id"); //ir a buscar a la base de datos la pelicula de $id
