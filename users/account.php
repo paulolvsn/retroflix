@@ -12,7 +12,7 @@
       ?> 
       <main class="container">
         <?php
-          include_once('connect-to-bdd.php');
+          include_once('../users/connect-to-bdd.php');
           function changesMess(){
             if(isset($_GET['changes'])){
               if($_GET['changes']=="ok"){
@@ -77,7 +77,7 @@
                     </div>
                     <div class='tab-pane active' id='admin' role='tabpanel'>                
                   ";
-                  include "../connect-to-bdd.php"; // open database
+                  include "../users/connect-to-bdd.php"; // open database
                   include "../key.php"; // load API key
                   include "../admin/adminPanel.php";
                   echo "
