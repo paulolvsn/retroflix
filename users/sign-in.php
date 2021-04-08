@@ -37,7 +37,7 @@
                             <div class="d-grid gap-2">    
                                 <input class="btn btn-outline-primary btn-block text-warning"  type="submit" value="connexion"><br>
                             </div>
-                            <a class="link-secondary" href="create-account.php">Create an account</a>
+                            <a class="link-secondary" href="create-account.php">Create an account</a><br>
                             <a class="link-secondary" href="password-recovery-form.php">Forgot your password?</a><br>
                         </form>
                     </div>
