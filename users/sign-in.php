@@ -8,9 +8,11 @@
         include "../base/head.php";
     ?>
     <body class="bg-dark text-white">
-        <?php
-            include "../base/header.php";
-        ?>  
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-warning fs-3" href="/index.php">RETROFLIX</a>
+      </header>
         <main class="container-fluid">
 
 
@@ -33,10 +35,10 @@
                             <input class="form-control"  type="password" name="password">
                             <br>
                             <div class="d-grid gap-2">    
-                                <input class="btn btn-outline-primary btn-block"  type="submit" value="connexion"><br>
+                                <input class="btn btn-outline-primary btn-block text-warning"  type="submit" value="connexion"><br>
                             </div>
-                            <a class="link-secondary" href="create-account.php">Create an Account</a>
-                            <a class="link-secondary" href="password-recovery-form.php">Forgotten password ?</a><br>
+                            <a class="link-secondary" href="create-account.php">Create an account</a>
+                            <a class="link-secondary" href="password-recovery-form.php">Forgot your password?</a><br>
                         </form>
                     </div>
                 </div>

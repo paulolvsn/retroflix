@@ -37,7 +37,7 @@
                         echo "
                             <div class='card-header text-center'>
                                 <h2 class='card-title'>$title</h2>
-                                <h3 class='card-title'>$original_title</h3>
+                                <h3 class='card-title'><i>$original_title</i></h3>
                             </div>
                             <div class='card-body'>
                                 <div class='row'>
@@ -56,8 +56,8 @@
                                         </ul>
                                     </div>
                                     <div class='col-12 col-md-6'>
-                                        <h4>Synopsis</h4>
-                                        <p class='p-3'>$overview</p>
+                                        <h4 class='text-warning'>SYNOPSIS</h4>
+                                        <p>$overview</p>
                                         <div class='row'>
                         ";
                         if(isset($_SESSION['pseudo'])) {
