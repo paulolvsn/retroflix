@@ -47,11 +47,11 @@
             ?>
             <div class="container" >
             <div class="row d-flex justify-content-center">
-                <div class="col-auto border rounded my-5 p-3 bg-body text-dark">      
+                <div class="col-8 col-sm-6 col-md-4 col-lg-3 border rounded my-5 p-3 bg-body text-dark">      
                     <form method='POST' enctype=multipart/form-data action="user-save-changes.php">
                     <div class="card form-control" >
-                        <h3> <?php echo "Welcome " . $pseudo;   ?></h3>
-                        <?php  echo '<img id="avatarDisplay" src="'.$avatar.'" alt="avatar"><br>'; ?>
+                        <div class="card-header h3 text-center"> <?php echo "Welcome " . $pseudo;   ?></div>
+                        <?php  echo '<img class="card-img-top" id="avatarDisplay" src="'.$avatar.'" alt="avatar"><br>'; ?>
                         <div class="card-body">
                             <input class="form-control" id=avatar type='file' name='file'/>
                         </div>
