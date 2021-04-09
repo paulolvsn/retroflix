@@ -11,7 +11,8 @@
     $isValid = $resultat['valid'];
 
     if(!$resultat) { //if entered pseudo doesn't exist in db
-        echo 'Mauvais identifiant ou mot de passe !';
+        $_POST['error'] = 'Mauvais identifiant ou mot de passe !';
+        header("location: sign-in.php?error=0");
     } else {
         if($isPasswordCorrect && $isValid) {
             session_start();
@@ -21,9 +22,11 @@
             header("Location: /index.php");  
         }
         else if($isPasswordCorrect && ($isValid != 1)) {
-            echo '<p>Your account is not activated yet. Please check you inbox mail and follow the link</p>';
+            $_POST['error'] = '<p>Your account is not activated yet. <br> Please check you inbox mail and follow the link</p>';
+            header("location: sign-in.php?error=1");
         } else {
-            echo 'Mauvais identifiant ou mot de passe !';
+            $_POST['error'] = 'Mauvais identifiant ou mot de passe !';
+            header("location: sign-in.php?error=0");
         }
     }
 ?>
