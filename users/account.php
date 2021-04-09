@@ -46,7 +46,7 @@
                 }
             ?>
             <div class="container" >
-            <div class="row d-flex justify-content-center mt-5">
+            <div class="row d-flex justify-content-center">
                 <div class="col-auto border border-light border-1 rounded shadow my-5 p-3 bg-body text-dark">      
                     <form method='POST' enctype=multipart/form-data action="user-save-changes.php">
                     <div class="card form-control" >
