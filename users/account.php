@@ -47,13 +47,13 @@
             ?>
             <div class="container" >
             <div class="row d-flex justify-content-center">
-                <div class="col-auto border border-light border-1 rounded shadow my-5 p-3 bg-body text-dark">      
+                <div class="col-auto border rounded my-5 p-3 bg-body text-dark">      
                     <form method='POST' enctype=multipart/form-data action="user-save-changes.php">
                     <div class="card form-control" >
                         <h3> <?php echo "Welcome " . $pseudo;   ?></h3>
-                        <?php  echo '<img id="avatarDisplay" src="'.$avatar.'" alt="avatar"><br>'; ?>    
+                        <?php  echo '<img id="avatarDisplay" src="'.$avatar.'" alt="avatar"><br>'; ?>
                         <div class="card-body">
-                        <input class="form-control" id=avatar type='file' name='file'/>
+                            <input class="form-control" id=avatar type='file' name='file'/>
                         </div>
                     </div>              
                     <label for="oldPass">Old password</label><br>
@@ -63,9 +63,11 @@
                     <label for="newPass2">New password confirmation</label><br>
                     <input type="password" name="newPass2"><br>
                     <div class="d-grid gap-2 mt-3">    
-                    <input class="btn btn-outline-primary btn-block"  type="submit" value="Save Changes"><br>
+                        <input class="btn btn-outline-primary btn-block"  type="submit" value="Save Changes"><br>
                     </div> 
-                    <div class="form-text"><?php echo changesMess(); ?></div>
+                    <div class="form-text">
+                        <?php echo changesMess(); ?>
+                    </div>
                     </form>
                 </div>
             </div>
