@@ -1,33 +1,26 @@
 <?php
     include "../users/check-session.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
     <?php
         include "../base/head.php";
     ?>
     <body class="bg-dark text-white">
-    <header>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand text-warning fs-3" href="/index.php">RETROFLIX</a>
-      </header>
+        <?php
+            include "../base/header.php";
+        ?>  
         <main class="container-fluid">
-
-
             <?php 
-            if(isset($_GET['register'])){
-                if($_GET['register']=="ok"){
-                    echo "<p> Your account have been created. Last step, connect to your account </p>";
-                }    
-            }
-
+                if(isset($_GET['register'])){
+                    if($_GET['register']=="ok"){
+                        echo "<p> Your account have been created. Last step, connect to your account </p>";
+                    }    
+                }
             ?>
-
             <div class="container" >
-                <div class="row mt-5">
-                    <div class="mt-5 col-2 offset-5 border border-dark border-2 rounded shadow p-3 mb-5 bg-body rounded">
+                <div class="row d-flex justify-content-center my-5">
+                    <div class="col-auto border border-dark rounded p-3 my-5 bg-body">
                         <form  action="sign-in-check.php" method="post">
                             <label class="form-label text-body" for="pseudo">Pseudo</label>
                             <input class="form-control"  type="text" name="pseudo"><br>

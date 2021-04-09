@@ -1,5 +1,5 @@
 <?php
-  include('check-session.php');
+    include('check-session.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -92,36 +92,30 @@
       <?php
         include('../base/footer.php');
       ?>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script>
-      //! PREVIEW AVATAR BEFORE UPLOAD AND CHECK SIZE
-      function readURL(input) {
-        if (input.files && input.files[0]) {
-          var reader = new FileReader();
-          
-          reader.onload = function(e) {
-            $('#avatarDisplay').attr('src', e.target.result);
-          }
-
-
-          
-          reader.readAsDataURL(input.files[0]); 
-        }
-      }
-
-      $("#avatar").change(function() {
-          var size = document.getElementById('avatar').files[0].size;
-          if (parseInt(size)<2000000){
-        readURL(this);
-      }else{
-          alert("THE FILE IS TOO BIG! 2MO MAX!");
-      }
-        
-      });
-      </script>
-      <?php
+    <?php
         include "../base/script.php";
-      ?>    
+    ?>
+    <script>
+      //! PREVIEW AVATAR BEFORE UPLOAD AND CHECK SIZE
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#avatarDisplay').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]); 
+            }
+        }
+
+        $("#avatar").change(function() {
+            var size = document.getElementById('avatar').files[0].size;
+            if (parseInt(size)<2000000){
+                readURL(this);
+            } else {
+                alert("THE FILE IS TOO BIG! 2MO MAX!");
+            }    
+        });
+    </script>  
   </body>
 </html>
 

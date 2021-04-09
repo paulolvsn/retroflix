@@ -46,14 +46,9 @@
                 echo "<p style='color:red;'> " . errorMessage($_GET['failed']) . "</p>";
             }
             ?>
-
-
-        
-            <div class="row mt-5 mx-5 justify-content-center">
-                
+            <div class="row mt-5 mx-5 justify-content-center">                
                 <div class="col-6 border border-white border-2 rounded shadow p-3 mb-5 mt-5">
                     <form action="create-account-check.php" method="post" enctype='multipart/form-data'>
-
                         <h2 class="text-center">S'inscrire</h2>
                             
                         <div class="card form-control" >
@@ -82,15 +77,11 @@
                                 <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/obama.png" alt="Obama"></a></li>
                                 <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/lenin.png" alt="Lenin"></a></li>
                                 <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/dalai.png" alt="Dalai Lama"></a></li>
-                                
-                                
                             </ul>
                         </div>
-                        
                         <br>
                         <label class="form-label"  for="pseudo">pseudo :</label>
-                        <input class="form-control" type="text" name="pseudo" value="<?php getEcho('pseudo') ?>"required>
-                        <br>
+                        <input class="form-control" type="text" name="pseudo" value="<?php getEcho('pseudo') ?>"required><br>
 
                         <label class="form-label"  for="email">email :</label>
                         <input class="form-control" type="email" name="email" value="<?php getEcho('email') ?>" required><br>
@@ -111,7 +102,6 @@
                     </form>
                 </div>
             </div>
-            
         </main>
         <?php
             include "../base/footer.php";
@@ -119,30 +109,25 @@
         <?php
             include "../base/script.php";
         ?>
-        
-
         <script>
         //! PREVIEW AVATAR BEFORE UPLOAD
         function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function(e) {
-            $('#avatarDisplay').attr('src', e.target.result);
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                $('#avatarDisplay').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]); 
             }
-            
-            reader.readAsDataURL(input.files[0]); 
-        }
         }
 
         $("#avatar").change(function() {
             var size = document.getElementById('avatar').files[0].size;
-            if (parseInt(size)<2000000){
-        readURL(this);
-        }else{
-            alert("THE FILE IS TOO BIG! 2MO MAX!");
-        }
-        
+            if (parseInt(size)<2000000) {
+                readURL(this);
+            } else {
+                alert("THE FILE IS TOO BIG! 2MO MAX!");
+            }
         });
         </script>    
     </body>

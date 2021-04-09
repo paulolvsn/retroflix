@@ -1,28 +1,47 @@
-<?php
-session_start();
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
-mail("guillaumeazer@gmail.com","Subject","Content");
-
-
-
-// if (isset($_POST['email'])&& 
-//     filter_var(test_input($_POST['email']), FILTER_VALIDATE_EMAIL)){
-// $token = bin2hex(random_bytes(50));
-// $email =$_POST['email'];
-// $to = $email;
-// $subject = "Reset your password on examplesite.com";
-// $msg = "Hi there, click on this <a href=\"new_password.php?token=" . $token . "\">link</a> to reset your password on our site";
-// $msg = wordwrap($msg,70);
-// $headers = "From: info@examplesite.com";
-// mail($to, $subject, $msg, $headers);
-// echo mail($to, $subject, $msg, $headers);
-// // header('location: pending.php?email=' . $email);
-
-//     }
-
+<!DOCTYPE html>
+<html lang="fr">
+    <?php
+        include "../base/head.php";
     ?>
+
+    <body class="bg-dark text-white">
+        <?php
+            include "../base/header.php";
+            if(isset($_GET['email']) && isset($_GET['str'])) {
+                include('connect-to-bdd.php');
+                $email = $_GET['email'];
+                $req = $bdd->query("SELECT recovery, pseudo FROM users WHERE email = '$email'");
+                while ($data = $req->fetch()) {
+                    $recoveryTest = $data['recovery'];
+                    $pseudo = $data['pseudo'];                
+                }
+                if($recoveryTest == $_GET['str']) {
+                    $req = $bdd->prepare('UPDATE users SET recovery = "" WHERE email = :email');
+                    $req->execute(array("email" => $email));
+                }
+            }
+        ?>
+        <div class="container">
+            <div class="row mt-5 mx-5 justify-content-center">
+                <div class="col-6 border border-white border-1 rounded shadow p-3 mb-5 mt-5">
+                    <form action="password-recovery-check.php?email=<?php echo $email?>" method="post">
+                        <label class="form-label" for="pass1">Veuillez entrer votre noveau mot de passe</label>
+                        <input class="form-control" type="password" required name="pass1">   
+                        <label class="form-label" for="pass2">Confirmez votre mot de passe</label>
+                        <input class="form-control" type="password" required name="pass2">   
+                        <br>    
+                        <div class='col text-center'>  
+                            <input class="btn btn-outline-secondary btn-block" type="submit" value="Enregistrer">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <?php
+            include "../base/footer.php";
+        ?>  
+        <?php
+            include "../base/script.php";
+        ?>
+    </body>
+</html>
