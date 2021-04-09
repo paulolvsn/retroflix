@@ -34,7 +34,7 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 - [x] Management of lost passwords.
 - [x] Back office for user and comment management (CRUD).
 - [x] Create a page or section that displays the top movies with the movie db API.
-- [ ] Integrate a newsletter with Mailchimp.
+- [x] Integrate a newsletter with Mailchimp.
 
 ### Miscellanous information
 * The videos will not be hosted by you, a simple link to the Youtube trailer will suffice.
