@@ -33,11 +33,12 @@
                         $vote_average = $film['vote_average'];
                         $overview = $film['overview'];
                         $video = $film['video'];
+                        list($year, $rest) = explode("-", $release_date);
                         $request->closeCursor();       
                         echo "
                             <div class='card-header text-center'>
                                 <h2 class='card-title'>$title</h2>
-                                <h3 class='card-title'><i>$original_title</i></h3>
+                                <h3 class='card-title'><i>$original_title ($year)</i></h3>
                             </div>
                             <div class='card-body'>
                                 <div class='row'>
