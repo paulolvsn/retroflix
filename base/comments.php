@@ -1,5 +1,5 @@
 <div class="container-fluid" id='comments'>
-    <h2 class='fs-2 p-5 text-warning'>COMMENTAIRES</h2>
+    <h2 class='fs-2 text-warning'>COMMENTAIRES</h2>
     <?php
         if(isset($_POST['text'])) {
             $date = date("Y-m-d");
@@ -58,10 +58,10 @@
                 <div class='col-12 col-md-10'>
                     <form action='$url' method='post'>
                         <div class='form-group'>
-                            <label class='fs-4' for='comment'>Auteur $pseudo</label>
+                            <label class='fs-4' for='comment'>Auteur: $pseudo</label>
                             <textarea class='form-control' id='comment' name='text' rows='4' cols='50'></textarea>
                         </div>
-                        <button type='submit' class='btn btn-dark my-1' name='addComment' value=$user_id>Submit</button>
+                        <button type='submit' class='btn btn-success my-1' name='addComment' value=$user_id>Submit</button>
                     </form>    
                 </div>
             </div>

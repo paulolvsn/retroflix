@@ -42,7 +42,7 @@
                             <div class='card-body'>
                                 <div class='row'>
                                     <div class='col-12 col-md-3'>
-                                        <img class='img-fluid border border-5 border-white' src='https://image.tmdb.org/t/p/w342/$poster_path' alt='$title'>
+                                        <img class='img-fluid border border-5 border-white rounded' src='https://image.tmdb.org/t/p/w342/$poster_path' alt='$title'>
                                     </div>
                                     <div class='col-12 col-md-3'>
                                         <ul class='list-group'>
