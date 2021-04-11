@@ -7,11 +7,11 @@
     <?php
         include "base/head.php";
     ?>
-    <body class="bg-dark text-white">
+    <body class="bg-dark text-white m-0 p-0">
         <?php
             include "base/header.php";
         ?>  
-        <main class="container-fluid">
+        <main class="container-fluid m-0 p-0">
             <?php
                 include "users/connect-to-bdd.php";
                 $request = $bdd->query("SELECT * FROM films");
@@ -29,38 +29,35 @@
                 $overview = $overviews[$random];
                 $backdrop_path = "https://image.tmdb.org/t/p/original/" . $backdrop_paths[$random];
             echo "
-                <section class='row my-5' style='height:75vh;width:75vw;margin:auto;'>
-                    <div class='card'>
-                        <img class='card-img-top' src='$backdrop_path' alt='$title' style='opacity:0.3;'>
-                        <div class='card-img-overlay'>
-                            <div class='row h-100'>
-                                <div class='col d-flex align-items-center p-5'>
-                                    <h1 class='display-1 text-uppercase'><a class='text-decoration-none text-warning' href='/base/film.php?id=$id'>$title</a></h1>
-                                </div>
-                                <div class='col d-flex flex-column align-self-center p-5'>
-                                    <p class='text-body'>$overview</p><br>
-                                    <div class='text-center'>
+                <section class='row mx-0 px-0' style='position:absolute;top:0;height:100vh;width:100vw;'>
+                    <div style='position:absolute;top:0;left:0;width:100%;height:100%;background:url($backdrop_path);background-repeat:no-repeat;background-position:center;background-size:cover;opacity:0.2;z-index:-1;'>
+                    </div>
+                    <div class='row h-100'>
+                        <div class='col-12 col-md-6 d-flex align-items-center p-4'>
+                            <h1 class='display-1 text-uppercase'><a class='text-decoration-none text-warning' href='/base/film.php?id=$id'>$title</a></h1>
+                        </div>
+                        <div class='col-12 col-md-6 d-flex flex-column align-self-center p-4 text-white'>
+                            <p>$overview</p>
+                            <div class='text-center'>
             ";
             if(isset($_SESSION['pseudo'])) {
                 echo "
-                                        <a href='/base/play.php?id=$id' class='link-light mx-3'><i class='text-body fs-3 fas fa-play-circle'></i></a>
+                                <a href='/base/play.php?id=$id' class='link-light px-3'><i class='fs-3 fas fa-play-circle'></i></a>
                 ";
             } else {
                 echo "
-                                        <a href='/users/sign-in.php' class='link-light mx-3'><i class='text-body fs-3 fas fa-sign-in-alt'></i></a>
+                                <a href='/users/sign-in.php' class='link-light px-3'><i class='fs-3 fas fa-sign-in-alt'></i></a>
                 ";
             }
             echo "
-                                        <a href='/base/film.php?id=$id' class='link-light mx-3'><i class='text-body fs-3 fas fa-chevron-down'></i></a>
-                                    </div>
-                                </div>
+                                <a href='/base/film.php?id=$id' class='link-light px-3'><i class='fs-3 fas fa-chevron-down'></i></a>
                             </div>
                         </div>
                     </div>
                 </section>
             ";
             ?>
-            <section class="container cardlist">
+            <section class="container-fluid cardlist" style="margin-top:90vh;">
                 <div class="cardlistcontainer">
                     <h2 class="mb-5" id="rating">Best rating</h2>
                     <?php
