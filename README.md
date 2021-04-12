@@ -11,7 +11,29 @@
   * backend: 2
   * project management : 1
 
-## [Our getflixProject](https://retro-flix.000webhostapp.com/)
+## [Our getflix Project (click here)](https://retro-flix.000webhostapp.com/)
+
+## RETROFLIX
+### Home page:
+![Home page](images/homeretroflix.png)
+
+
+#### Home page carousel organised by genres:
+![Carousel](images/carouselretroflix.png)
+
+#### The Header
+With links to the Home Page, Browse Movies Page, the Search bar with entries to keywords or genrers, the icon to the Members area page and the icon for the members to Sign Out.
+![header](images/headerretroflix.png)
+
+
+#### The Browse Movies page
+The Search function works also with alphabetic order (to up & down). To each search request, the page shows the Number of total items.
+![browse page](images/browseretroflix.png)
+
+#### The Film Card
+Each film card it's composed by the movie original poster and a bottom section (Movie tittle & play icon - info icon) who leads both to the film streaming and to the Movie Info page.
+![Movie card](images/cardmovie.png)
+
 
 ## Mission objectives
 Now is the time to take stock of everything you've learned so far and add a layer at the same time!
@@ -34,7 +56,7 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 - [x] Management of lost passwords.
 - [x] Back office for user and comment management (CRUD).
 - [x] Create a page or section that displays the top movies with the movie db API.
-- [x] Integrate a newsletter with Mailchimp.
+- [ ] Integrate a newsletter with Mailchimp.
 
 ### Miscellanous information
 * The videos will not be hosted by you, a simple link to the Youtube trailer will suffice.

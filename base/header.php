@@ -10,27 +10,6 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/base/browse.php">BROWSE MOVIES</a>
                 </li>
-<<<<<<< HEAD
-                <li class='nav-item'>
-                  <a class='nav-link text-white' aria-current='page' href='/users/sign-in.php'><i class='fs-5 fas fa-sign-in-alt' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Sign In'></i></a>
-                </li>
-              ";
-            }
-          ?>
-          <?php
-            if(isset($_SESSION['pseudo'])) {
-              echo "
-              <li class='nav-item'>
-                <a class='nav-link text-white' aria-current='page' href='/users/deconnexion.php'><i class='fs-5 fas fa-sign-out-alt'></i></a>
-              </li>
-              ";
-            }
-          ?>
-        </ul>        
-      </div>
-    </div>
-  </nav>
-=======
             </ul>
             <form class="d-flex" action="/base/search.php" method="get">
                     <input class="form-control me-2 rounded-pill" type="search" name="keyword" placeholder="Recherche..." aria-label="search">
@@ -78,5 +57,4 @@
             </div>
         </div>
     </nav>
->>>>>>> bc9ef8ae3764f85367504ef7b4185bad27b2c4d0
 </header>
