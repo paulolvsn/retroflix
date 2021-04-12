@@ -16,36 +16,43 @@
                     <button class="btn btn-secondary rounded-circle" type="submit" name="search"><i class="fas fa-search"></i></button>
             </form>
             <ul class="navbar-nav mb-2 mb-lg-0 me-2">
-                <?php
-                    if(isset($_SESSION['pseudo'])) {
-                        echo "
-                            <li class='nav-item'>
-                                <a class='nav-link text-white' aria-current='page' href='/users/account.php' data-bs-toggle='tooltip' data-bs-placement='top' title='User panel'><i class='fs-1 fas fa-user-circle'></i></i></a>
-                            </li>
-                        ";
-                    }
-                ?>
-                <?php
-                    if(!isset($_SESSION['pseudo'])) {
-                        echo "
-                            <li class='nav-item'>
-                                <a class='nav-link text-white' aria-current='page' href='/users/create-account.php' data-bs-toggle='tooltip' data-bs-placement='top' title='S&apos;enregistrer'><i class='fs-5 fas fa-user-plus'></i></a>
-                            </li>
-                            <li class='nav-item'>
-                                <a class='nav-link text-white' aria-current='page' href='/users/sign-in.php' data-bs-toggle='tooltip' data-bs-placement='top' title='Se connecter'><i class='fs-5 fas fa-sign-in-alt'></i></a>
-                            </li>
-                        ";
-                    }
-                ?>
-                <?php
-                    if(isset($_SESSION['pseudo'])) {
-                        echo "
-                        <li class='nav-item'>
-                            <a class='nav-link text-white' aria-current='page' href='/users/deconnexion.php' data-bs-toggle='tooltip' data-bs-placement='top' title='Se déconnecter'><i class='fs-5 fas fa-sign-out-alt'></i></a>
-                        </li>
-                        ";
-                    }
-                ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class='fs-1 fas fa-user-circle'></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                        <?php
+                            if(isset($_SESSION['pseudo'])) {
+                                echo "
+                                    <li class='dropdown-item'>
+                                        <a class='nav-link text-white' href='/users/account.php' data-bs-toggle='tooltip' data-bs-placement='top' title='User panel'><i class='fs-3 fas fa-user-circle'></i> Mon profil </a>
+                                    </li>
+                                ";
+                            }
+                        ?>
+                        <?php
+                            if(!isset($_SESSION['pseudo'])) {
+                                echo "
+                                    <li class='dropdown-item'>
+                                        <a class='nav-link text-white' href='/users/create-account.php' data-bs-toggle='tooltip' data-bs-placement='top' title='S&apos;enregistrer'><i class='fs-5 fas fa-user-plus'></i> S'enregistrer </a>
+                                    </li>
+                                    <li class='dropdown-item'>
+                                        <a class='nav-link text-white' href='/users/sign-in.php' data-bs-toggle='tooltip' data-bs-placement='top' title='Se connecter'><i class='fs-5 fas fa-sign-in-alt'></i> Se connecter </a>
+                                    </li>
+                                ";
+                            }
+                        ?>
+                        <?php
+                            if(isset($_SESSION['pseudo'])) {
+                                echo "
+                                <li class='dropdown-item'>
+                                    <a class='nav-link text-white' href='/users/deconnexion.php' data-bs-toggle='tooltip' data-bs-placement='top' title='Se déconnecter'><i class='fs-5 fas fa-sign-out-alt'></i> Se déconnecter </a>
+                                </li>
+                                ";
+                            }
+                        ?>
+                        </ul>
+                    </li>
                 </ul>        
             </div>
         </div>
