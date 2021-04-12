@@ -36,7 +36,6 @@ The Search function works also with alphabetic order (to up & down). To each sea
 
 #### The Film Card
 Each film card it's composed by the movie original poster and a bottom section (Movie tittle & play icon - info icon) who leads both to the film streaming and to the Movie Info page.
-![Movie card](images/cardmovie.png)
 
 #### The Movie Info page
 This page it's at the core of the site. It shows most of the features that are present in the DB. Basic information about the movie itself and an overview (FR). At the bottom of this page, the **"Comments"** section allows the user (already Signed-in) to write down his comments but also it displays a list of older comments.
