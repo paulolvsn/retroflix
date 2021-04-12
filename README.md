@@ -35,7 +35,39 @@ Each film card it's composed by the movie original poster and a bottom section (
 ![Movie card](images/cardmovie.png)
 
 
+
+## Member system 
+
+By following this [openclassroom course](https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/917948-tp-creez-un-espace-membres) we built a basic member system. 
+
+Here is how look the data base :
+
+![image-20210412135649075](images/user-db.png)
+
+The date is generated automatically when we insert a new member in the base.
+
+The admin field determine the user rights. If admin = 1, he's and admin and he can access to the back office to manage comment, movies, users accounts etc...
+
+The password is hashed with the password_hash function in php.
+
+For the avatar, a random string is added to the name to avoid duplicates.
+
+Then the valid field indicates if the account is validated, and finally, recovery is a random string generated randomly to confirm the account creation or a password recovery.
+
+When the user create his account a mail is sent to his mail box to confirm the registration. To do that we used [phpMailer](https://github.com/PHPMailer/PHPMailer), really easy to configure but less functionalities than MailChimp.
+
+If the user is not connected he can't watch a movie and the play button is replaced with a "register" button. 
+
+When he's connected he can access to his member area, change his avatar and his password.
+
+Here is the member area:
+
+![image-20210412144909607](images/member-area.png)
+
+
+
 ## Mission objectives
+
 Now is the time to take stock of everything you've learned so far and add a layer at the same time!
 
 And what could be better for this than putting it into practice :)
@@ -92,34 +124,6 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 | 2. | Is Correct	The HTML and CSS pass the W3C Validation tool.	|
 | | The lighthouse test scores 90 at least on Performance, Best Practices, Accessibility and SEO.	|
 | | The code is well indented and commented....... |
-
-## Member system 
-
-By following this [openclassroom course](https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/917948-tp-creez-un-espace-membres) we built a basic member system. 
-
-Here is how look the data base :
-
-![image-20210412135649075](images/user-db.png)
-
-The date is generated automatically when we insert a new member in the base.
-
-The admin field determine the user rights. If admin = 1, he's and admin and he can access to the back office to manage comment, movies, users accounts etc...
-
-The password is hashed with the password_hash function in php.
-
-For the avatar, a random string is added to the name to avoid duplicates.
-
-Then the valid field indicates if the account is validated, and finally, recovery is a random string generated randomly to confirm the account creation or a password recovery.
-
-When the user create his account a mail is sent to his mail box to confirm the registration. To do that we used [phpMailer](https://github.com/PHPMailer/PHPMailer), really easy to configure but less functionalities than MailChimp.
-
-If the user is not connected he can't watch a movie and the play button is replaced with a "register" button. 
-
-When he's connected he can access to his member area, change his avatar and his password.
-
-Here is the member area:
-
-![image-20210412144909607](images/member-area.png)
 
  
 
