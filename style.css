@@ -1,31 +1,18 @@
-a {
-    color: white;
-    text-decoration: none;
-}
-
-.a:link {
-    text-decoration: none;
-}
-
-.a:visited {
-    text-decoration: none;
-}
-
-.a:hover, a:active {
-    color: rgb(252, 186, 3);
-    text-decoration: none;
-    font-weight: 900;
-}
+/* Logo font */
 
 .retroflix {
     font-family: 'Josefin Slab', serif;
     font-weight: 500;
 }
 
+/* Headers color */
+
 h2 {
     color: rgb(255,193,8);
     text-transform: uppercase;
 }
+
+/* Carousels */
 
 .cardlist {
     position: relative; 
@@ -121,41 +108,39 @@ h2 {
     color: white;
 }
 
-/* */
+/* Create account item list */
 
-.vodiapicker{
+.vodiapicker {
   display: none; 
 }
 
-#a{
+#a {
   padding-left: 0px;
 }
 
-#a img, .btn-select img{
+#a img, .btn-select img {
   width: 235px;
 }
 
-#a li{
+#a li {
   list-style: none;
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-#a li:hover{
+#a li:hover {
  background-color: #F4F3F3;
 }
 
-#a li img{
+#a li img {
   margin: 5px;
 }
 
-#a li span, .btn-select li span{
+#a li span, .btn-select li span {
   margin-left: 30px;
 }
 
-/* item list */
-
-.b{
+.b {
   display: none;
   width: 100%;
   max-width: 250px;
@@ -165,11 +150,11 @@ h2 {
   
 }
 
-.open{
+.open {
   display: show !important;
 }
 
-.btn-select{
+.btn-select {
   margin-top: 10px;
   width: 100%;
   max-width: 250px;
@@ -179,29 +164,32 @@ h2 {
   border: 1px solid #ccc;
  
 }
-.btn-select li{
+
+.btn-select li {
   list-style: none;
   float: left;
   padding-bottom: 0px;
 }
 
-.btn-select:hover li{
+.btn-select:hover li {
   margin-left: 0px;
 }
 
-.btn-select:hover{
+.btn-select:hover {
   background-color: #F4F3F3;
   border: 1px solid transparent;
   box-shadow: inset 0 0px 0px 1px #ccc;  
 }
 
-.btn-select:focus{
+.btn-select:focus {
    outline:none;
 }
 
-.lang-select{
+.lang-select {
   margin-left: 50px;
 }
+
+/* Index.php banner */
 
 #banner {
     position: absolute;
@@ -221,4 +209,10 @@ h2 {
     #carousels {
         margin-top: 0;
     }
+}
+
+/* Header.php navbar profile dropdown background */
+
+header nav ul li .dropdown-menu-dark {
+    background-color: rgba(52, 58, 64, 0.2)
 }
