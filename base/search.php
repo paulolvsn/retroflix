@@ -1,30 +1,84 @@
 <?php
     include "../users/check-session.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
     <?php
         include "head.php";
     ?>        
     <body class="bg-dark text-white">
-        <?php
-            include "header.php";
-        ?>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="z-index:10;">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand text-warning fs-3 retroflix" href="/index.php">RETROFLIX</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/base/browse.php">BROWSE MOVIES</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" action="/base/search.php" method="get">
+                            <input class="form-control me-2 rounded-pill" type="search" name="keyword" placeholder="Recherche..." aria-label="search">
+                            <button class="btn btn-secondary rounded-circle" type="submit" name="search"><i class="fas fa-search"></i></button>
+                    </form>
+                    <ul class="navbar-nav mb-2 mb-lg-0 me-2">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='fs-1 fas fa-user-circle'></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                                <?php
+                                    if(isset($_SESSION['pseudo'])) {
+                                        echo "
+                                            <li class='dropdown-item'>
+                                                <a class='nav-link text-white' href='/users/account.php' data-bs-toggle='tooltip' data-bs-placement='top' title='User panel'><i class='fs-3 fas fa-user-circle'></i> Mon profil </a>
+                                            </li>
+                                        ";
+                                    }
+                                ?>
+                                <?php
+                                    if(!isset($_SESSION['pseudo'])) {
+                                        echo "
+                                            <li class='dropdown-item'>
+                                                <a class='nav-link text-white' href='/users/create-account.php' data-bs-toggle='tooltip' data-bs-placement='top' title='S&apos;enregistrer'><i class='fs-5 fas fa-user-plus'></i> S'enregistrer </a>
+                                            </li>
+                                            <li class='dropdown-item'>
+                                                <a class='nav-link text-white' href='/users/sign-in.php' data-bs-toggle='tooltip' data-bs-placement='top' title='Se connecter'><i class='fs-5 fas fa-sign-in-alt'></i> Se connecter </a>
+                                            </li>
+                                        ";
+                                    }
+                                ?>
+                                <?php
+                                    if(isset($_SESSION['pseudo'])) {
+                                        echo "
+                                        <li class='dropdown-item'>
+                                            <a class='nav-link text-white' href='/users/deconnexion.php' data-bs-toggle='tooltip' data-bs-placement='top' title='Se déconnecter'><i class='fs-5 fas fa-sign-out-alt'></i> Se déconnecter </a>
+                                        </li>
+                                        ";
+                                    }
+                                ?>
+                                </ul>
+                            </li>
+                        </ul>        
+                    </div>
+                </div>
+            </nav>
+        </header>
         <main class="container" id="search">
-            <section class="mb-3">
-                <h3 class="h3">Rechercher...</h3>
-                <div>
+            <section class="row mb-3">
+                <div class="col mx-0 p-0">
                     <form class="d-flex" action="search.php" method="get">
-                        <input class="form-control me-2" type="search" name="keyword" placeholder="Recherche par Titre ou Genre..." aria-label="search">
-                        <button class="btn btn-secondary" type="submit" name="search"><i class="fas fa-search"></i></button>
+                        <input class="form-control rounded-pill me-2" type="search" name="keyword" placeholder="Recherche par Titre ou Genre..." aria-label="search">
+                        <button class="btn btn-secondary rounded-pill" type="submit" name="search"><i class="fas fa-search"></i></button>
                     </form>
                 </div>                
             </section>
-
             <?php                    
-                include "../connect-to-bdd.php"; // open database
-                if(isset($_GET['keyword'])) {  //al click en submit
+                include "../users/connect-to-bdd.php"; // open database
+                if(isset($_GET['keyword'])) {
                     $keyword= $_GET['keyword'];
                     if(isset($_GET['genre'])){
                         $genre = $_GET['genre'];
@@ -37,26 +91,25 @@
                         $alpha = NULL;
                     }
                     echo "
-                        <section class='container mb-3'>
-                            <div class='row g-4'>
+                        <section class='row g-4 my-3'>
                     ";
                     if(($alpha) AND ($genre)) {
-                        echo" <h5>Résultats pour<strong> '$keyword', genre: '$genre', en ordre alphabétique $alpha</strong></h5>";
+                        echo "<h5 class='m-0 p-0'>Résultats pour<strong> '$keyword', genre: '$genre', en ordre alphabétique $alpha</strong></h5>";
                     }
                     else if($genre) {
-                        echo" <h5>Résultats pour<strong> '$keyword', genre: '$genre'</strong></h5>";
+                        echo "<h5 class='m-0 p-0'>Résultats pour<strong> '$keyword', genre: '$genre'</strong></h5>";
                     }
                     else if($alpha) {
-                        echo" <h5>Résultats pour<strong> '$keyword' en ordre alphabétique $alpha</strong></h5>";
+                        echo "<h5 class='m-0 p-0'>Résultats pour<strong> '$keyword' en ordre alphabétique $alpha</strong></h5>";
                     }
-                    else {
-                        echo" <h5>Résultats pour<strong> '$keyword'</strong></h5>";
+                    else if($keyword){
+                        echo "<h5 class='m-0 p-0'>Résultats pour<strong> '$keyword'</strong></h5>";
                     }
                     echo " 
-                        <ul class='nav nav-tabs'>
-                            <p class='navbar-brand'>Filtrez votre recherche:</p>                                    
+                        <ul class='nav nav-tabs mt-0'>
+                            <p class='navbar-brand text-warning'>Filtrez votre recherche:</p>
                             <li class='nav-item dropdown'>
-                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
+                                <a class='nav-link dropdown-toggle text-warning' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Genres</a>
                                 <ul class='dropdown-menu'>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Action' id='action'>Action</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='genre' value='Animation' id='animation'>Animation</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='alpha' value=$alpha></form></li>
@@ -77,14 +130,13 @@
                                 </ul>
                             </li>                                    
                             <li class='nav-item dropdown'>
-                                <a class='nav-link dropdown-toggle text-white' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
+                                <a class='nav-link dropdown-toggle text-warning' data-bs-toggle='dropdown' href='#' role='button' aria-expanded='false'>Par ordre alphabétique</a>
                                 <ul class='dropdown-menu'>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='ascendent' id='ascendent'>Ascendent (A-Z)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
                                     <li><form action='search.php' method='get'><button class='dropdown-item btn btn-dark' type='submit' name='alpha' value='descendent' id='descendent'>Descendent (Z-A)</button><input type='hidden' name='keyword' value=$keyword><input type='hidden' name='genre' value=$genre></form></li>
                                 </ul>
                             </li>
                     ";
-                    
                     if(($alpha) AND ($genre)) {
                         if ($alpha == 'ascendent') {
                             $request = $bdd->query("SELECT * FROM films WHERE ((title LIKE '%$keyword%') OR (original_title LIKE '%$keyword%') OR (genres LIKE '%$keyword%')) AND (genres LIKE '%$genre%') ORDER BY title");//ir a buscar a la base de datos "text"
@@ -118,7 +170,7 @@
                         $total = $total + 1;
                     }
                     $counter->closeCursor();
-                    echo "<p class='navbar-brand'>On a trouvé $total résultats.<p>";
+                    echo "<p class='navbar-brand text-warning'>On a trouvé $total résultats.<p>";
                     echo "</ul>";
                     while ($film = $request->fetch()){
                         $id = $film['id'];
@@ -136,26 +188,30 @@
                         $vote_average = $film['vote_average'];
                         $overview = $film['overview'];
                         $video = $film['video'];
+                        list($year, $rest) = explode("-", $release_date);
                         echo "
-                            <div class='col-12 col-sm-4 col-md-3 '>
-                                <div class='card h-100 border rounded'>
-                                    <img class='card-img-top' src='https://image.tmdb.org/t/p/w342/$poster_path' alt='$title'>
+                            <div class='col-12 col-sm-4 col-md-3'>
+                                <div class='card h-100 border border-5 border-white rounded'>
+                                <a href='film.php?id=$id'><img class='card-img-top' src='https://image.tmdb.org/t/p/w342/$poster_path' alt='$title'></a>
                                     <div class='card-body text-center bg-dark'>
-                                        <h4>$title</h4> 
+                                        <h4 class='text-warning'>$title</h4>
+                                        <h4 class='text-warning'>($year)</h4>
                                     </div>    
-                                    <div class='card-footer d-flex bg-dark'>
+                                    <div class='card-footer bg-dark text-center'>
+                                        <ul class='list-inline list-unstyled'>
                         ";
                         if(isset($_SESSION['pseudo'])) {
                             echo "
-                                        <a class='link-light h3 col text-center' href='/base/play.php?id=$id'><i class='fas fa-play-circle'></i></a>
+                                            <li class='list-inline-item'><a href='play.php?id=$id' class='link-light h5 mx-3'><i class='fas fa-play-circle'></i></a></li>
                             ";
                         } else {
                             echo "
-                                        <a class='link-light h3 col text-center' href='/users/sign-in.php'><i class='fas fa-sign-in-alt'></i></a>
+                                            <li class='list-inline-item'><a href='/users/sign-in.php' class='link-light h5 mx-3'><i class='fas fa-sign-in-alt'></i></a></li>
                             ";
                         }
                         echo "
-                                        <a class='link-light h3 col text-center' href='film.php?id=$id'><i class='fas fa-chevron-down'></i></a>
+                                            <li class='list-inline-item'><a href='film.php?id=$id' class='link-light h5 mx-3'><i class='fas fa-chevron-down'></i></a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -163,8 +219,7 @@
                     }
                     $request->closeCursor();
                     echo "
-                        </div> 
-                    </section>
+                        </section>
                     ";
                 } 
             ?>            

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : database:3306
--- Généré le :  mer. 07 avr. 2021 à 08:52
--- Version du serveur :  10.4.2-MariaDB-1:10.4.2+maria~bionic
--- Version de PHP :  7.2.5
+-- Hôte : localhost:3306
+-- Généré le : jeu. 08 avr. 2021 à 12:27
+-- Version du serveur :  10.3.16-MariaDB
+-- Version de PHP : 7.3.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `retroflix`
+-- Base de données : `id16499719_retroflix`
 --
 
 -- --------------------------------------------------------
@@ -53,7 +53,7 @@ CREATE TABLE `films` (
 --
 
 INSERT INTO `films` (`id`, `imdb_id`, `video`, `torrent`, `backdrop_path`, `poster_path`, `title`, `original_title`, `original_language`, `release_date`, `origin_country`, `genres`, `runtime`, `popularity`, `vote_count`, `vote_average`, `overview`) VALUES
-(160, 'tt0000012', 'b9MoAQJFn_8', '', '/uusNog5m2aCuL53rrKw8RaBnprb.jpg', '/y3A15HpugKsPjVyxKa9POLTEX6B.jpg', 'L\'arrivée d\'un train en gare de La Ciotat', 'L\'arrivée d\'un train à La Ciotat', '', '1896-01-25', 'FR', 'Documentaire', 1, 5.39, 298, 7.1, 'L\'arrivée d\'un train en gare de La Ciotat, ou L\'arrivée d\'un train à La Ciotat, est un film français réalisé par Louis Lumière en 1895, sorti en janvier 1896, dont il existe plusieurs versions.'),
+(160, 'tt0000012', '-e1u7Fgoocc', '', '/uusNog5m2aCuL53rrKw8RaBnprb.jpg', '/y3A15HpugKsPjVyxKa9POLTEX6B.jpg', 'L\'arrivée d\'un train en gare de La Ciotat', 'L\'arrivée d\'un train à La Ciotat', '', '1896-01-25', 'FR', 'Documentaire', 1, 5.39, 298, 7.1, 'L\'arrivée d\'un train en gare de La Ciotat, ou L\'arrivée d\'un train à La Ciotat, est un film français réalisé par Louis Lumière en 1895, sorti en janvier 1896, dont il existe plusieurs versions.'),
 (222, 'tt0017668', 'wY5GdeqOkfc', 'https://yts.mx/torrent/download/3CB41C422D0F3C42E58EA572658C626D337F2659', '/oJhrCtF4CbFPvAn7hGdT6QyFu8R.jpg', '/2IuYWewY6VloddUj5e5kVFuPX7m.jpg', 'Berlin, symphonie d\'une grande ville', 'Berlin: Die Sinfonie der Großstadt', 'de', '1927-09-23', 'DE', 'Documentaire Histoire', 62, 4.151, 62, 7.8, 'Ce film nous montre une journée à Berlin, au rythme de cette époque, commençant au petit matin et se terminant dans la nuit la plus profonde.'),
 (234, 'tt0010323', '8UYkA0kjTjI', 'https://yts.mx/torrent/download/63E5FA416114F7944FFAE969AC0F20C892298B2F', '/m0N89MIIu6qYZcujCRzBHrkZbns.jpg', '/qWAZozKtoRI8PO8teYmSvH3zcHI.jpg', 'Le Cabinet du docteur Caligari', 'Das Cabinet des Dr. Caligari', 'de', '1920-02-27', 'DE', 'Drame Horreur Thriller Crime', 77, 10.326, 928, 7.9, 'Dans une fête foraine, un mystérieux docteur prédit un avenir tragique à un jeune étudiant.'),
 (303, 'tt0038787', 'j7SwtqfpPow', 'https://yts.mx/torrent/download/5BE2F9C4C501551CB2AED7A0E24BCACEF27B3260', '/nQjenIvZzPtmOsBKW7AGjL7HW3T.jpg', '/32fAQsdYpDPBCOvmL4w18FyxqeT.jpg', 'Les Enchaînés', 'Notorious', 'en', '1946-08-21', 'US', 'Thriller Drame Romance', 101, 12.611, 988, 7.8, 'Alicia, fille d\'un espion nazi, mène une vie dépravée. Devlin lui propose de travailler pour les États-Unis afin de réhabiliter son nom. Elle épouse donc un ancien ami de son père afin de l\'espionner. Devlin et elle s\'aiment sans oser se l\'avouer, attendant chacun que l\'autre fasse le premier pas. Lorsque le rôle qu\'elle tient est découvert, son mari décide de l\'empoisonner.'),
