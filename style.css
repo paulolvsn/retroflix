@@ -204,14 +204,21 @@ h2 {
 }
 
 #banner {
-    position:absolute;
-    top:0;
-    height:100vh;
-    width:100vw;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#carousels {
+    margin-top: 90vh;
 }
 
 @media only screen and (max-width: 991px) {
     #banner {
         position: relative;
+    }
+    #carousels {
+        margin-top: 0;
     }
 }

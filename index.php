@@ -57,7 +57,7 @@
                 </section>
             ";
             ?>
-            <section class="container-fluid cardlist" style="margin-top:90vh;">
+            <section class="container-fluid cardlist" id="carousels">
                 <div class="cardlistcontainer">
                     <h2 class="mb-5" id="rating">Best rating</h2>
                     <?php
