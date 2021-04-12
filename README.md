@@ -18,7 +18,6 @@
 * Retroflix it's a  movies streaming website with focus on **Old Classical Films**. 
 We have picked the film list from the site [Sens Critique](https://www.senscritique.com/liste/Grace_a_Youtube_vous_pouvez_decouvrir_ces_films/132727) .
 
-
 ### UI Overview
 
 #### Home page:
@@ -29,7 +28,7 @@ We have picked the film list from the site [Sens Critique](https://www.senscriti
 ![Carousel](images/carouselretroflix.png)
 
 #### The Header
-With links to the Home Page, Browse Movies Page, the Search bar with entries to keywords or genrers, the icon to the Members area page and the icon for the members to Sign Out.
+With links to the Home Page, Browse Movies Page, the Search bar with entries to keywords or genres, the icon to the Members area page and the icon for the members to Sign Out.
 ![header](images/headerretroflix.png)
 
 
@@ -41,31 +40,16 @@ The Search function works also with alphabetic order (to up & down). To each sea
 Each film card it's composed by the movie original poster and a bottom section (Movie tittle & play icon - info icon) who leads both to the film streaming and to the Movie Info page.
 ![Movie card](images/cardmovie.png)
 
-
-<<<<<<< HEAD
 #### The Movie Info page
 This page it's at the core of the site. It shows most of the features that are present in the DB. Basic information about the movie itself and an overview (FR). At the bottom of this page, the **"Comments"** section allows the user (already Signed-in) to write down his comments but also it displays a list of older comments.
 ![Info page](images/infofilm.png)
-
-
 
 #### The Player page
 The DB has a Youtube link for each movie.
 ![Player](images/filmplayer.png)
 
-
-
-
-
-##The Work flow and Organisation
+## Work flow and Organisation
 This project has had two mainly parts: The User's System and the DB management.
-
-
-
-
-
-
-=======
 
 ## Member system 
 
@@ -94,7 +78,6 @@ When he's connected he can access to his member area, change his avatar and his 
 Here is the member area:
 
 ![image-20210412144909607](images/member-area.png)
->>>>>>> a3b7cfc2644d1516109cb3bbd90832f652b43643
 
 
 
