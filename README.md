@@ -21,17 +21,21 @@ We have picked the film list from the site [Sens Critique](https://www.senscriti
 ### UI Overview
 
 #### Home page:
+
 ![Home page](images/homeretroflix.png)
 
 #### Home page carousel organised by genres:
+
 ![Carousel](images/carouselretroflix.png)
 
 #### The Header
 With links to the Home Page, Browse Movies Page, the Search bar with entries to keywords or genres, the icon to the Members area page and the icon for the members to Sign Out.
+
 ![header](images/headerretroflix.png)
 
 #### The Browse Movies page
 The Search function works also with alphabetic order (to up & down). To each search request, the page shows the Number of total items.
+
 ![browse page](images/browseretroflix.png)
 
 #### The Film Card
@@ -41,10 +45,12 @@ Each film card it's composed by the movie original poster and a bottom section (
 
 #### The Movie Info page
 This page it's at the core of the site. It shows most of the features that are present in the DB. Basic information about the movie itself and an overview (FR). At the bottom of this page, the **"Comments"** section allows the user (already Signed-in) to write down his comments but also it displays a list of older comments.
+
 ![Info page](images/infofilm.png)
 
 #### The Player page
 The DB has a Youtube link for each movie.
+
 ![Player](images/filmplayer.png)
 
 ## Work flow and Organisation
