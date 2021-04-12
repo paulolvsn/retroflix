@@ -32,7 +32,7 @@
                   <a class='nav-link text-white' aria-current='page' href='/users/create-account.php'><i class='fs-5 fas fa-user-plus'></i></a>
                 </li>
                 <li class='nav-item'>
-                  <a class='nav-link text-white' aria-current='page' href='/users/sign-in.php'><i class='fs-5 fas fa-sign-in-alt'></i></a>
+                  <a class='nav-link text-white' aria-current='page' href='/users/sign-in.php'><i class='fs-5 fas fa-sign-in-alt' data-bs-toggle='tooltip' data-bs-placement='bottom' title='Sign In'></i></a>
                 </li>
               ";
             }

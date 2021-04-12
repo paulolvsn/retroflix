@@ -66,6 +66,15 @@
                         </div>
                         <p class="text mt-4">Ou...Chosir de cette liste: </p>
                         
+
+                  
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1"><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/angelam.png" alt="Angela Merkel"></a></option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="avatardd" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="200,-130">
                                 Images disponibles
