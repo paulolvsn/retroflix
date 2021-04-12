@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 12 avr. 2021 à 17:42
+-- Généré le : lun. 12 avr. 2021 à 17:44
 -- Version du serveur :  10.3.16-MariaDB
 -- Version de PHP : 7.3.23
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `date` date NOT NULL DEFAULT current_timestamp(),
+  `date` date NOT NULL,
   `pseudo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `admin` tinyint(1) NOT NULL,
