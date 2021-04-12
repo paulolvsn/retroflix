@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark" style="z-index:10;">
     <div class="container-fluid px-5">
-        <a class="navbar-brand text-warning fs-3" href="/index.php">RETROFLIX</a>
+        <a class="navbar-brand text-warning fs-3 retroflix" href="/index.php">RETROFLIX</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
