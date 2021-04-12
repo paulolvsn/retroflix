@@ -1,8 +1,6 @@
-@font-face {
-    font-family: logofont;
-    src: url('fonts/josefinslab.ttf')
+body {
+    font-family: 'Josefin Slab', serif;
 }
-
 
 a {
     color: white;
