@@ -23,14 +23,12 @@ We have picked the film list from the site [Sens Critique](https://www.senscriti
 #### Home page:
 ![Home page](images/homeretroflix.png)
 
-
 #### Home page carousel organised by genres:
 ![Carousel](images/carouselretroflix.png)
 
 #### The Header
 With links to the Home Page, Browse Movies Page, the Search bar with entries to keywords or genres, the icon to the Members area page and the icon for the members to Sign Out.
 ![header](images/headerretroflix.png)
-
 
 #### The Browse Movies page
 The Search function works also with alphabetic order (to up & down). To each search request, the page shows the Number of total items.
