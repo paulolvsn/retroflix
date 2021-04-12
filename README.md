@@ -36,6 +36,7 @@ The Search function works also with alphabetic order (to up & down). To each sea
 
 #### The Film Card
 Each film card it's composed by the movie original poster and a bottom section (Movie tittle & play icon - info icon) who leads both to the film streaming and to the Movie Info page.
+
 ![Movie card](images/cardmovie.png)
 
 #### The Movie Info page
