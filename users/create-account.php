@@ -60,36 +60,6 @@
                             </div>
                         </div>
                         
-<<<<<<< HEAD
-
-                  
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1"><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/angelam.png" alt="Angela Merkel"></a></option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="avatardd" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="200,-130">
-                                Images disponibles
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/angelam.png" alt="Angela Merkel"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/gandhi.png" alt="Gandhi"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/ernestoche.png" alt="Che Guevara"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/kennedy.png" alt="Kennedy"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/mlutherk.png" alt="Martin L.King"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/putin.png" alt="Putin"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/einstein.png" alt="Einstein"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/isabel.png" alt="Queen Elisabeth"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/obama.png" alt="Obama"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/lenin.png" alt="Lenin"></a></li>
-                                <li><a class="dropdown-item" href="#"><img width="60px" height="auto" src="avatar/dalai.png" alt="Dalai Lama"></a></li>
-                                
-                                
-                            </ul>
-=======
                         <select class="vodiapicker" id="avatargallery">
                             <option value="/avatar/angelam.png" data-thumbnail="/avatar/angelam.png" name="avatar"></option>
                             <option value="/avatar/lenin.png" data-thumbnail="/avatar/lenin.png" name="avatar"></option>
@@ -110,7 +80,6 @@
                             <div class="b">
                                 <ul id="a"></ul>
                             </div>
->>>>>>> bc9ef8ae3764f85367504ef7b4185bad27b2c4d0
                         </div>
 
                         <br>
