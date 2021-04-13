@@ -51,8 +51,8 @@
                     <form action="create-account-check.php" method="post" enctype='multipart/form-data'>
                         <h2 class="text-center">S'inscrire</h2>
                             
-                        <div class="card form-control d-flex flex-column justify-items-center" >
-                            <img class="figure-img img-fluid mx-3" id="avatarDisplay" width="460px" height="auto" src="avatar/avatar.jpg"  alt="avatar"><br>
+                        <div class="card form-control" >
+                            <img class="figure-img img-fluid mx-auto" id="avatarDisplay" width="460px" height="auto" src="avatar/avatar.jpg"  alt="avatar"><br>
                                              
                             <div class="card-body">
                                 <label for="avatar" class="form-label">Téléchargez votre image</label>
