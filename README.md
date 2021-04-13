@@ -18,7 +18,15 @@
 * Retroflix it's a  movies streaming website with focus on **Old Classical Films**. 
 We have picked the film list from the site [Sens Critique](https://www.senscritique.com/liste/Grace_a_Youtube_vous_pouvez_decouvrir_ces_films/132727) .
 
+## Work flow and Organisation
+
+This project has had two mainly parts: The User's System and the DB management.
+
+# FRONT-END
+
 ### Mock ups
+
+
 
 #### Home
 
@@ -67,8 +75,9 @@ The DB has a Youtube link for each movie.
 
 ![Player](images/filmplayer.png)
 
-## Work flow and Organisation
-This project has had two mainly parts: The User's System and the DB management.
+# BACK-END
+
+
 
 ## Member system 
 
@@ -97,6 +106,16 @@ When he's connected he can access to his member area, change his avatar and his 
 Here is the member area:
 
 ![image-20210412144909607](images/member-area.png)
+
+## Lighthouse
+
+![image-20210413121549504](images/lighthouse.png)
+
+
+
+
+
+
 
 
 
