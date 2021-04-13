@@ -103,7 +103,7 @@ Here is the member area:
 
 ![image-20210412144909607](images/member-area.png)
 
-If the user has administrative rights it also has access to de Admin Panel: 
+If the user has administrative rights it also has access to de Admin Panel where you can "touch" the database using php CRUD functions: 
 ![Admin panel](images/adminpanel.jpg)
 
 Here you can:
