@@ -11,7 +11,7 @@
   * backend: 2
   * project management : 1
 
-## [Our getflix Project (click here)](https://retro-flix.000webhostapp.com/)
+## [Our getflix Project (click here)](https://www.retroflix.ga/)
 
 ## RETROFLIX
 
