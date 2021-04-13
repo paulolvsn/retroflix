@@ -17,7 +17,9 @@
     // if the user try to change the avatar
     if(isset($_FILES['file']['name'])&&(strlen($_FILES['file']['name']) > 0)) {
         if(in_array($file_extension, $valid_extension)) { 
-        unlink($avatarToDelete);
+        if ($avatarToDelete != "avatar/avatar.jpg"){
+            unlink($avatarToDelete);
+        }
         move_uploaded_file($_FILES['file']["tmp_name"],$target_file);
         $req = $bdd->prepare('UPDATE users SET avatar = :target WHERE pseudo = :pseudo');
         $req->execute(array(
