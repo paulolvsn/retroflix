@@ -11,7 +11,7 @@
   * backend: 2
   * project management : 1
 
-## [Our getflix Project (click here)](https://www.retroflix.ga/)
+## [Our getflix Project (click here)](http://www.retroflix.ga/)
 
 ## RETROFLIX
 
