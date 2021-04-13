@@ -77,8 +77,6 @@ The DB has a Youtube link for each movie.
 
 # BACK-END
 
-
-
 ## Member system 
 
 By following this [openclassroom course](https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/917948-tp-creez-un-espace-membres) we built a basic member system. 
@@ -106,6 +104,25 @@ When he's connected he can access to his member area, change his avatar and his 
 Here is the member area:
 
 ![image-20210412144909607](images/member-area.png)
+
+If the user has administrative rights it also has access to de Admin Panel: 
+![Admin panel](images/adminPanel.jpg)
+
+Here you can:
+* edit some content from the films in the database: 
+![Manage films](images/managefilms.jpg)
+
+* search new films to be added to the database:
+![Add films](images/addfilms.jpg)
+
+* add users or change users info:
+![Manage users](images/manageusers.jpg)
+
+* add, edit or delete comments:
+![Manage comments](images/managecomments.jpg)
+
+* you could also add torrent links to the films (but this is not implemented in the site for copyright reasons)
+![Add torrent](images/addtorrent.jpg)
 
 ## Lighthouse
 
