@@ -74,15 +74,6 @@ The DB has a Youtube link for each movie so we were able to implement a movie pl
 
 ![Player](images/filmplayer.png)
 
-* Comments area
-Each film has a user comments area where you can read comments made by any user:
-
-![Comments](images/comments.png)
-
-If you are already signed in you can also add a comment:
-
-![Add comment](images/addcomment.png)
-
 ## BACK-END
 
 ### Member system 
