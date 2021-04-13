@@ -10,8 +10,7 @@
   * frontend: 1
   * backend: 2
   * project management : 1
-
-## [Our getflix Project (click here)](http://www.retroflix.ga/)
+* [Click here to go to our website: "Retroflix"](http://www.retroflix.ga/)
 
 ## RETROFLIX
 
@@ -22,60 +21,71 @@ We have picked the film list from the site [Sens Critique](https://www.senscriti
 
 This project has had two mainly parts: The User's System and the DB management.
 
-# FRONT-END
+## FRONT-END
 
-### Mock ups
+### First mock ups:
 
-#### Home
+* Home page:
 
 ![Home page](images/MOCKUP.jpg)
 
-#### Browse Movies:
+* Browse movies page:
 
 ![Browse Movies](images/MOCKUP2.jpg)
 
-#### Subscription Page:
+* Subscription page:
 
 ![Subscription page](images/MOCKUP3.jpg)
 
-### UI Overview
+### Website UI Overview:
 
-#### Home page:
-
-![Home page](images/homeretroflix.png)
-
-#### Home page carousel organised by genres:
-
-![Carousel](images/carouselretroflix.png)
-
-#### The Header
+* Header
 With links to the Home Page, Browse Movies Page, the Search bar with entries to keywords or genres, the icon to the Members area page and the icon for the members to Sign Out.
 
 ![header](images/headerretroflix.png)
 
-#### The Browse Movies page
-The Search function works also with alphabetic order (to up & down). To each search request, the page shows the Number of total items.
+* Home page:
+
+The homepage shows a full screen banner (adjusted with 100vh and 100vw) displaying the info from a random film of our database:
+
+![Home page](images/homeretroflix.png)
+
+* Beneath it, there are dynamic carousels showing the top 10 films organised by different rankings and genres:
+
+![Carousel](images/carouselretroflix.png)
+
+* Browse movies page:
+The Search function works also with alphabetic order (to up & down). To each search request, the page shows the number of total items.
 
 ![browse page](images/browseretroflix.png)
 
-#### The Film Card
-Each film card it's composed by the movie original poster and a bottom section (Movie tittle & play icon - info icon) who leads both to the film streaming and to the Movie Info page.
+* Film info card
+Each film info card it's composed by the movie original poster and a bottom section (Movie tittle & play icon - info icon) who leads both to the film streaming and to the Movie Info page.
 
 ![Movie card](images/cardmovie.png)
 
-#### The Movie Info page
+* Film info page
 This page it's at the core of the site. It shows most of the features that are present in the DB. Basic information about the movie itself and an overview (FR). At the bottom of this page, the **"Comments"** section allows the user (already Signed-in) to write down his comments but also it displays a list of older comments.
 
 ![Info page](images/infofilm.png)
 
-#### The Player page
-The DB has a Youtube link for each movie.
+* Player page
+The DB has a Youtube link for each movie so we were able to implement a movie player embedding youtube code into ours.
 
 ![Player](images/filmplayer.png)
 
-# BACK-END
+* Comments area
+Each film has a user comments area where you can read comments made by any user:
 
-## Member system 
+![Comments](images/comments.png)
+
+If you are already signed in you can also add a comment:
+
+![Add comment](images/addcomment.png)
+
+## BACK-END
+
+### Member system 
 
 By following this [openclassroom course](https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/917948-tp-creez-un-espace-membres) we built a basic member system. 
 
@@ -125,14 +135,6 @@ Here you can:
 ## Lighthouse
 
 ![image-20210413121549504](images/lighthouse.png)
-
-
-
-
-
-
-
-
 
 ## Mission objectives
 
