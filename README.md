@@ -149,7 +149,7 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 - [x] Management of lost passwords.
 - [x] Back office for user and comment management (CRUD).
 - [x] Create a page or section that displays the top movies with the movie db API.
-- [ ] Integrate a newsletter with Mailchimp.
+- [x] Integrate a newsletter with Mailchimp.
 
 ### Miscellanous information
 * The videos will not be hosted by you, a simple link to the Youtube trailer will suffice.
@@ -177,14 +177,14 @@ Get inspired by Netflix, Amazon Prime Video and other Popcorn Time, Stremio ... 
 ## Evaluation criterias
 | Criteria |	Indicator	| Yes/No |
 |---|---|---|
-| 1. | Is complete	The student has realized all must-have features.	|
-| | There is a published GitHub page available.	|
-| | The code is well indented and commented	|
-| | The readme is clean and complete	|
-| | At least one Nice-to-have features is ok	|
-| 2. | Is Correct	The HTML and CSS pass the W3C Validation tool.	|
-| | The lighthouse test scores 90 at least on Performance, Best Practices, Accessibility and SEO.	|
-| | The code is well indented and commented....... |
+| 1. | Is complete	The student has realized all must-have features.	| YES |
+| | There is a published GitHub page available.	| YES |
+| | The code is well indented and commented	| MMM |
+| | The readme is clean and complete	| MMM |
+| | At least one Nice-to-have features is ok	| YES |
+| 2. | Is Correct	The HTML and CSS pass the W3C Validation tool.	| YES |
+| | The lighthouse test scores 90 at least on Performance, Best Practices, Accessibility and SEO.	| YES |
+| | The code is well indented and commented....... | MMM |
 
  
 
