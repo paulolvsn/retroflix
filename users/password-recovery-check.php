@@ -13,7 +13,7 @@
             $req->execute(array(
             "email" => $email,
             "newPass" => $newPass));
-            header("Location: http://retro-flix.000webhostapp.com/users/sign-in.php");
+            header("Location: http://www.retroflix.ga/users/sign-in.php");
         } else {
             header("Location: password-recovery.php?failed=1&email='$email'");
         }
