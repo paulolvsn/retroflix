@@ -71,12 +71,9 @@
     $filename = $_FILES['file']['name'];
     // Location
     if(strlen($_FILES['file']['name'])==0) {
-        if(isset($_POST['avatar'])) {
-            $target_file = $_POST['avatar'];
-        } else {
             $target_file = 'avatar/avatar.jpg';
         }
-    } else {
+     else {
         $target_file = 'avatar/'. $uniqueId .$filename;
     }
     // file extension
