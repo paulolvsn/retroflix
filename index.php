@@ -29,7 +29,7 @@
                 $overview = $overviews[$random];
                 $backdrop_path = "https://image.tmdb.org/t/p/original/" . $backdrop_paths[$random];
             echo "
-                <section class='row mx-0 px-0' id='banner'>
+                <section class='row' id='banner'>
                     <div style='position:absolute;top:0;left:0;width:100%;height:100%;background:url($backdrop_path);background-repeat:no-repeat;background-position:center;background-size:cover;opacity:0.2;z-index:-1;'>
                     </div>
                     <div class='row h-100'>
