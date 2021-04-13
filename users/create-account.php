@@ -131,7 +131,7 @@ $('#a').html(langArray);
 
 //Set the button value to the first el of the array
 $('.btn-select').html(langArray[0]);
-$('.btn-select').attr('value', 'en');
+$('.btn-select').attr('value', '/avatar/angelam.png');
 
 //change button stuff on click
 $('#a li').click(function(){
@@ -149,19 +149,19 @@ $(".btn-select").click(function(){
         $(".b").toggle();
     });
 
-//check local storage for the lang
-var sessionLang = localStorage.getItem('lang');
-if (sessionLang){
-  //find an item with value of sessionLang
-  var langIndex = langArray.indexOf(sessionLang);
-  $('.btn-select').html(langArray[langIndex]);
-  $('.btn-select').attr('value', sessionLang);
-} else {
-   var langIndex = langArray.indexOf('ch');
-  console.log(langIndex);
-  $('.btn-select').html(langArray[langIndex]);
-  //$('.btn-select').attr('value', 'en');
-}
+// //check local storage for the lang
+// var sessionLang = localStorage.getItem('lang');
+// if (sessionLang){
+//   //find an item with value of sessionLang
+//   var langIndex = langArray.indexOf(sessionLang);
+//   $('.btn-select').html(langArray[langIndex]);
+//   $('.btn-select').attr('value', sessionLang);
+// } else {
+//    var langIndex = langArray.indexOf('ch');
+//   console.log(langIndex);
+//   $('.btn-select').html(langArray[langIndex]);
+//   $('.btn-select').attr('value', '/avatar/angelam.png');
+// }
 
         //! PREVIEW AVATAR BEFORE UPLOAD
         function readURL(input) {
