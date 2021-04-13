@@ -111,7 +111,7 @@ Here you can:
 * edit some content from the films in the database: 
 ![Manage films](images/managefilms.jpg)
 
-* search new films to be added to the database:
+* search new films to be added to the database (thanks to [The movie database API](https://developers.themoviedb.org/3)):
 ![Add films](images/addfilms.jpg)
 
 * add users or change users info:
@@ -120,7 +120,7 @@ Here you can:
 * add, edit or delete comments:
 ![Manage comments](images/managecomments.jpg)
 
-* you could also add torrent links to the films (but this is not implemented in the site for copyright reasons)
+* you could also add torrent links to the films (but this is not implemented in the site for copyright reasons and we take the torrents from [YIFI torrent database API](https://yts.mx/api))
 ![Add torrent](images/addtorrent.jpg)
 
 ## Lighthouse
