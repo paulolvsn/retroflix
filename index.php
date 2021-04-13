@@ -33,7 +33,7 @@
                     <div style='position:absolute;top:0;left:0;width:100%;height:100%;background:url($backdrop_path);background-repeat:no-repeat;background-position:center;background-size:cover;opacity:0.2;z-index:-1;'>
                     </div>
                     <div class='row h-100'>
-                        <div class='col-12 col-md-6 d-flex align-items-center p-4'>
+                        <div class='col-12 col-md-6 d-flex align-items-center ps-5 p-4'>
                             <h1 class='display-1 text-uppercase'><a class='text-decoration-none text-warning' href='/base/film.php?id=$id'>$title</a></h1>
                         </div>
                         <div class='col-12 col-md-6 d-flex flex-column align-self-center p-4 text-white'>
