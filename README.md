@@ -11,12 +11,26 @@
   * backend: 2
   * project management : 1
 
-## [Our getflix Project (click here)](https://www.retroflix.ga/)
+## [Our getflix Project (click here)](http://www.retroflix.ga/)
 
 ## RETROFLIX
 
 * Retroflix it's a  movies streaming website with focus on **Old Classical Films**. 
 We have picked the film list from the site [Sens Critique](https://www.senscritique.com/liste/Grace_a_Youtube_vous_pouvez_decouvrir_ces_films/132727) .
+
+### Mock ups
+
+#### Home
+
+![Home page](images/MOCKUP.jpg)
+
+#### Browse Movies:
+
+![Browse Movies](images/MOCKUP2.jpg)
+
+#### Subscription Page:
+
+![Subscription page](images/MOCKUP3.jpg)
 
 ### UI Overview
 
