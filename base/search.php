@@ -36,7 +36,7 @@
                                             $request->closeCursor();
                                             $avatar = $user['avatar'];
                                             echo "
-                                                <img class='rounded-circle' width='50px' src='/users/$avatar' alt=$pseudo>
+                                                <img class='rounded-circle' width='50px' height='50px' src='/users/$avatar' alt=$pseudo>
                                             ";
                                         }
                                         else {
