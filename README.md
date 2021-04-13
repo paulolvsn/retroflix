@@ -26,8 +26,6 @@ This project has had two mainly parts: The User's System and the DB management.
 
 ### Mock ups
 
-
-
 #### Home
 
 ![Home page](images/MOCKUP.jpg)
@@ -106,7 +104,7 @@ Here is the member area:
 ![image-20210412144909607](images/member-area.png)
 
 If the user has administrative rights it also has access to de Admin Panel: 
-![Admin panel](images/adminPanel.jpg)
+![Admin panel](images/adminpanel.jpg)
 
 Here you can:
 * edit some content from the films in the database: 
