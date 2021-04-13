@@ -22,7 +22,7 @@
             </div> 
             <div class="row"> 
                 <div style="width: 30%; margin: auto;" class="col-md-offset-3 text-center mb-3"> 
-                <button style="background-color: rgba(40, 40, 40, 1);" type="button"><a style="background-color: rgba(40, 40, 40, 1); color:#fcba03;font-size: larger" href='http://retro-flix.000webhostapp.com/users/password-recovery.php?email=$adress&str=$link'>réinitialiser le mot de passe</a></button> 
+                <button style="background-color: rgba(40, 40, 40, 1);" type="button"><a style="background-color: rgba(40, 40, 40, 1); color:#fcba03;font-size: larger" href='http://www.retroflix.ga/users/password-recovery.php?email=$adress&str=$link'>réinitialiser le mot de passe</a></button> 
                 </div> 
             </div> 
         </div>  
