@@ -1,6 +1,9 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Visual Studio Code">
+    <meta name="description" content="Retroflix, watch classic films at your home.">
+    <meta name="keywords" content="retroflix, classic, films, movies, streaming, youtube">
     <title>Retroflix</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
